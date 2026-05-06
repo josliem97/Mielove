@@ -82,10 +82,10 @@ export default function TemplateGallery() {
                                                 {template.category}
                                             </span>
                                         </div>
-                                        <div className="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                                        <div className="absolute inset-0 bg-black/20 md:bg-stone-900/40 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
                                             <Link 
                                                 href={`/dashboard?create=${template.id}`} 
-                                                className="w-full py-3 bg-white text-stone-900 text-center font-semibold rounded-xl hover:bg-primary-50 transition"
+                                                className="w-full max-w-[200px] py-3 bg-primary-600 text-white text-center font-semibold rounded-xl shadow-lg hover:bg-primary-700 transition transform hover:scale-105"
                                             >
                                                 Sử dụng mẫu này
                                             </Link>

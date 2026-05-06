@@ -15,6 +15,7 @@ export default function Login() {
     try {
       const res = await apiLogin(formData.username, formData.password);
       localStorage.setItem("access_token", res.access_token);
+      localStorage.removeItem("mielove_token"); // Clean up old token
       router.push("/dashboard");
     } catch (err: any) {
       setError(typeof err === "string" ? err : "Thông tin không chính xác.");

@@ -7,7 +7,14 @@ export default function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    const token = localStorage.getItem('access_token');
+    let token = localStorage.getItem('access_token');
+    if (!token) {
+      token = localStorage.getItem('mielove_token');
+      if (token) {
+        localStorage.setItem('access_token', token);
+        localStorage.removeItem('mielove_token');
+      }
+    }
     setIsLoggedIn(!!token);
   }, []);
 

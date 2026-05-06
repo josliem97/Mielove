@@ -4,6 +4,7 @@ import { useEffect, useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import axios from "axios";
+import Navbar from "@/components/Navbar";
 import { Plus, Edit, Users, Eye, X, Copy, Trash2, BarChart2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -145,8 +146,9 @@ function DashboardContent() {
   };
 
   return (
-    <div className="min-h-screen bg-stone-50 py-12 px-4 sm:px-6 lg:px-8 font-sans">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-stone-50 font-sans">
+      <Navbar />
+      <div className="max-w-7xl mx-auto pt-32 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center mb-8">
            <h1 className="text-3xl font-serif font-bold text-stone-900">Dashboard của bạn</h1>
            <Link href="/templates" className="flex items-center gap-2 px-4 py-2 bg-primary-600 text-white rounded-xl shadow-md hover:bg-primary-700 transition-all font-medium">

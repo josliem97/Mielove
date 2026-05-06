@@ -10,7 +10,7 @@ load_dotenv()
 
 models.Base.metadata.create_all(bind=database.engine)
 
-app = FastAPI(title="Mielove API")
+app = FastAPI(title="Mielove API", redirect_slashes=False)
 
 app.add_middleware(
     CORSMiddleware,

@@ -1,0 +1,1627 @@
+[
+  {
+    "id": "element_text_5drkesyzj2q",
+    "type": "element_text",
+    "x": 5.321714743589737,
+    "y": 1074.1387720352564,
+    "w": 562.5170272435897,
+    "h": 94.0,
+    "z": 0,
+    "props": {
+      "text": "WHEN TWO HEATS\nBEAT AS ONE",
+      "fontSize": 36,
+      "color": "#ffffff",
+      "fontFamily": "Lora",
+      "textAlign": "center"
+    },
+    "animation": {
+      "preset": "bounceIn",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2,0.8,0.2,1)"
+    }
+  },
+  {
+    "id": "element_text_n89e4g42wdj",
+    "type": "element_text",
+    "x": 122.51849521734776,
+    "y": 1263.8231138571716,
+    "w": 314.37550080128204,
+    "h": 94.0,
+    "z": 0,
+    "props": {
+      "text": "They create a soul strong\nenough to last forever!",
+      "fontSize": 24,
+      "color": "#ffffff",
+      "fontFamily": "Lora",
+      "textAlign": "center"
+    },
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_amnseov51iu",
+    "type": "element_text",
+    "x": 252.07527043269232,
+    "y": 1207.6632111378208,
+    "w": 72.0,
+    "h": 30.0,
+    "z": 0,
+    "props": {
+      "text": "______",
+      "fontSize": 23,
+      "color": "#f0f1f5",
+      "fontFamily": "",
+      "textAlign": "left"
+    },
+    "animation": null
+  },
+  {
+    "id": "element_text_1sgz63palk1",
+    "type": "element_text",
+    "x": 145.72561097756406,
+    "y": 698.9292868589745,
+    "w": 373.532952724359,
+    "h": 104.0,
+    "z": 0,
+    "props": {
+      "text": "Save our date",
+      "fontSize": 80,
+      "color": "#fafafa",
+      "fontFamily": "High Spirited",
+      "textAlign": "left"
+    },
+    "animation": {
+      "preset": "bounceInUp",
+      "duration": 600,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2,0.8,0.2,1)"
+    }
+  },
+  {
+    "id": "element_text_ggpeazqfzho",
+    "type": "element_text",
+    "x": 4.781250000000018,
+    "y": 813.8634815705129,
+    "w": 577.6293068910256,
+    "h": 44.0,
+    "z": 0,
+    "props": {
+      "text": "ANH QUÂN - KHÁNH LINH",
+      "fontSize": 34,
+      "color": "#ffffff",
+      "fontFamily": "Lora",
+      "textAlign": "center"
+    },
+    "animation": {
+      "preset": "fadeIn",
+      "duration": 1000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2,0.8,0.2,1)"
+    }
+  },
+  {
+    "id": "element_text_sw2g4tritog",
+    "type": "element_text",
+    "x": 15.137219551282044,
+    "y": 874.6989683493592,
+    "w": 551.0303485576924,
+    "h": 47.0,
+    "z": 0,
+    "props": {
+      "text": "31-12-2026",
+      "fontSize": 36,
+      "color": "#ffffff",
+      "fontFamily": "Lora",
+      "textAlign": "center"
+    },
+    "animation": {
+      "preset": "tada",
+      "duration": 600,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2,0.8,0.2,1)"
+    }
+  },
+  {
+    "id": "element_text_8v6aahyrjca",
+    "type": "element_text",
+    "x": 183.52423878205127,
+    "y": 1865.9941907051284,
+    "w": 205.07001201923077,
+    "h": 86.0,
+    "z": 0,
+    "props": {
+      "text": "Chú rĂ",
+      "fontSize": 66,
+      "color": "#ffffff",
+      "fontFamily": "Arcittya-Begatri",
+      "textAlign": "center"
+    },
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_tmrq54dtaxd",
+    "type": "element_text",
+    "x": 157.77569110576923,
+    "y": 1951.4820713141028,
+    "w": 256.16060697115387,
+    "h": 44.0,
+    "z": 0,
+    "props": {
+      "text": "ANH QUÂN",
+      "fontSize": 34,
+      "color": "#ffffff",
+      "fontFamily": "Lora",
+      "textAlign": "center"
+    },
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2,0.8,0.2,1)"
+    }
+  },
+  {
+    "id": "element_text_4k184no8ujs",
+    "type": "element_text",
+    "x": 87.03921274038461,
+    "y": 2770.730268429488,
+    "w": 108.38837139423077,
+    "h": 31.0,
+    "z": 0,
+    "props": {
+      "text": "Nhà trai",
+      "fontSize": 24,
+      "color": "#6d0208",
+      "fontFamily": "Lora",
+      "textAlign": "left"
+    },
+    "animation": {
+      "preset": "fadeInLeft",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_2prpu9qb88k",
+    "type": "element_text",
+    "x": 385.4998998397436,
+    "y": 2769.7578625801293,
+    "w": 103.92342748397435,
+    "h": 31.0,
+    "z": 0,
+    "props": {
+      "text": "Nhà gái",
+      "fontSize": 24,
+      "color": "#6d0208",
+      "fontFamily": "Lora",
+      "textAlign": "left"
+    },
+    "animation": {
+      "preset": "fadeInRight",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_8c5rqgjebyq",
+    "type": "element_text",
+    "x": 36.422375801282044,
+    "y": 2821.6483874198725,
+    "w": 236.65625,
+    "h": 56.0,
+    "z": 0,
+    "props": {
+      "text": "Ông: NguyÅn V\u0003n DiÇu\nBà: Ph¡m Kim Khánh",
+      "fontSize": 20,
+      "color": "#6d0208",
+      "fontFamily": "Lora",
+      "textAlign": "left"
+    },
+    "animation": {
+      "preset": "fadeInLeft",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_wfvsmgnfrpn",
+    "type": "element_text",
+    "x": 340.9532752403846,
+    "y": 2823.394330929488,
+    "w": 199.869139059996,
+    "h": 52.0,
+    "z": 0,
+    "props": {
+      "text": "Ông: Ph¡m V\u0003n \u0010¡o\nBà: NguyÅn ThË Hăi",
+      "fontSize": 20,
+      "color": "#6d0208",
+      "fontFamily": "Lora",
+      "textAlign": "left"
+    },
+    "animation": {
+      "preset": "fadeInRight",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_6x5glevmotj",
+    "type": "element_text",
+    "x": 283.8085436698718,
+    "y": 2999.163862179487,
+    "w": 49.0,
+    "h": 98.0,
+    "z": 0,
+    "props": {
+      "text": "T",
+      "fontSize": 75,
+      "color": "#6d0208",
+      "fontFamily": "Dancing Script",
+      "textAlign": "left"
+    },
+    "animation": {
+      "preset": "fadeIn",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_vvx0wqioeir",
+    "type": "element_text",
+    "x": 259.66105769230774,
+    "y": 2973.409555288461,
+    "w": 54.0,
+    "h": 97.0,
+    "z": 0,
+    "props": {
+      "text": "H",
+      "fontSize": 74,
+      "color": "#6d0208",
+      "fontFamily": "Dancing Script",
+      "textAlign": "left"
+    },
+    "animation": {
+      "preset": "fadeIn",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_a8sem1kayyv",
+    "type": "element_text",
+    "x": 159.37279647435898,
+    "y": 2599.752604166667,
+    "w": 254.49444110576923,
+    "h": 44.0,
+    "z": 0,
+    "props": {
+      "text": "KHÁNH LINH",
+      "fontSize": 34,
+      "color": "#ffffff",
+      "fontFamily": "Lora",
+      "textAlign": "center"
+    },
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2,0.8,0.2,1)"
+    }
+  },
+  {
+    "id": "element_text_tirdakhayyv",
+    "type": "element_text",
+    "x": 177.82441907051282,
+    "y": 2507.5264423076924,
+    "w": 216.81926081730768,
+    "h": 86.0,
+    "z": 0,
+    "props": {
+      "text": "Cô dâu",
+      "fontSize": 66,
+      "color": "#ffffff",
+      "fontFamily": "Arcittya-Begatri",
+      "textAlign": "center"
+    },
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_9ifew76biqh",
+    "type": "element_text",
+    "x": 91.72991786858975,
+    "y": 3197.300731169873,
+    "w": 387.1976662660257,
+    "h": 110.46564503205128,
+    "z": 0,
+    "props": {
+      "text": "Trân trÍng kính mƯi Quư Khách tÛi tham dñ bïa tiÇc chung vui cùng gia \u0011́nh chúng tôi!",
+      "fontSize": 24,
+      "color": "#6d0208",
+      "fontFamily": "Lora",
+      "textAlign": "center"
+    },
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_hqxd1zy02gz",
+    "type": "element_text",
+    "x": 259.6034655448718,
+    "y": 3332.7394831730776,
+    "w": 72.0,
+    "h": 30.0,
+    "z": 0,
+    "props": {
+      "text": "______",
+      "fontSize": 23,
+      "color": "#6d0208",
+      "fontFamily": "",
+      "textAlign": "left"
+    },
+    "animation": null
+  },
+  {
+    "id": "element_text_z0nfldx2nbp",
+    "type": "element_text",
+    "x": 194.29667467948715,
+    "y": 3436.6844951923076,
+    "w": 184.80378605769226,
+    "h": 124.0,
+    "z": 0,
+    "props": {
+      "text": "and",
+      "fontSize": 95,
+      "color": "#6d0208",
+      "fontFamily": "Flavinda",
+      "textAlign": "center"
+    },
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_e3pbz0i593p",
+    "type": "element_text",
+    "x": 3.655148237179475,
+    "y": 3419.1794370993593,
+    "w": 566.1273036858975,
+    "h": 46.0,
+    "z": 0,
+    "props": {
+      "text": "ANH QUÂN",
+      "fontSize": 35,
+      "color": "#6d0208",
+      "fontFamily": "Lora",
+      "textAlign": "center"
+    },
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2,0.8,0.2,1)"
+    }
+  },
+  {
+    "id": "element_text_4ffn52f5b4i",
+    "type": "element_text",
+    "x": 3.356570512820497,
+    "y": 3557.171123798077,
+    "w": 564.3822616185897,
+    "h": 46.0,
+    "z": 0,
+    "props": {
+      "text": "TR¯ NG TH¢O TRANG",
+      "fontSize": 35,
+      "color": "#6d0208",
+      "fontFamily": "Lora",
+      "textAlign": "center"
+    },
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2,0.8,0.2,1)"
+    }
+  },
+  {
+    "id": "element_text_fo8she9s3hy",
+    "type": "element_text",
+    "x": 179.09288924779645,
+    "y": 3677.0314960968803,
+    "w": 227.97325721153845,
+    "h": 29.0,
+    "z": 0,
+    "props": {
+      "text": "LÄ THÀNH HÔN",
+      "fontSize": 22,
+      "color": "#ffffff",
+      "fontFamily": "Lora",
+      "textAlign": "center"
+    },
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2,0.8,0.2,1)"
+    }
+  },
+  {
+    "id": "element_text_dxprjxa0off",
+    "type": "element_text",
+    "x": 3.510987893129043,
+    "y": 3978.7729232005595,
+    "w": 567.4150140224359,
+    "h": 26.0,
+    "z": 0,
+    "props": {
+      "text": "Téc ngày 22 tháng 11 n\u0003m Bính NgÍ",
+      "fontSize": 20,
+      "color": "#6d0208",
+      "fontFamily": "Lora",
+      "textAlign": "center"
+    },
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_06ac4q53k8i",
+    "type": "element_text",
+    "x": 131.44420447716348,
+    "y": 4058.7897655780516,
+    "w": 307.5650040064103,
+    "h": 29.0,
+    "z": 0,
+    "props": {
+      "text": "\u0010Ëa \u0011iĂm",
+      "fontSize": 22,
+      "color": "#6d0208",
+      "fontFamily": "Lora",
+      "textAlign": "center"
+    },
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_d9l0um64u0y",
+    "type": "element_text",
+    "x": 18.382451766576526,
+    "y": 4097.224156697593,
+    "w": 533.1364378317809,
+    "h": 31.0,
+    "z": 0,
+    "props": {
+      "text": "T¯ GIA NHÀ TRAI",
+      "fontSize": 24,
+      "color": "#6d0208",
+      "fontFamily": "Lora",
+      "textAlign": "center"
+    },
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_7izh3ni5mms",
+    "type": "element_text",
+    "x": 20.182837853064903,
+    "y": 4136.658581464721,
+    "w": 533.1364378317809,
+    "h": 23.0,
+    "z": 0,
+    "props": {
+      "text": "18 Vân Ḥa, HÓng Vân, Hà NÙi",
+      "fontSize": 18,
+      "color": "#6d0208",
+      "fontFamily": "Lora",
+      "textAlign": "center"
+    },
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_fdmxouq84o3",
+    "type": "element_text",
+    "x": 180.17865616235972,
+    "y": 4368.429358849159,
+    "w": 227.97325721153845,
+    "h": 29.0,
+    "z": 0,
+    "props": {
+      "text": "LÄ VU QUY",
+      "fontSize": 22,
+      "color": "#ffffff",
+      "fontFamily": "Lora",
+      "textAlign": "center"
+    },
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2,0.8,0.2,1)"
+    }
+  },
+  {
+    "id": "element_text_kmldvzj84o3",
+    "type": "element_text",
+    "x": 1.9993489583333326,
+    "y": 4686.290828020145,
+    "w": 567.4150140224359,
+    "h": 26.0,
+    "z": 0,
+    "props": {
+      "text": "Téc ngày 23 tháng 11 n\u0003m Bính NgÍ",
+      "fontSize": 20,
+      "color": "#6d0208",
+      "fontFamily": "Lora",
+      "textAlign": "center"
+    },
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_2f0sjot84o3",
+    "type": "element_text",
+    "x": 131.78127347506006,
+    "y": 4763.716023763022,
+    "w": 307.5650040064103,
+    "h": 29.0,
+    "z": 0,
+    "props": {
+      "text": "\u0010Ëa \u0011iĂm",
+      "fontSize": 22,
+      "color": "#6d0208",
+      "fontFamily": "Lora",
+      "textAlign": "center"
+    },
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_s1sbwje84o3",
+    "type": "element_text",
+    "x": 18.71952076447312,
+    "y": 4802.150414882563,
+    "w": 533.1364378317809,
+    "h": 31.0,
+    "z": 0,
+    "props": {
+      "text": "T¯ GIA NHÀ GÁI",
+      "fontSize": 24,
+      "color": "#6d0208",
+      "fontFamily": "Lora",
+      "textAlign": "center"
+    },
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_di57kh584o3",
+    "type": "element_text",
+    "x": 20.5199068509615,
+    "y": 4841.584839649691,
+    "w": 533.1364378317809,
+    "h": 23.0,
+    "z": 0,
+    "props": {
+      "text": "18 Vân Ḥa, HÓng Vân, Hà NÙi",
+      "fontSize": 18,
+      "color": "#6d0208",
+      "fontFamily": "Lora",
+      "textAlign": "center"
+    },
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_khcg2u29hdv",
+    "type": "element_text",
+    "x": 6.087690304487181,
+    "y": 4274.102664262821,
+    "w": 563.5457732371796,
+    "h": 26.0,
+    "z": 0,
+    "props": {
+      "text": "-------------------------------------------------",
+      "fontSize": 20,
+      "color": "#6d0208",
+      "fontFamily": "",
+      "textAlign": "center"
+    },
+    "animation": null
+  },
+  {
+    "id": "element_text_0w6ll87frxz",
+    "type": "element_text",
+    "x": 13.395365918803407,
+    "y": 5214.724525908119,
+    "w": 147.21314102564102,
+    "h": 86.0,
+    "z": 0,
+    "props": {
+      "text": "Just",
+      "fontSize": 66,
+      "color": "#ffffff",
+      "fontFamily": "Flavinda",
+      "textAlign": "left"
+    },
+    "animation": {
+      "preset": "fadeInLeft",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_m373m7qgrrj",
+    "type": "element_text",
+    "x": 13.021784855769283,
+    "y": 5295.414362980769,
+    "w": 216.71875,
+    "h": 66.0,
+    "z": 0,
+    "props": {
+      "text": "Married",
+      "fontSize": 50,
+      "color": "#f5f5f5",
+      "fontFamily": "Ergisa-Regular",
+      "textAlign": "left"
+    },
+    "animation": {
+      "preset": "fadeInLeft",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_gaf25vqlb2y",
+    "type": "element_text",
+    "x": 144.9308393429487,
+    "y": 5414.810947516025,
+    "w": 282.0265925480769,
+    "h": 130.0,
+    "z": 0,
+    "props": {
+      "text": "2026",
+      "fontSize": 100,
+      "color": "#6d0208",
+      "fontFamily": "Ergisa-Regular",
+      "textAlign": "left"
+    },
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_zyqkxxkm0nw",
+    "type": "element_text",
+    "x": 170.37505008012818,
+    "y": 5465.273187099359,
+    "w": 235.66611578525644,
+    "h": 117.0,
+    "z": 0,
+    "props": {
+      "text": "January",
+      "fontSize": 90,
+      "color": "#6d0208",
+      "fontFamily": "High Spirited",
+      "textAlign": "left"
+    },
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_lab0ry9qg5w",
+    "type": "element_text",
+    "x": 98.37910657051283,
+    "y": 5954.28014823718,
+    "w": 376.0,
+    "h": 62.0,
+    "z": 0,
+    "props": {
+      "text": "We\u0019ll be sharing a home and a life\ntogether in",
+      "fontSize": 24,
+      "color": "#6d0208",
+      "fontFamily": "Lora",
+      "textAlign": "center"
+    },
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_cx1i6tqzrvf",
+    "type": "element_text",
+    "x": 170.56724857384728,
+    "y": 6322.309496413096,
+    "w": 235.66611578525644,
+    "h": 117.0,
+    "z": 0,
+    "props": {
+      "text": "Timeline",
+      "fontSize": 90,
+      "color": "#fcfcfc",
+      "fontFamily": "High Spirited",
+      "textAlign": "left"
+    },
+    "animation": {
+      "preset": "fadeIn",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_gd1aay8c25t",
+    "type": "element_text",
+    "x": 148.05809294871798,
+    "y": 6488.932291666667,
+    "w": 82.51312099358975,
+    "h": 30.0,
+    "z": 0,
+    "props": {
+      "text": "_______",
+      "fontSize": 23,
+      "color": "#ffffff",
+      "fontFamily": "",
+      "textAlign": "left"
+    },
+    "animation": null
+  },
+  {
+    "id": "element_text_kdxetmccvku",
+    "type": "element_text",
+    "x": 148.30919471153845,
+    "y": 6573.241135817308,
+    "w": 80.3015825320513,
+    "h": 30.0,
+    "z": 0,
+    "props": {
+      "text": "_______",
+      "fontSize": 23,
+      "color": "#ffffff",
+      "fontFamily": "",
+      "textAlign": "left"
+    },
+    "animation": null
+  },
+  {
+    "id": "element_text_cai8z6ud12e",
+    "type": "element_text",
+    "x": 146.62174479166669,
+    "y": 6662.90680088141,
+    "w": 78.41831931089746,
+    "h": 30.0,
+    "z": 0,
+    "props": {
+      "text": "_______",
+      "fontSize": 23,
+      "color": "#ffffff",
+      "fontFamily": "",
+      "textAlign": "left"
+    },
+    "animation": null
+  },
+  {
+    "id": "element_text_j15r2cud993",
+    "type": "element_text",
+    "x": 145.873046875,
+    "y": 6757.09875801282,
+    "w": 79.65655048076925,
+    "h": 30.0,
+    "z": 0,
+    "props": {
+      "text": "_______",
+      "fontSize": 23,
+      "color": "#ffffff",
+      "fontFamily": "",
+      "textAlign": "left"
+    },
+    "animation": null
+  },
+  {
+    "id": "element_text_6g7sdz48few",
+    "type": "element_text",
+    "x": 243.76472355769235,
+    "y": 6479.387570112179,
+    "w": 54.0,
+    "h": 26.0,
+    "z": 0,
+    "props": {
+      "text": "17:30",
+      "fontSize": 20,
+      "color": "#ffffff",
+      "fontFamily": "Lora",
+      "textAlign": "left"
+    },
+    "animation": {
+      "preset": "fadeInRight",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_hyk51z29vqc",
+    "type": "element_text",
+    "x": 240.9521734775641,
+    "y": 6511.397435897436,
+    "w": 331.0615985576923,
+    "h": 26.0,
+    "z": 0,
+    "props": {
+      "text": "\u0002n kem, chåp £nh  vÛi photobooth",
+      "fontSize": 20,
+      "color": "#ffffff",
+      "fontFamily": "Lora",
+      "textAlign": "left"
+    },
+    "animation": {
+      "preset": "fadeInRight",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_avfokq6d4ip",
+    "type": "element_text",
+    "x": 242.34450120192315,
+    "y": 6569.536708733975,
+    "w": 60.8828125,
+    "h": 26.0,
+    "z": 0,
+    "props": {
+      "text": "18:00",
+      "fontSize": 20,
+      "color": "#ffffff",
+      "fontFamily": "Lora",
+      "textAlign": "left"
+    },
+    "animation": {
+      "preset": "fadeInRight",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_jfs31e8d4ip",
+    "type": "element_text",
+    "x": 239.53195112179486,
+    "y": 6601.546574519231,
+    "w": 331.0615985576923,
+    "h": 26.0,
+    "z": 0,
+    "props": {
+      "text": "Ti¿p \u0011ón khách mƯi",
+      "fontSize": 20,
+      "color": "#ffffff",
+      "fontFamily": "Lora",
+      "textAlign": "left"
+    },
+    "animation": {
+      "preset": "fadeInRight",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_56bizr7dacf",
+    "type": "element_text",
+    "x": 240.68584735576928,
+    "y": 6657.6526943108975,
+    "w": 56.0,
+    "h": 26.0,
+    "z": 0,
+    "props": {
+      "text": "18:30",
+      "fontSize": 20,
+      "color": "#ffffff",
+      "fontFamily": "Lora",
+      "textAlign": "left"
+    },
+    "animation": {
+      "preset": "fadeInRight",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_ft3vg4adacf",
+    "type": "element_text",
+    "x": 237.87329727564105,
+    "y": 6689.662560096154,
+    "w": 331.0615985576923,
+    "h": 26.0,
+    "z": 0,
+    "props": {
+      "text": "B¯t \u0011§u LÅ Thành Hôn",
+      "fontSize": 20,
+      "color": "#ffffff",
+      "fontFamily": "Lora",
+      "textAlign": "left"
+    },
+    "animation": {
+      "preset": "fadeInRight",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_2r5vm91deqm",
+    "type": "element_text",
+    "x": 239.96594551282058,
+    "y": 6751.262970753205,
+    "w": 54.0,
+    "h": 26.0,
+    "z": 0,
+    "props": {
+      "text": "17:30",
+      "fontSize": 20,
+      "color": "#ffffff",
+      "fontFamily": "Lora",
+      "textAlign": "left"
+    },
+    "animation": {
+      "preset": "fadeInRight",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_wu68dvadeqm",
+    "type": "element_text",
+    "x": 237.15339543269232,
+    "y": 6783.272836538462,
+    "w": 331.0615985576923,
+    "h": 26.0,
+    "z": 0,
+    "props": {
+      "text": "Khai tiÇc chúc mëng",
+      "fontSize": 20,
+      "color": "#ffffff",
+      "fontFamily": "Lora",
+      "textAlign": "left"
+    },
+    "animation": {
+      "preset": "fadeInRight",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_mrtyagqmdr7",
+    "type": "element_text",
+    "x": 1.2365471956944587,
+    "y": 7972.108488210066,
+    "w": 565.4219013018524,
+    "h": 117.0,
+    "z": 0,
+    "props": {
+      "text": "Our Memory",
+      "fontSize": 90,
+      "color": "#6d0208",
+      "fontFamily": "High Spirited",
+      "textAlign": "center"
+    },
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_6i60l4cz1gv",
+    "type": "element_text",
+    "x": 49.69943472055288,
+    "y": 10498.082832923303,
+    "w": 469.8571213942307,
+    "h": 62.0,
+    "z": 0,
+    "props": {
+      "text": "Sñ hiÇn diÇn cça b¡n là \nniÁm vinh h¡nh cça gia \u0011́nh chúng tôi!",
+      "fontSize": 24,
+      "color": "#6d0208",
+      "fontFamily": "Lora",
+      "textAlign": "center"
+    },
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_ma5thj613wb",
+    "type": "element_text",
+    "x": 324.25739855644025,
+    "y": 10781.750640477889,
+    "w": 230.07572115384616,
+    "h": 91.0,
+    "z": 0,
+    "props": {
+      "text": "In you",
+      "fontSize": 70,
+      "color": "#ffffff",
+      "fontFamily": "Flavinda",
+      "textAlign": "left"
+    },
+    "animation": {
+      "preset": "fadeInRight",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_text_zf384i21uym",
+    "type": "element_text",
+    "x": 415.79000071990174,
+    "y": 10863.737619644557,
+    "w": 187.50585937499991,
+    "h": 86.0,
+    "z": 0,
+    "props": {
+      "text": "I\u0019ve found my home\nmy heart\nand my forever!",
+      "fontSize": 22,
+      "color": "#ffffff",
+      "fontFamily": "Lora",
+      "textAlign": "left"
+    },
+    "animation": {
+      "preset": "fadeInRight",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_image_az87tzsrjz9",
+    "type": "element_image",
+    "x": 0.004206730769228839,
+    "y": -2.1251502403846234,
+    "w": 590.3605769230769,
+    "h": 934.9604366987178,
+    "z": 0,
+    "props": {
+      "src": "/images/templates/53/1773994673929-1770736621058-3579417304942654189.webp"
+    },
+    "animation": null
+  },
+  {
+    "id": "element_shape_0rrpugmt6yv",
+    "type": "container",
+    "x": 0.13892227564100734,
+    "y": 931.0417668269231,
+    "w": 576.8103966346154,
+    "h": 1822.6985677083333,
+    "z": 0,
+    "props": {},
+    "animation": null
+  },
+  {
+    "id": "element_image_6vlk63lyqdr",
+    "type": "element_image",
+    "x": 209.62459935897434,
+    "y": 880.4445112179486,
+    "w": 393.5752203525641,
+    "h": 408.6661157852564,
+    "z": 0,
+    "props": {
+      "src": "/images/templates/53/decor-flower1.png"
+    },
+    "animation": null
+  },
+  {
+    "id": "element_image_cp2ifiqq6p5",
+    "type": "element_image",
+    "x": 58.41992187499999,
+    "y": 1446.0180789262822,
+    "w": 451.972405849359,
+    "h": 572.089593349359,
+    "z": 0,
+    "props": {
+      "src": "/images/templates/53/1773995329499-1770736612197-12597987462083336082.webp"
+    },
+    "animation": {
+      "preset": "rotateInDownLeft",
+      "duration": 800,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2,0.8,0.2,1)"
+    }
+  },
+  {
+    "id": "element_image_two7cqg1bdk",
+    "type": "element_image",
+    "x": -7.192558092948721,
+    "y": 2744.6737780448716,
+    "w": 581.4580829326923,
+    "h": 2372.456567226312,
+    "z": 0,
+    "props": {
+      "src": "/images/templates/53/background.jpg"
+    },
+    "animation": null
+  },
+  {
+    "id": "element_image_vvk038qm6xo",
+    "type": "element_image",
+    "x": 166.34410056089743,
+    "y": 2927.7443409455127,
+    "w": 240.0,
+    "h": 220.0,
+    "z": 0,
+    "props": {
+      "src": "/images/templates/53/signature-bg-red.png"
+    },
+    "animation": null
+  },
+  {
+    "id": "element_image_9wxjwif9ijp",
+    "type": "element_image",
+    "x": -130.53190104166669,
+    "y": 2106.5194310897436,
+    "w": 450.9830729166667,
+    "h": 541.0301482371794,
+    "z": 0,
+    "props": {
+      "src": "/images/templates/53/decor-flower02.png"
+    },
+    "animation": null
+  },
+  {
+    "id": "element_image_uowcu8ia0qk",
+    "type": "element_image",
+    "x": 60.82907652243589,
+    "y": 2077.2989282852564,
+    "w": 456.5509815705128,
+    "h": 593.4217247596155,
+    "z": 0,
+    "props": {
+      "src": "/images/templates/53/1773995332651-1770736796361-0438933dad2723797a361.webp"
+    },
+    "animation": {
+      "preset": "rotateInDownRight",
+      "duration": 800,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2,0.8,0.2,1)"
+    }
+  },
+  {
+    "id": "element_shape_mx0egdwrbp5",
+    "type": "container",
+    "x": 143.3804016113281,
+    "y": 3668.851386045798,
+    "w": 285.030040251903,
+    "h": 46.71583909254807,
+    "z": 0,
+    "props": {},
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_calendar_5zjnlsxup6d",
+    "type": "element_calendar",
+    "x": 94.15225376226965,
+    "y": 3771.631610968174,
+    "w": 385.97872611803894,
+    "h": 176.7463116768079,
+    "z": 0,
+    "props": {
+      "date": "2026-12-31"
+    },
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_button_ndhn6x96u8i",
+    "type": "container",
+    "x": 166.73194767878607,
+    "y": 4194.798502212916,
+    "w": 240.0,
+    "h": 52.0,
+    "z": 0,
+    "props": {},
+    "animation": {
+      "preset": "heartBeat",
+      "duration": 2000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2,0.8,0.2,1)"
+    }
+  },
+  {
+    "id": "element_shape_87i0umd84o3",
+    "type": "container",
+    "x": 144.46616852589136,
+    "y": 4360.249248798076,
+    "w": 285.030040251903,
+    "h": 46.71583909254807,
+    "z": 0,
+    "props": {},
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_calendar_3or7w9v84o3",
+    "type": "element_calendar",
+    "x": 93.76942091721753,
+    "y": 4464.561424842247,
+    "w": 385.97872611803894,
+    "h": 176.7463116768079,
+    "z": 0,
+    "props": {
+      "date": "2026-12-31"
+    },
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2,0.8,0.2,1)"
+    }
+  },
+  {
+    "id": "element_button_elmr9pb84o3",
+    "type": "container",
+    "x": 167.06901667668265,
+    "y": 4899.724760397887,
+    "w": 240.0,
+    "h": 52.0,
+    "z": 0,
+    "props": {},
+    "animation": {
+      "preset": "heartBeat",
+      "duration": 2000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2,0.8,0.2,1)"
+    }
+  },
+  {
+    "id": "element_image_amjscq1cywl",
+    "type": "element_image",
+    "x": -7.736177884615391,
+    "y": 4976.961488381409,
+    "w": 579.7290665064103,
+    "h": 393.9282852564103,
+    "z": 0,
+    "props": {
+      "src": "/images/templates/53/1773995332563-1770737114423-1770736625177-7464951118052762810-cropped.webp"
+    },
+    "animation": {
+      "preset": "flipInX",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_image_6nkef5oenjx",
+    "type": "element_image",
+    "x": -3.2415364583333313,
+    "y": 5374.162009214743,
+    "w": 581.4580829326923,
+    "h": 5219.640324910481,
+    "z": 0,
+    "props": {
+      "src": "/images/templates/53/background.jpg"
+    },
+    "animation": null
+  },
+  {
+    "id": "element_calendar_k3hg2sno5xp",
+    "type": "element_calendar",
+    "x": 47.997996794871796,
+    "y": 5632.026792868591,
+    "w": 475.517327724359,
+    "h": 271.1240484775641,
+    "z": 0,
+    "props": {
+      "date": "2026-12-31"
+    },
+    "animation": {
+      "preset": "fadeIn",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_countdown_inn5q95rzmn",
+    "type": "element_countdown",
+    "x": 76.60326522435896,
+    "y": 6044.95758213141,
+    "w": 420.0,
+    "h": 60.0,
+    "z": 0,
+    "props": {
+      "targetDate": "2026-12-31T09:00:00"
+    },
+    "animation": {
+      "preset": "fadeInDown",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_image_zwgeugrx5p5",
+    "type": "element_image",
+    "x": 2.215745192307692,
+    "y": 6126.367988782051,
+    "w": 568.5446714743589,
+    "h": 728.3025340544873,
+    "z": 0,
+    "props": {
+      "src": "/images/templates/53/1773995333755-1770738932961-1770736642986-103656611401632917316-cropped.webp"
+    },
+    "animation": null
+  },
+  {
+    "id": "element_image_42bfc8zagtp",
+    "type": "element_image",
+    "x": 53.84359975961538,
+    "y": 6467.269381009614,
+    "w": 80.33728966346155,
+    "h": 70.09339943910255,
+    "z": 0,
+    "props": {
+      "src": "/images/templates/53/icon-tl1.png"
+    },
+    "animation": {
+      "preset": "fadeInLeft",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_image_97f7cwgaw6h",
+    "type": "element_image",
+    "x": 57.926883012820504,
+    "y": 6566.160857371795,
+    "w": 80.84985977564101,
+    "h": 63.188100961538446,
+    "z": 0,
+    "props": {
+      "src": "/images/templates/53/icon-tl2.png"
+    },
+    "animation": {
+      "preset": "fadeInLeft",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_image_xoc8gcyaxth",
+    "type": "element_image",
+    "x": 53.354066506410255,
+    "y": 6653.055889423076,
+    "w": 78.09695512820511,
+    "h": 57.82627203525641,
+    "z": 0,
+    "props": {
+      "src": "/images/templates/53/icon-tl3.png"
+    },
+    "animation": {
+      "preset": "fadeInLeft",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_image_x6wms79az4h",
+    "type": "element_image",
+    "x": 57.17818509615385,
+    "y": 6735.625751201923,
+    "w": 75.2461438301282,
+    "h": 68.37715344551282,
+    "z": 0,
+    "props": {
+      "src": "/images/templates/53/icon-tl4.png"
+    },
+    "animation": {
+      "preset": "fadeInLeft",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_image_jqf5ogftxzd",
+    "type": "element_image",
+    "x": 3.085386618589741,
+    "y": 6950.614508213142,
+    "w": 561.3600510817308,
+    "h": 279.4566932091346,
+    "z": 0,
+    "props": {},
+    "animation": {
+      "preset": "fadeIn",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_album_himkeehuyt2",
+    "type": "element_album",
+    "x": -0.43604063376402613,
+    "y": 8114.608290843475,
+    "w": 567.4186197916667,
+    "h": 1517.0,
+    "z": 0,
+    "props": {},
+    "animation": {
+      "preset": "fadeIn",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_image_c9mwl1kqgv7",
+    "type": "element_image",
+    "x": -1.658316587790472,
+    "y": 10593.28888467642,
+    "w": 574.8682892628206,
+    "h": 371.5479767628205,
+    "z": 0,
+    "props": {
+      "src": "/images/templates/53/1773995333152-1770737323502-1770736616631-28166094688939022414-cropped.webp"
+    },
+    "animation": {
+      "preset": "fadeIn",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_image_gwzqj3fwcml",
+    "type": "element_image",
+    "x": 478.77574118589746,
+    "y": 5840.687199519231,
+    "w": 91.04366987179486,
+    "h": 290.27393830128204,
+    "z": 0,
+    "props": {
+      "src": "/images/templates/53/decor-flower3.png"
+    },
+    "animation": null
+  },
+  {
+    "id": "element_image_qie6mjyx3us",
+    "type": "element_image",
+    "x": 4.504407051282044,
+    "y": 5378.798177083334,
+    "w": 113.46429286858974,
+    "h": 220.0,
+    "z": 0,
+    "props": {
+      "src": "/images/templates/53/decor-flower4.png"
+    },
+    "animation": null
+  },
+  {
+    "id": "element_rsvp_orr9zl0ovfy",
+    "type": "element_rsvp",
+    "x": 5.199292305188294,
+    "y": 7273.232710422613,
+    "w": 565.0754840557391,
+    "h": 621.7149861653646,
+    "z": 0,
+    "props": {},
+    "animation": {
+      "preset": "fadeIn",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+  {
+    "id": "element_wishes_7ww8abtqh8e",
+    "type": "element_wishes",
+    "x": 2.742177327473959,
+    "y": 9661.474177042644,
+    "w": 567.6734298314803,
+    "h": 768.9251435108674,
+    "z": 0,
+    "props": {},
+    "animation": {
+      "preset": "fadeIn",
+      "duration": 3000,
+      "delay": 0,
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  }
+]

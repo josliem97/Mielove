@@ -1,0 +1,5 @@
+--- Bottom elements in Template 2 ---
+element_image ID=element_image_sv299dr1bvw Y=11085.101232088531, Text: 
+element_text ID=element_text_827c14h2ceo Y=11304.008703769783, Text: Cảm ơn bạn đã dành tình cảm cho chúng mình!
+Sự hiện diện của bạn chính là món quà ý nghĩa nhất và chúng mình vô cùng trân quý khi được cùng bạn chia sẻ niềm hạnh phúc trong ngày trọng đại này.
+element_text ID=element_text_6eefqfc4hpc Y=11219.795910957533, Text: Thank you

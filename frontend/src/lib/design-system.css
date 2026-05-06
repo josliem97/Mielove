@@ -1,0 +1,209 @@
+/* Mielove Premium Design System */
+
+:root {
+  --miu-primary: #6d0208;
+  --miu-primary-light: #360104;
+  --miu-text-gold: #c5a059;
+  --miu-bg-cream: #f5f5f0;
+  
+  /* Animation Defaults */
+  --miu-anim-distance: 20px;
+  --miu-node-rotate: 0deg;
+}
+
+/* Base Styles for Canvas Elements */
+.miu-element {
+  position: absolute;
+  transform: rotate(var(--miu-node-rotate, 0deg));
+  transition: transform 0.2s ease-out;
+}
+
+.miu-animated {
+  animation-fill-mode: both;
+}
+
+/* Animations from miu_raw.html */
+
+@keyframes miu-baseline {
+  0% { opacity: 0; transform: rotate(var(--miu-node-rotate, 0deg)) translateY(var(--miu-anim-distance, 16px)); }
+  60% { opacity: 1; transform: rotate(var(--miu-node-rotate, 0deg)) translateY(calc(var(--miu-anim-distance, 16px) * -0.125)); }
+  100% { opacity: 1; transform: rotate(var(--miu-node-rotate, 0deg)) translateY(0); }
+}
+
+@keyframes miu-drift {
+  0% { opacity: 0; transform: rotate(var(--miu-node-rotate, 0deg)) translateX(calc(var(--miu-anim-distance, 10px) * -1)) translateY(var(--miu-anim-distance, 10px)); }
+  100% { opacity: 1; transform: rotate(var(--miu-node-rotate, 0deg)) translateX(0) translateY(0); }
+}
+
+@keyframes miu-tectonic {
+  0% { opacity: 0; transform: rotate(var(--miu-node-rotate, 0deg)) translateX(0); }
+  35% { opacity: 1; transform: rotate(var(--miu-node-rotate, 0deg)) translateX(calc(var(--miu-anim-distance, 6px) * -1)); }
+  55% { transform: rotate(var(--miu-node-rotate, 0deg)) translateX(var(--miu-anim-distance, 6px)); }
+  70% { transform: rotate(var(--miu-node-rotate, 0deg)) translateX(calc(var(--miu-anim-distance, 6px) * -0.5)); }
+  100% { transform: rotate(var(--miu-node-rotate, 0deg)) translateX(0); }
+}
+
+@keyframes miu-tumble {
+  0% { opacity: 0; transform: rotate(calc(var(--miu-node-rotate, 0deg) + var(--miu-anim-distance, 8deg) * -1)) translateY(var(--miu-anim-distance, 10px)) scale(.98); }
+  60% { opacity: 1; transform: rotate(calc(var(--miu-node-rotate, 0deg) + var(--miu-anim-distance, 8deg) * 0.25)) translateY(calc(var(--miu-anim-distance, 10px) * -0.2)) scale(1.02); }
+  100% { opacity: 1; transform: rotate(var(--miu-node-rotate, 0deg)) translateY(0) scale(1); }
+}
+
+@keyframes miu-neon {
+  0% { opacity: 0; filter: drop-shadow(0 0 0 rgba(255, 0, 200, 0)); transform: rotate(var(--miu-node-rotate, 0deg)); }
+  55% { opacity: 1; filter: drop-shadow(0 0 12px rgba(255, 0, 200, .45)); transform: rotate(var(--miu-node-rotate, 0deg)); }
+  100% { opacity: 1; filter: drop-shadow(0 0 0 rgba(255, 0, 200, 0)); transform: rotate(var(--miu-node-rotate, 0deg)); }
+}
+
+@keyframes miu-stomp {
+  0% { opacity: 0; transform: rotate(var(--miu-node-rotate, 0deg)) scale(.82); }
+  60% { opacity: 1; transform: rotate(var(--miu-node-rotate, 0deg)) scale(1.12); }
+  100% { opacity: 1; transform: rotate(var(--miu-node-rotate, 0deg)) scale(1); }
+}
+
+@keyframes miu-rotate {
+  0% { transform: rotate(var(--miu-node-rotate, 0deg)); transform-origin: center center; }
+  100% { transform: rotate(calc(var(--miu-node-rotate, 0deg) + 360deg)); transform-origin: center center; }
+}
+
+@keyframes miu-pulse {
+  0% { transform: rotate(var(--miu-node-rotate, 0deg)) scale(1); }
+  40% { transform: rotate(var(--miu-node-rotate, 0deg)) scale(1.05); }
+  100% { transform: rotate(var(--miu-node-rotate, 0deg)) scale(1); }
+}
+
+@keyframes miu-wiggle {
+  0% { transform: rotate(var(--miu-node-rotate, 0deg)); }
+  20% { transform: rotate(calc(var(--miu-node-rotate, 0deg) - 2.5deg)); }
+  40% { transform: rotate(calc(var(--miu-node-rotate, 0deg) + 2.5deg)); }
+  60% { transform: rotate(calc(var(--miu-node-rotate, 0deg) - 1.5deg)); }
+  80% { transform: rotate(calc(var(--miu-node-rotate, 0deg) + 1.5deg)); }
+  100% { transform: rotate(var(--miu-node-rotate, 0deg)); }
+}
+
+@keyframes miu-fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes miu-fadeInUp {
+  from { opacity: 0; transform: rotate(var(--miu-node-rotate, 0deg)) translateY(var(--miu-anim-distance, 12px)); }
+  to { opacity: 1; transform: rotate(var(--miu-node-rotate, 0deg)) translateY(0); }
+}
+
+@keyframes miu-fadeInDown {
+  from { opacity: 0; transform: rotate(var(--miu-node-rotate, 0deg)) translateY(calc(var(--miu-anim-distance, 12px) * -1)); }
+  to { opacity: 1; transform: rotate(var(--miu-node-rotate, 0deg)) translateY(0); }
+}
+
+@keyframes miu-fadeInRight {
+  from { opacity: 0; transform: rotate(var(--miu-node-rotate, 0deg)) translateX(var(--miu-anim-distance, 12px)); }
+  to { opacity: 1; transform: rotate(var(--miu-node-rotate, 0deg)) translateX(0); }
+}
+
+@keyframes miu-fadeInLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Premium Animations */
+@keyframes miu-softReveal {
+    from { opacity: 0; transform: translateY(20px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes miu-float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes miu-glow {
+    0% { filter: drop-shadow(0 0 5px rgba(255,255,255,0.4)); }
+    50% { filter: drop-shadow(0 0 15px rgba(255,255,255,0.8)); }
+    100% { filter: drop-shadow(0 0 5px rgba(255,255,255,0.4)); }
+}
+
+.miu-softReveal { animation: miu-softReveal 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+.miu-float { animation: miu-float 4s ease-in-out infinite; }
+.miu-glow { animation: miu-glow 3s ease-in-out infinite; }
+
+@keyframes miu-bounceIn {
+  0% { opacity: 0; transform: rotate(var(--miu-node-rotate, 0deg)) scale3d(.3, .3, .3); }
+  20% { transform: rotate(var(--miu-node-rotate, 0deg)) scale3d(1.1, 1.1, 1.1); }
+  40% { transform: rotate(var(--miu-node-rotate, 0deg)) scale3d(.9, .9, .9); }
+  60% { opacity: 1; transform: rotate(var(--miu-node-rotate, 0deg)) scale3d(1.03, 1.03, 1.03); }
+  80% { transform: rotate(var(--miu-node-rotate, 0deg)) scale3d(.97, .97, .97); }
+  100% { opacity: 1; transform: rotate(var(--miu-node-rotate, 0deg)) scale3d(1, 1, 1); }
+}
+
+@keyframes miu-heartBeat {
+  0% { transform: rotate(var(--miu-node-rotate, 0deg)) scale(1); }
+  14% { transform: rotate(var(--miu-node-rotate, 0deg)) scale(1.12); }
+  28% { transform: rotate(var(--miu-node-rotate, 0deg)) scale(1); }
+  42% { transform: rotate(var(--miu-node-rotate, 0deg)) scale(1.12); }
+  70% { transform: rotate(var(--miu-node-rotate, 0deg)) scale(1); }
+  100% { transform: rotate(var(--miu-node-rotate, 0deg)) scale(1); }
+}
+
+@keyframes miu-tada {
+  0% { transform: rotate(var(--miu-node-rotate, 0deg)) scale3d(1, 1, 1); }
+  10%, 20% { transform: rotate(calc(var(--miu-node-rotate, 0deg) - 3deg)) scale3d(.9, .9, .9); }
+  30%, 50%, 70%, 90% { transform: rotate(calc(var(--miu-node-rotate, 0deg) + 3deg)) scale3d(1.1, 1.1, 1.1); }
+  40%, 60%, 80% { transform: rotate(calc(var(--miu-node-rotate, 0deg) - 3deg)) scale3d(1.1, 1.1, 1.1); }
+  100% { transform: rotate(var(--miu-node-rotate, 0deg)) scale3d(1, 1, 1); }
+}
+
+@keyframes miu-zoomIn {
+  from { opacity: 0; transform: rotate(var(--miu-node-rotate, 0deg)) scale(.92); }
+  to { opacity: 1; transform: rotate(var(--miu-node-rotate, 0deg)) scale(1); }
+}
+
+@keyframes miu-slideUp {
+  from { opacity: 0; transform: rotate(var(--miu-node-rotate, 0deg)) translateY(var(--miu-anim-distance, 150px)); }
+  to { opacity: 1; transform: rotate(var(--miu-node-rotate, 0deg)) translateY(0); }
+}
+
+@keyframes miu-slideDown {
+  from { opacity: 0; transform: rotate(var(--miu-node-rotate, 0deg)) translateY(calc(var(--miu-anim-distance, 150px) * -1)); }
+  to { opacity: 1; transform: rotate(var(--miu-node-rotate, 0deg)) translateY(0); }
+}
+
+/* Custom Component Styles */
+.miu-calendar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+  color: var(--miu-primary);
+  font-family: inherit;
+}
+
+.miu-countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--miu-primary);
+  white-space: pre;
+}
+
+.miu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  border-radius: 12px;
+  background: var(--miu-primary);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.miu-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(109, 2, 8, 0.2);
+}

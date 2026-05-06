@@ -31,6 +31,6 @@ export const apiRegister = async (email: string, username: string, password: str
 };
 
 export const getTemplates = async () => {
-    const response = await axios.get(`${API_URL}/templates/`);
+    const response = await axios.get(`${API_URL}/templates`);
     return response.data;
 };

@@ -4,11 +4,11 @@ import models, database, auth
 
 router = APIRouter(prefix="/api/v1/templates", tags=["templates"])
 
-@router.get("/")
+@router.get("")
 def get_templates(db: Session = Depends(database.get_db)):
     return db.query(models.Template).all()
 
-@router.post("/")
+@router.post("")
 def create_template(name: str, thumbnail_url: str, html_content: str, css_style: str, category: str, db: Session = Depends(database.get_db), current_user: models.User = Depends(auth.get_current_user)):
     if current_user.role != "admin":
         raise HTTPException(status_code=403, detail="Not authorized")

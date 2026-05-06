@@ -23,7 +23,7 @@ def replace_placeholders(obj, data_map):
     else:
         return obj
 
-@router.post("/", response_model=schemas.Wedding)
+@router.post("", response_model=schemas.Wedding)
 def create_wedding(wedding: schemas.WeddingCreate, db: Session = Depends(database.get_db), current_user: models.User = Depends(auth.get_current_user)):
     if db.query(models.Wedding).filter(models.Wedding.slug == wedding.slug).first():
         raise HTTPException(status_code=400, detail="Slug already in use")

@@ -86,7 +86,7 @@ function DashboardContent() {
           }
           if (!generatedSlug) generatedSlug = `wedding-${Date.now()}`;
 
-          const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/weddings/`, {
+          const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/weddings`, {
               slug: generatedSlug,
               groom_name: newWeddingData.groom_name,
               bride_name: newWeddingData.bride_name,

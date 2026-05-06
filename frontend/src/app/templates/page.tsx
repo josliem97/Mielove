@@ -17,7 +17,7 @@ export default function TemplateGallery() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/templates/`)
+        axios.get(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/templates`)
             .then(res => setTemplates(res.data))
             .catch(err => console.error("Error fetching templates", err))
             .finally(() => setLoading(false));

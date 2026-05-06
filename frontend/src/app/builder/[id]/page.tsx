@@ -287,7 +287,7 @@ export default function BuilderPage({ params }: { params: { id: string } }) {
                 }
 
                 // Fetch templates for the gallery
-                const tRes = await axios.get(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/templates`);
+                const tRes = await axios.get(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/templates/`);
                 setTemplates(tRes.data);
             } catch (error) {
                 console.error("Fetch err", error);

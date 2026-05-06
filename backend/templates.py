@@ -4,6 +4,7 @@ import models, database, auth
 
 router = APIRouter(prefix="/api/v1/templates", tags=["templates"])
 
+@router.get("/", include_in_schema=False)
 @router.get("")
 def get_templates(db: Session = Depends(database.get_db)):
     return db.query(models.Template).all()

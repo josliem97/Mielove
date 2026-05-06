@@ -12,7 +12,7 @@ models.Base.metadata.create_all(bind=database.engine)
 
 app = FastAPI(title="Mielove API")
 
-origins = os.getenv("CORS_ORIGINS", "http://localhost:3000").split(",")
+origins = [o.strip() for o in os.getenv("CORS_ORIGINS", "http://localhost:3000").split(",")]
 
 app.add_middleware(
     CORSMiddleware,

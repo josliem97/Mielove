@@ -8,7 +8,51 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+from sqlalchemy import inspect, text
+
 models.Base.metadata.create_all(bind=database.engine)
+
+def run_migrations(engine):
+    """Safely add any missing columns to existing tables (no data loss)."""
+    inspector = inspect(engine)
+
+    migrations_by_table = {
+        "weddings": [
+            ("map_url",           "ALTER TABLE weddings ADD COLUMN IF NOT EXISTS map_url VARCHAR"),
+            ("gallery_images",    "ALTER TABLE weddings ADD COLUMN IF NOT EXISTS gallery_images JSON DEFAULT '[]'::json"),
+            ("bank_qr_code",      "ALTER TABLE weddings ADD COLUMN IF NOT EXISTS bank_qr_code VARCHAR"),
+            ("bank_name",         "ALTER TABLE weddings ADD COLUMN IF NOT EXISTS bank_name VARCHAR"),
+            ("bank_account",      "ALTER TABLE weddings ADD COLUMN IF NOT EXISTS bank_account VARCHAR"),
+            ("bank_account_name", "ALTER TABLE weddings ADD COLUMN IF NOT EXISTS bank_account_name VARCHAR"),
+            ("config_data",       "ALTER TABLE weddings ADD COLUMN IF NOT EXISTS config_data JSON DEFAULT '{}'::json"),
+        ],
+        "templates": [
+            ("location",          "ALTER TABLE templates ADD COLUMN IF NOT EXISTS location VARCHAR"),
+            ("music_url",         "ALTER TABLE templates ADD COLUMN IF NOT EXISTS music_url VARCHAR"),
+            ("bank_qr_code",      "ALTER TABLE templates ADD COLUMN IF NOT EXISTS bank_qr_code VARCHAR"),
+            ("bank_name",         "ALTER TABLE templates ADD COLUMN IF NOT EXISTS bank_name VARCHAR"),
+            ("bank_account",      "ALTER TABLE templates ADD COLUMN IF NOT EXISTS bank_account VARCHAR"),
+            ("bank_account_name", "ALTER TABLE templates ADD COLUMN IF NOT EXISTS bank_account_name VARCHAR"),
+            ("config_data",       "ALTER TABLE templates ADD COLUMN IF NOT EXISTS config_data JSON DEFAULT '{}'::json"),
+        ],
+        "guests": [
+            ("category",   "ALTER TABLE guests ADD COLUMN IF NOT EXISTS category VARCHAR DEFAULT 'Khác'"),
+            ("created_at", "ALTER TABLE guests ADD COLUMN IF NOT EXISTS created_at TIMESTAMP DEFAULT NOW()"),
+        ],
+    }
+
+    with engine.connect() as conn:
+        for table, migrations in migrations_by_table.items():
+            if not inspector.has_table(table):
+                continue
+            for col_name, sql in migrations:
+                try:
+                    conn.execute(text(sql))
+                    conn.commit()
+                except Exception as e:
+                    print(f"Migration skipped ({table}.{col_name}): {e}")
+
+run_migrations(database.engine)
 
 app = FastAPI(title="Mielove API", redirect_slashes=False)
 

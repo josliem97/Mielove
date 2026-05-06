@@ -26,54 +26,62 @@ def replace_placeholders(obj, data_map):
 @router.post("/", response_model=schemas.Wedding, include_in_schema=False)
 @router.post("", response_model=schemas.Wedding)
 def create_wedding(wedding: schemas.WeddingCreate, db: Session = Depends(database.get_db), current_user: models.User = Depends(auth.get_current_user)):
-    if db.query(models.Wedding).filter(models.Wedding.slug == wedding.slug).first():
-        raise HTTPException(status_code=400, detail="Slug already in use")
-    
-    # Inherit config_data from template if template_id is provided
-    initial_config = {}
-    if wedding.template_id:
-        template = db.query(models.Template).filter(models.Template.id == wedding.template_id).first()
-        if template and template.config_data:
-            # Deep copy to avoid modifying the template's master config
-            initial_config = copy.deepcopy(template.config_data)
-            
-            # Map placeholders
-            from datetime import datetime
-            
-            d_iso = wedding.wedding_date.split('T')[0] if (wedding.wedding_date and 'T' in wedding.wedding_date) else wedding.wedding_date
-            d_obj = None
-            if d_iso:
-                try: d_obj = datetime.strptime(d_iso, '%Y-%m-%d')
-                except: pass
-            
-            dot_date = d_obj.strftime('%d . %m . %Y') if d_obj else (d_iso or "Chưa xác định")
-            display_date = d_obj.strftime('%d/%m/%Y') if d_obj else (d_iso or "Chưa xác định")
+    try:
+        if db.query(models.Wedding).filter(models.Wedding.slug == wedding.slug).first():
+            raise HTTPException(status_code=400, detail="Slug already in use")
+        
+        # Inherit config_data from template if template_id is provided
+        initial_config = {}
+        if wedding.template_id:
+            template = db.query(models.Template).filter(models.Template.id == wedding.template_id).first()
+            if template and template.config_data:
+                # Deep copy to avoid modifying the template's master config
+                initial_config = copy.deepcopy(template.config_data)
+                
+                # Map placeholders
+                from datetime import datetime
+                
+                d_iso = wedding.wedding_date.split('T')[0] if (wedding.wedding_date and 'T' in wedding.wedding_date) else wedding.wedding_date
+                d_obj = None
+                if d_iso:
+                    try: d_obj = datetime.strptime(d_iso, '%Y-%m-%d')
+                    except: pass
+                
+                dot_date = d_obj.strftime('%d . %m . %Y') if d_obj else (d_iso or "Chưa xác định")
+                display_date = d_obj.strftime('%d/%m/%Y') if d_obj else (d_iso or "Chưa xác định")
 
-            data_map = {
-                "groom_name": wedding.groom_name,
-                "bride_name": wedding.bride_name,
-                "wedding_date": d_iso or "Chưa xác định",
-                "wedding_date_dot": dot_date,
-                "wedding_date_display": display_date,
-                "wedding_time": wedding.wedding_date.split('T')[1] if (wedding.wedding_date and 'T' in wedding.wedding_date) else "09:00",
-                "location": wedding.location or "Địa điểm chưa xác định"
-            }
-            # Inject user data into the config JSON
-            initial_config = replace_placeholders(initial_config, data_map)
+                data_map = {
+                    "groom_name": wedding.groom_name,
+                    "bride_name": wedding.bride_name,
+                    "wedding_date": d_iso or "Chưa xác định",
+                    "wedding_date_dot": dot_date,
+                    "wedding_date_display": display_date,
+                    "wedding_time": wedding.wedding_date.split('T')[1] if (wedding.wedding_date and 'T' in wedding.wedding_date) else "09:00",
+                    "location": wedding.location or "Địa điểm chưa xác định"
+                }
+                # Inject user data into the config JSON
+                initial_config = replace_placeholders(initial_config, data_map)
 
-    # Remove config_data from dump to avoid duplicate values error
-    wedding_data = wedding.model_dump()
-    wedding_data.pop('config_data', None)
+        # Remove config_data from dump to avoid duplicate values error
+        wedding_data = wedding.model_dump()
+        wedding_data.pop('config_data', None)
 
-    db_wedding = models.Wedding(
-        **wedding_data, 
-        owner_id=current_user.id,
-        config_data=initial_config
-    )
-    db.add(db_wedding)
-    db.commit()
-    db.refresh(db_wedding)
-    return db_wedding
+        db_wedding = models.Wedding(
+            **wedding_data, 
+            owner_id=current_user.id,
+            config_data=initial_config
+        )
+        db.add(db_wedding)
+        db.commit()
+        db.refresh(db_wedding)
+        return db_wedding
+    except HTTPException:
+        raise
+    except Exception as e:
+        import traceback
+        err_detail = traceback.format_exc()
+        print("CREATE WEDDING ERROR:", err_detail)
+        raise HTTPException(status_code=500, detail=f"Server error: {str(e)}")
 
 @router.get("/me", response_model=List[schemas.Wedding])
 def get_my_weddings(db: Session = Depends(database.get_db), current_user: models.User = Depends(auth.get_current_user)):

@@ -12,17 +12,9 @@ models.Base.metadata.create_all(bind=database.engine)
 
 app = FastAPI(title="Mielove API")
 
-origins = [
-    "http://localhost:3000",
-    "https://mielove.vercel.app",
-]
-env_origins = os.getenv("CORS_ORIGINS")
-if env_origins:
-    origins.extend([o.strip() for o in env_origins.split(",") if o.strip()])
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins, 
+    allow_origins=["https://mielove.vercel.app", "http://localhost:3000"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

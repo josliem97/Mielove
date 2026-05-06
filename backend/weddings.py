@@ -83,6 +83,55 @@ def create_wedding(wedding: schemas.WeddingCreate, db: Session = Depends(databas
         print("CREATE WEDDING ERROR:", err_detail)
         raise HTTPException(status_code=500, detail=f"Server error: {str(e)}")
 
+@router.post("/test_create", response_model=None)
+def test_create_wedding(wedding: schemas.WeddingCreate, db: Session = Depends(database.get_db), current_user: models.User = Depends(auth.get_current_user)):
+    try:
+        if db.query(models.Wedding).filter(models.Wedding.slug == wedding.slug).first():
+            return {"error": "Slug already in use"}
+        
+        initial_config = {}
+        if wedding.template_id:
+            template = db.query(models.Template).filter(models.Template.id == wedding.template_id).first()
+            if template and template.config_data:
+                initial_config = copy.deepcopy(template.config_data)
+                
+                from datetime import datetime
+                d_iso = wedding.wedding_date.split('T')[0] if (wedding.wedding_date and 'T' in wedding.wedding_date) else wedding.wedding_date
+                d_obj = None
+                if d_iso:
+                    try: d_obj = datetime.strptime(d_iso, '%Y-%m-%d')
+                    except: pass
+                
+                dot_date = d_obj.strftime('%d . %m . %Y') if d_obj else (d_iso or "Chưa xác định")
+                display_date = d_obj.strftime('%d/%m/%Y') if d_obj else (d_iso or "Chưa xác định")
+
+                data_map = {
+                    "groom_name": wedding.groom_name,
+                    "bride_name": wedding.bride_name,
+                    "wedding_date": d_iso or "Chưa xác định",
+                    "wedding_date_dot": dot_date,
+                    "wedding_date_display": display_date,
+                    "wedding_time": wedding.wedding_date.split('T')[1] if (wedding.wedding_date and 'T' in wedding.wedding_date) else "09:00",
+                    "location": wedding.location or "Địa điểm chưa xác định"
+                }
+                initial_config = replace_placeholders(initial_config, data_map)
+
+        wedding_data = wedding.model_dump()
+        wedding_data.pop('config_data', None)
+
+        db_wedding = models.Wedding(
+            **wedding_data, 
+            owner_id=current_user.id,
+            config_data=initial_config
+        )
+        db.add(db_wedding)
+        db.commit()
+        db.refresh(db_wedding)
+        return {"success": db_wedding.id}
+    except Exception as e:
+        import traceback
+        return {"error_captured": traceback.format_exc()}
+
 @router.get("/me", response_model=List[schemas.Wedding])
 def get_my_weddings(db: Session = Depends(database.get_db), current_user: models.User = Depends(auth.get_current_user)):
     # Optimized query to get weddings with guest counts in fewer trips to DB

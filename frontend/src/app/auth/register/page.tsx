@@ -16,7 +16,7 @@ export default function Register() {
       await apiRegister(formData.email, formData.username, formData.password);
       // auto login after register
       const res = await apiLogin(formData.username, formData.password);
-      localStorage.setItem("mielove_token", res.access_token);
+      localStorage.setItem("access_token", res.access_token);
       router.push("/dashboard");
     } catch (err: any) {
       setError(typeof err === "string" ? err : "Lỗi đăng ký.");

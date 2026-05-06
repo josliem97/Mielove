@@ -46,14 +46,14 @@ function DashboardContent() {
   const [loadingStats, setLoadingStats] = useState(false);
 
   const fetchWeddings = async () => {
-    const token = localStorage.getItem("mielove_token");
+    const token = localStorage.getItem("access_token");
     if (!token) {
       router.push("/auth/login");
       return;
     }
 
     try {
-        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/v1/weddings/me`, {
+        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/weddings/me`, {
             headers: { Authorization: `Bearer ${token}` }
         });
         setWeddings(res.data);
@@ -77,7 +77,7 @@ function DashboardContent() {
       setCreating(true);
       setErrorInfo("");
       try {
-          const token = localStorage.getItem("mielove_token");
+          const token = localStorage.getItem("access_token");
           
           let generatedSlug = (newWeddingData.groom_name + '-' + newWeddingData.bride_name).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
           if (newWeddingData.wedding_date) {
@@ -85,7 +85,7 @@ function DashboardContent() {
           }
           if (!generatedSlug) generatedSlug = `wedding-${Date.now()}`;
 
-          const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/v1/weddings/`, {
+          const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/weddings/`, {
               slug: generatedSlug,
               groom_name: newWeddingData.groom_name,
               bride_name: newWeddingData.bride_name,
@@ -105,8 +105,8 @@ function DashboardContent() {
   const handleClone = async (id: number) => {
     if (!confirm("Bạn muốn nhân bản thiệp cưới này?")) return;
     try {
-        const token = localStorage.getItem("mielove_token");
-        await axios.post(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/v1/weddings/${id}/clone`, {}, {
+        const token = localStorage.getItem("access_token");
+        await axios.post(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/weddings/${id}/clone`, {}, {
             headers: { Authorization: `Bearer ${token}` }
         });
         fetchWeddings();
@@ -118,8 +118,8 @@ function DashboardContent() {
   const handleDelete = async (id: number) => {
     if (!confirm("Bạn có chắc chắn muốn xoá thiệp cưới này? Mọi dữ liệu khách mời cũng sẽ mất.")) return;
     try {
-        const token = localStorage.getItem("mielove_token");
-        await axios.delete(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/v1/weddings/${id}`, {
+        const token = localStorage.getItem("access_token");
+        await axios.delete(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/weddings/${id}`, {
             headers: { Authorization: `Bearer ${token}` }
         });
         fetchWeddings();
@@ -132,8 +132,8 @@ function DashboardContent() {
     setShowStats(id);
     setLoadingStats(true);
     try {
-        const token = localStorage.getItem("mielove_token");
-        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/v1/guests/stats/${id}`, {
+        const token = localStorage.getItem("access_token");
+        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/guests/stats/${id}`, {
             headers: { Authorization: `Bearer ${token}` }
         });
         setStatsData(res.data);

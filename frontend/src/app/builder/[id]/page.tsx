@@ -274,8 +274,8 @@ export default function BuilderPage({ params }: { params: { id: string } }) {
     useEffect(() => {
         const fetchWedding = async () => {
             try {
-                const token = localStorage.getItem("mielove_token");
-                const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/v1/weddings/id/${params.id}`, {
+                const token = localStorage.getItem("access_token");
+                const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/weddings/id/${params.id}`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setWeddingConfig(res.data);
@@ -287,7 +287,7 @@ export default function BuilderPage({ params }: { params: { id: string } }) {
                 }
 
                 // Fetch templates for the gallery
-                const tRes = await axios.get(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/v1/templates/`);
+                const tRes = await axios.get(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/templates/`);
                 setTemplates(tRes.data);
             } catch (error) {
                 console.error("Fetch err", error);
@@ -322,8 +322,8 @@ export default function BuilderPage({ params }: { params: { id: string } }) {
             if (!weddingConfigRef.current?.id) return;
             setSaving(true);
             try {
-                const token = localStorage.getItem("mielove_token");
-                await axios.put(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/v1/weddings/${weddingConfigRef.current.id}`, {
+                const token = localStorage.getItem("access_token");
+                await axios.put(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/weddings/${weddingConfigRef.current.id}`, {
                     ...weddingConfigRef.current,
                     config_data: configDataRef.current
                 }, { headers: { Authorization: `Bearer ${token}` } });
@@ -372,8 +372,8 @@ export default function BuilderPage({ params }: { params: { id: string } }) {
     const handleSave = async () => {
         setSaving(true);
         try {
-            const token = localStorage.getItem("mielove_token");
-            await axios.put(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/v1/weddings/${weddingConfig.id}`, {
+            const token = localStorage.getItem("access_token");
+            await axios.put(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/weddings/${weddingConfig.id}`, {
                 ...weddingConfig,
                 config_data: configData
             }, { headers: { Authorization: `Bearer ${token}` } });
@@ -390,10 +390,10 @@ export default function BuilderPage({ params }: { params: { id: string } }) {
         if (!file) return;
         setUploadingImage(true);
         try {
-            const token = localStorage.getItem("mielove_token");
+            const token = localStorage.getItem("access_token");
             const formData = new FormData();
             formData.append("file", file);
-            const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/v1/upload/image`, formData, {
+            const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/upload/image`, formData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     "Content-Type": "multipart/form-data"

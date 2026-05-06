@@ -14,7 +14,7 @@ export default function Login() {
     e.preventDefault();
     try {
       const res = await apiLogin(formData.username, formData.password);
-      localStorage.setItem("mielove_token", res.access_token);
+      localStorage.setItem("access_token", res.access_token);
       router.push("/dashboard");
     } catch (err: any) {
       setError(typeof err === "string" ? err : "Thông tin không chính xác.");

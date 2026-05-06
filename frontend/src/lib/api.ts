@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/v1`;
+const API_URL = `${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1`;
 
 export const apiLogin = async (username: string, password: string) => {
     const params = new URLSearchParams();

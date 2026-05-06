@@ -143,7 +143,7 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
     useEffect(() => {
         const fetchDetails = async () => {
             try {
-                const weddingRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/v1/weddings/${params.slug}?t=${Date.now()}`, { cache: 'no-store' });
+                const weddingRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/weddings/${params.slug}?t=${Date.now()}`, { cache: 'no-store' });
                 if (!weddingRes.ok) throw new Error("Wedding not found");
                 const weddingData = await weddingRes.json();
                 setWedding(weddingData);
@@ -151,7 +151,7 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                 if (guestSlug) {
                     setShowEnvelope(true);
                     try {
-                        const guestRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/v1/guests/public/${params.slug}/${guestSlug}`);
+                        const guestRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/guests/public/${params.slug}/${guestSlug}`);
                         if (guestRes.ok) {
                             const guestData = await guestRes.json();
                             setGuest(guestData);
@@ -178,7 +178,7 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
         // Fetch Wishes separately
         const fetchWishes = async () => {
             try {
-                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/v1/guests/wishes/${params.slug}`);
+                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/guests/wishes/${params.slug}`);
                 if (res.ok) {
                     const data = await res.json();
                     setWishes(data);
@@ -215,7 +215,7 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
         if (!guest) return;
         setSubmitting(true);
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/v1/guests/rsvp/${guest.id}`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/guests/rsvp/${guest.id}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(rsvpData)

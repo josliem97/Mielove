@@ -44,7 +44,7 @@ export default function GuestManagement({ params }: { params: { id: string } }) 
     const [importing, setImporting] = useState(false);
 
     useEffect(() => {
-        const token = localStorage.getItem("mielove_token");
+        const token = localStorage.getItem("access_token");
         if (!token) {
             router.push("/auth/login");
             return;
@@ -53,13 +53,13 @@ export default function GuestManagement({ params }: { params: { id: string } }) 
         const fetchData = async () => {
             try {
                 // Fetch wedding details (requires auth token)
-                const wedRes = await axios.get(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/v1/weddings/id/${params.id}`, {
+                const wedRes = await axios.get(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/weddings/id/${params.id}`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setWedding(wedRes.data);
 
                 // Fetch guests list
-                const guestRes = await axios.get(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/v1/guests/${params.id}`, {
+                const guestRes = await axios.get(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/guests/${params.id}`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setGuests(guestRes.data);
@@ -87,8 +87,8 @@ export default function GuestManagement({ params }: { params: { id: string } }) 
         if (!newGuestName || !newGuestSlug) return;
         setCreating(true);
         try {
-            const token = localStorage.getItem("mielove_token");
-            const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/v1/guests/${params.id}`, {
+            const token = localStorage.getItem("access_token");
+            const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/guests/${params.id}`, {
                 guest_name: newGuestName,
                 custom_slug: newGuestSlug,
                 category: newGuestCategory,
@@ -117,8 +117,8 @@ export default function GuestManagement({ params }: { params: { id: string } }) 
     const handleDeleteGuest = async (guestId: number, guestName: string) => {
         if (!confirm(`Bạn có chắc muốn xóa khách "${guestName}"?`)) return;
         try {
-            const token = localStorage.getItem("mielove_token");
-            await axios.delete(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/v1/guests/item/${guestId}`, {
+            const token = localStorage.getItem("access_token");
+            await axios.delete(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/guests/item/${guestId}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setGuests(prev => prev.filter(g => g.id !== guestId));
@@ -157,7 +157,7 @@ export default function GuestManagement({ params }: { params: { id: string } }) 
         if (!batchText.trim()) return;
         setImporting(true);
         try {
-            const token = localStorage.getItem("mielove_token");
+            const token = localStorage.getItem("access_token");
             const lines = batchText.split('\n').filter(line => line.trim() !== "");
 
             const batchData = lines.map(line => {
@@ -174,7 +174,7 @@ export default function GuestManagement({ params }: { params: { id: string } }) 
                 };
             }).filter(g => g.guest_name);
 
-            const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/v1/guests/${params.id}/batch`, {
+            const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/guests/${params.id}/batch`, {
                 guests: batchData
             }, {
                 headers: { Authorization: `Bearer ${token}` }

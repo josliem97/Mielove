@@ -217,7 +217,7 @@ export const WishesBlock = ({ props, slug }: { props: any, slug: string }) => {
 
   const fetchWishes = async () => {
     try {
-      const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL || `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/v1`}/guests/wishes/${slug}`);
+      const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/guests/wishes/${slug}`);
       setWishes(res.data);
     } catch (e) {}
   };
@@ -227,7 +227,7 @@ export const WishesBlock = ({ props, slug }: { props: any, slug: string }) => {
     if (!name || !message) return;
     setSubmitting(true);
     try {
-      await axios.post(`${process.env.NEXT_PUBLIC_API_URL || `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/v1`}/guests/wishes/${slug}`, {
+      await axios.post(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/guests/wishes/${slug}`, {
         guest_name: name,
         wish_message: message
       });

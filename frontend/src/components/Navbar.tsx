@@ -5,6 +5,7 @@ import { User, Menu, LogOut, LayoutDashboard } from 'lucide-react';
 
 export default function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState<string | null>(null);
 
   useEffect(() => {
     let token = localStorage.getItem('access_token');
@@ -16,10 +17,12 @@ export default function Navbar() {
       }
     }
     setIsLoggedIn(!!token);
+    setUsername(localStorage.getItem('mielove_user'));
   }, []);
 
   const handleLogout = () => {
     localStorage.removeItem('access_token');
+    localStorage.removeItem('mielove_user');
     window.location.href = '/';
   };
 
@@ -42,6 +45,12 @@ export default function Navbar() {
       <div className="flex items-center gap-4">
         {isLoggedIn ? (
           <div className="flex items-center gap-3">
+            <div className="hidden lg:flex items-center gap-2 text-sm font-medium text-stone-600 mr-2">
+              <div className="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center">
+                <User size={14} className="text-stone-400" />
+              </div>
+              <span className="max-w-[100px] truncate">{username || "Người dùng"}</span>
+            </div>
             <Link href="/dashboard" className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 text-primary-600 text-sm font-semibold hover:bg-primary-100 transition-all border border-primary-100">
               <LayoutDashboard size={16} />
               Quản lý

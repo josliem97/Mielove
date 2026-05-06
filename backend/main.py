@@ -73,3 +73,14 @@ app.include_router(uploads.router)
 @app.get("/")
 def read_root():
     return {"message": "Mielove Backend is running!"}
+
+from fastapi import Request
+from fastapi.responses import JSONResponse
+import traceback
+
+@app.exception_handler(Exception)
+async def global_exception_handler(request: Request, exc: Exception):
+    return JSONResponse(
+        status_code=500,
+        content={"detail": "Global Exception", "traceback": traceback.format_exc()}
+    )

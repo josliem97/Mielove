@@ -159,7 +159,7 @@ export default function Pricing() {
               <div className="flex justify-center mb-6">
                 <div className="p-4 bg-white border-2 border-stone-100 rounded-2xl shadow-inner relative group">
                   <img 
-                    src={`https://img.vietqr.io/image/970407-1903893801013-compact2.jpg?amount=${selectedPlan.amount}&addInfo=MIELOVE%20${selectedPlan.name.toUpperCase().replace(/\s/g, '%20')}&accountName=Pham%20Duc%20Liem`} 
+                    src={`https://img.vietqr.io/image/TCB-19038938901013-compact2.jpg?amount=${selectedPlan.amount}&addInfo=MIELOVE%20${selectedPlan.name.toUpperCase().replace(/\s/g, '%20')}&accountName=PHAM%20DUC%20LIEM`} 
                     alt="Payment QR Code"
                     className="w-64 h-64"
                   />

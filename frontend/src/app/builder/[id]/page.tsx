@@ -370,23 +370,24 @@ export default function BuilderPage({ params }: { params: { id: string } }) {
     }, [selectedBlockId, configData.components]);
 
     const handleSave = async () => {
-        // PAYWALL LOGIC: Prevent publishing if not paid
-        if (!weddingConfig?.is_paid) {
-            const confirmUpgrade = confirm("Bạn cần nâng cấp gói dịch vụ để Lưu & Xuất bản thiệp này. Đi tới trang bảng giá?");
-            if (confirmUpgrade) {
-                router.push('/pricing');
-            }
-            return;
-        }
-
         setSaving(true);
         try {
             const token = localStorage.getItem("access_token");
+            // ALWAYS SAVE FIRST to prevent data loss
             await axios.put(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/weddings/${weddingConfig.id}`, {
                 ...weddingConfig,
                 config_data: configData
             }, { headers: { Authorization: `Bearer ${token}` } });
-            alert("Lưu thành công!");
+            
+            // AFTER SAVING, check payment status to decide next step
+            if (!weddingConfig?.is_paid) {
+                const confirmUpgrade = confirm("Tiến trình chỉnh sửa đã được lưu! Tuy nhiên, bạn cần nâng cấp gói dịch vụ để Xuất bản thiệp này lên Internet. Đi tới trang bảng giá?");
+                if (confirmUpgrade) {
+                    router.push('/pricing');
+                }
+            } else {
+                alert("Lưu và Xuất bản thành công!");
+            }
         } catch (error) {
             console.error(error);
             alert("Lưu thất bại. Vui lòng thử lại.");

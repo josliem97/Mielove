@@ -298,196 +298,210 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
 
     const canvas = (canvasConfig.canvas || canvasConfig.canvasProps) || { width: 575, height: 2000, backgroundColor: "#ffffff" };
 
-    const getAnimationVariants = (preset: string) => {
-        const baseTrans: any = { duration: 1.2, ease: "easeOut" };
-        switch (preset) {
-            case 'miu-softReveal':
-                return {
-                    initial: { opacity: 0, scale: 0.95, y: 30 },
-                    visible: { opacity: 1, scale: 1, y: 0, transition: baseTrans }
-                };
-            case 'miu-baseline':
-                return {
-                    initial: { opacity: 0, y: 60 },
-                    visible: { opacity: 1, y: 0, transition: { ...baseTrans, duration: 1.5 } }
-                };
-            case 'miu-fadeUp':
-            case 'miu-fadeInUp':
-                return {
-                    initial: { opacity: 0, y: 40 },
-                    visible: { opacity: 1, y: 0, transition: baseTrans }
-                };
-            case 'miu-zoomIn':
-                return {
-                    initial: { opacity: 0, scale: 0.8 },
-                    visible: { opacity: 1, scale: 1, transition: { ...baseTrans, duration: 1 } }
-                };
-            case 'miu-stagger-fade':
-                return {
-                    initial: { opacity: 0, x: -20 },
-                    visible: { opacity: 1, x: 0, transition: { ...baseTrans, duration: 1.5 } }
-                };
-            case 'miu-slideIn':
-                return {
-                    initial: { opacity: 0, x: 50 },
-                    visible: { opacity: 1, x: 0, transition: { ...baseTrans, duration: 1 } }
-                };
-            case 'miu-fadeIn':
-                return {
-                    initial: { opacity: 0 },
-                    visible: { opacity: 1, transition: { duration: 0.8 } }
-                };
-            case 'miu-fadeInDown':
-                return {
-                    initial: { opacity: 0, y: -40 },
-                    visible: { opacity: 1, y: 0, transition: baseTrans }
-                };
-            case 'miu-fadeInRight':
-                return {
-                    initial: { opacity: 0, x: 40 },
-                    visible: { opacity: 1, x: 0, transition: baseTrans }
-                };
-            case 'miu-fadeInLeft':
-                return {
-                    initial: { opacity: 0, x: -40 },
-                    visible: { opacity: 1, x: 0, transition: baseTrans }
-                };
-            case 'miu-stomp':
-                return {
-                    initial: { opacity: 0, scale: 0.82 },
-                    visible: { opacity: 1, scale: 1, transition: { type: "spring", stiffness: 300, damping: 20 } }
-                };
-            case 'miu-bounceIn':
-                return {
-                    initial: { opacity: 0, scale: 0.3 },
-                    visible: { opacity: 1, scale: 1, transition: { type: "spring", stiffness: 200, damping: 10 } }
-                };
-            case 'miu-blurIn':
-                return {
-                    initial: { opacity: 0, filter: 'blur(10px)', y: 20 },
-                    visible: { opacity: 1, filter: 'blur(0px)', y: 0, transition: { ...baseTrans, duration: 1.5 } }
-                };
-            default:
-                return {
-                    initial: { opacity: 0, y: 30, filter: 'blur(10px)' },
-                    visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 1, ease: "easeOut" } }
-                };
-        }
-    };
+}
 
-    const renderCanvasComponent = (comp: any) => {
-        const preset = comp.animation?.preset;
-        const variants = getAnimationVariants(preset);
+const getAnimationVariants = (preset: string) => {
+    const baseTrans: any = { duration: 1.2, ease: "easeOut" };
+    switch (preset) {
+        case 'miu-softReveal':
+            return {
+                initial: { opacity: 0, scale: 0.95, y: 30 },
+                visible: { opacity: 1, scale: 1, y: 0, transition: baseTrans }
+            };
+        case 'miu-baseline':
+            return {
+                initial: { opacity: 0, y: 60 },
+                visible: { opacity: 1, y: 0, transition: { ...baseTrans, duration: 1.5 } }
+            };
+        case 'miu-fadeUp':
+        case 'miu-fadeInUp':
+            return {
+                initial: { opacity: 0, y: 40 },
+                visible: { opacity: 1, y: 0, transition: baseTrans }
+            };
+        case 'miu-zoomIn':
+            return {
+                initial: { opacity: 0, scale: 0.8 },
+                visible: { opacity: 1, scale: 1, transition: { ...baseTrans, duration: 1 } }
+            };
+        case 'miu-stagger-fade':
+            return {
+                initial: { opacity: 0, x: -20 },
+                visible: { opacity: 1, x: 0, transition: { ...baseTrans, duration: 1.5 } }
+            };
+        case 'miu-slideIn':
+            return {
+                initial: { opacity: 0, x: 50 },
+                visible: { opacity: 1, x: 0, transition: { ...baseTrans, duration: 1 } }
+            };
+        case 'miu-fadeIn':
+            return {
+                initial: { opacity: 0 },
+                visible: { opacity: 1, transition: { duration: 0.8 } }
+            };
+        case 'miu-fadeInDown':
+            return {
+                initial: { opacity: 0, y: -40 },
+                visible: { opacity: 1, y: 0, transition: baseTrans }
+            };
+        case 'miu-fadeInRight':
+            return {
+                initial: { opacity: 0, x: 40 },
+                visible: { opacity: 1, x: 0, transition: baseTrans }
+            };
+        case 'miu-fadeInLeft':
+            return {
+                initial: { opacity: 0, x: -40 },
+                visible: { opacity: 1, x: 0, transition: baseTrans }
+            };
+        case 'miu-stomp':
+            return {
+                initial: { opacity: 0, scale: 0.82 },
+                visible: { opacity: 1, scale: 1, transition: { type: "spring", stiffness: 300, damping: 20 } }
+            };
+        case 'miu-bounceIn':
+            return {
+                initial: { opacity: 0, scale: 0.3 },
+                visible: { opacity: 1, scale: 1, transition: { type: "spring", stiffness: 200, damping: 10 } }
+            };
+        case 'miu-blurIn':
+            return {
+                initial: { opacity: 0, filter: 'blur(10px)', y: 20 },
+                visible: { opacity: 1, filter: 'blur(0px)', y: 0, transition: { ...baseTrans, duration: 1.5 } }
+            };
+        default:
+            return {
+                initial: { opacity: 0, y: 30, filter: 'blur(10px)' },
+                visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 1, ease: "easeOut" } }
+            };
+    }
+};
 
-        return (
-            <motion.div
-                key={comp.id}
-                initial="initial"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-80px" }}
-                variants={variants}
-                style={{
-                    position: "absolute",
-                    left: comp.x, top: comp.y, width: comp.w, height: comp.h, zIndex: comp.z,
-                    "--miu-node-rotate": `${comp.rotation || 0}deg`,
-                    animationName: (comp.animation?.loop) ? (comp.animation?.preset || "none") : "none",
-                    animationDuration: `${comp.animation?.duration || 1000}ms`,
-                    animationDelay: `${comp.animation?.delay || 0}ms`,
-                    animationIterationCount: comp.animation?.loop ? "infinite" : "1",
-                    animationTimingFunction: comp.animation?.easing || "ease-in-out"
-                } as React.CSSProperties}
-            >
-                {comp.type === "container" && (
-                    <div style={{ width: '100%', height: '100%', backgroundColor: comp.props?.fill || 'transparent', borderRadius: comp.props?.borderRadius || 0, overflow: comp.props?.overflow || 'visible', ...(comp.style || {}) }}>
-                        {comp.components?.map((child: any) => renderCanvasComponent(child))}
-                    </div>
-                )}
-                {comp.type === "element_text" && (
-                    <div style={{
-                        width: "100%", height: "100%",
-                        color: comp.props?.color || "#000",
-                        fontSize: comp.props?.fontSize || 16,
-                        textAlign: comp.props?.align || "left",
-                        fontFamily: comp.props?.fontFamily || "inherit",
-                        fontWeight: comp.props?.fontWeight || "normal",
-                        lineHeight: comp.props?.lineHeight || 1.4,
-                        letterSpacing: comp.props?.letterSpacing || "normal",
-                        textTransform: comp.props?.textTransform || "none" as any,
-                        whiteSpace: "pre-wrap",
-                        display: 'flex', flexDirection: 'column',
-                        justifyContent: comp.props?.valign || 'center',
-                        textShadow: comp.props?.fontFamily === 'OpeningScript' ? '2px 2px 4px rgba(0,0,0,0.1)' : 'none',
-                        ...(comp.style || {})
-                    }}>
-                        {replacePlaceholders(String(comp.props?.text || ""))}
-                    </div>
-                )}
-                {comp.type === "element_shape" && (
-                    <div style={{
-                        width: "100%", height: "100%",
-                        backgroundColor: comp.props.fill || "transparent",
-                        borderRadius: comp.props.borderRadius || 0,
-                        boxShadow: comp.style?.boxShadow || 'none',
-                        ...(comp.style || {})
-                    }}></div>
-                )}
-                {comp.type === "element_image" && comp.props?.src && (
-                    <motion.div 
-                        className="group" 
-                        style={{
-                            width: "100%", height: "100%",
-                            overflow: "hidden",
-                            borderRadius: comp.props?.borderRadius || 0,
-                            boxShadow: comp.props?.isDecor ? 'none' : (comp.props?.boxShadow || 'none'),
-                            ...(comp.style || {})
-                        }}
-                    >
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <motion.img
-                            whileHover={{ scale: 1.05 }}
-                            transition={{ duration: 1 }}
-                            src={comp.props.src}
-                            alt=""
-                            className="w-full h-full block"
-                            style={{
-                                objectFit: (comp.props?.objectFit as any) || "cover",
-                                objectPosition: (comp.props?.objectPosition as any) || "center",
-                            }}
+const RenderCanvasComponent = ({ comp, wedding, guest, params, replacePlaceholders, setShowRSVP, setShowGiftModal, setActiveGiftTab, setSelectedPhoto }: any) => {
+    const preset = comp.animation?.preset;
+    const variants = getAnimationVariants(preset || "");
+
+    return (
+        <motion.div
+            key={comp.id}
+            initial="initial"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={variants}
+            style={{
+                position: "absolute",
+                left: comp.x, top: comp.y, width: comp.w, height: comp.h, zIndex: comp.z,
+                "--miu-node-rotate": `${comp.rotation || 0}deg`,
+                animationName: (comp.animation?.loop) ? (comp.animation?.preset || "none") : "none",
+                animationDuration: `${comp.animation?.duration || 1000}ms`,
+                animationDelay: `${comp.animation?.delay || 0}ms`,
+                animationIterationCount: comp.animation?.loop ? "infinite" : "1",
+                animationTimingFunction: comp.animation?.easing || "ease-in-out"
+            } as React.CSSProperties}
+        >
+            {comp.type === "container" && (
+                <div style={{ width: '100%', height: '100%', backgroundColor: comp.props?.fill || 'transparent', borderRadius: comp.props?.borderRadius || 0, overflow: comp.props?.overflow || 'visible', ...(comp.style || {}) }}>
+                    {comp.components?.map((child: any) => (
+                        <RenderCanvasComponent 
+                            key={child.id} 
+                            comp={child} 
+                            wedding={wedding} 
+                            guest={guest} 
+                            params={params} 
+                            replacePlaceholders={replacePlaceholders} 
+                            setShowRSVP={setShowRSVP} 
+                            setShowGiftModal={setShowGiftModal} 
+                            setActiveGiftTab={setActiveGiftTab} 
+                            setSelectedPhoto={setSelectedPhoto} 
                         />
-                    </motion.div>
-                )}
-                {comp.type === "element_rsvp" && (
-                    <RSVPBlock props={comp.props} slug={params.slug} guest={guest} />
-                )}
-                {comp.type === "element_calendar" && <CalendarBlock props={{...comp.props, date: replacePlaceholders(comp.props.date)}} />}
-                {comp.type === "element_countdown" && <CountdownBlock props={{...comp.props, targetDate: replacePlaceholders(comp.props.targetDate)}} />}
-                {comp.type === "element_button" && (
-                    <ButtonBlock
-                        props={comp.props}
-                        onClick={() => {
-                            if (comp.props.action === 'rsvp') setShowRSVP(true);
-                            if (comp.props.action === 'map' && wedding.map_url) window.open(wedding.map_url, '_blank');
-                            if (comp.props.action === 'gift') {
-                                const text = (comp.props.text || "").toLowerCase();
-                                if (text.includes("cô dâu") || text.includes("nhà gái")) setActiveGiftTab('bride');
-                                else if (text.includes("chú rể") || text.includes("nhà trai")) setActiveGiftTab('groom');
-                                setShowGiftModal(true);
-                            }
+                    ))}
+                </div>
+            )}
+            {comp.type === "element_text" && (
+                <div style={{
+                    width: "100%", height: "100%",
+                    color: comp.props?.color || "#000",
+                    fontSize: comp.props?.fontSize || 16,
+                    textAlign: comp.props?.align || "left",
+                    fontFamily: comp.props?.fontFamily || "inherit",
+                    fontWeight: comp.props?.fontWeight || "normal",
+                    lineHeight: comp.props?.lineHeight || 1.4,
+                    letterSpacing: comp.props?.letterSpacing || "normal",
+                    textTransform: comp.props?.textTransform || "none" as any,
+                    whiteSpace: "pre-wrap",
+                    display: 'flex', flexDirection: 'column',
+                    justifyContent: comp.props?.valign || 'center',
+                    textShadow: comp.props?.fontFamily === 'OpeningScript' ? '2px 2px 4px rgba(0,0,0,0.1)' : 'none',
+                    ...(comp.style || {})
+                }}>
+                    {replacePlaceholders(String(comp.props?.text || ""))}
+                </div>
+            )}
+            {comp.type === "element_shape" && (
+                <div style={{
+                    width: "100%", height: "100%",
+                    backgroundColor: comp.props.fill || "transparent",
+                    borderRadius: comp.props.borderRadius || 0,
+                    boxShadow: comp.style?.boxShadow || 'none',
+                    ...(comp.style || {})
+                }}></div>
+            )}
+            {comp.type === "element_image" && comp.props?.src && (
+                <motion.div 
+                    className="group" 
+                    style={{
+                        width: "100%", height: "100%",
+                        overflow: "hidden",
+                        borderRadius: comp.props?.borderRadius || 0,
+                        boxShadow: comp.props?.isDecor ? 'none' : (comp.props?.boxShadow || 'none'),
+                        ...(comp.style || {})
+                    }}
+                >
+                    <motion.img
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 1 }}
+                        src={comp.props.src}
+                        alt=""
+                        className="w-full h-full block"
+                        style={{
+                            objectFit: (comp.props?.objectFit as any) || "cover",
+                            objectPosition: (comp.props?.objectPosition as any) || "center",
                         }}
                     />
-                )}
-                {comp.type === "element_timeline" && <TimelineBlock props={comp.props} />}
-                {comp.type === "element_dresscode" && <DresscodeBlock props={comp.props} />}
-                {comp.type === "element_album" && <AlbumBlock props={comp.props} onPhotoClick={(src) => setSelectedPhoto(src)} />}
-                {comp.type === "element_slider" && <SliderBlock props={comp.props} />}
-                {comp.type === "element_wishes" && <WishesBlock props={comp.props} slug={params.slug} />}
-                {comp.type === "element_event_card" && <EventCardBlock props={comp.props} />}
-                {comp.type === "element_quote" && <QuoteBlock props={comp.props} />}
-                {comp.type === "element_bank" && <BankBlock props={comp.props} wedding={wedding} />}
-                {comp.type === "element_map" && <MapBlock props={comp.props} />}
-            </motion.div>
-        );
-    };
+                </motion.div>
+            )}
+            {comp.type === "element_rsvp" && (
+                <RSVPBlock props={comp.props} slug={params.slug} guest={guest} />
+            )}
+            {comp.type === "element_calendar" && <CalendarBlock props={{...comp.props, date: replacePlaceholders(comp.props.date)}} />}
+            {comp.type === "element_countdown" && <CountdownBlock props={{...comp.props, targetDate: replacePlaceholders(comp.props.targetDate)}} />}
+            {comp.type === "element_button" && (
+                <ButtonBlock
+                    props={comp.props}
+                    onClick={() => {
+                        if (comp.props.action === 'rsvp') setShowRSVP(true);
+                        if (comp.props.action === 'map' && wedding.map_url) window.open(wedding.map_url, '_blank');
+                        if (comp.props.action === 'gift') {
+                            const text = (comp.props.text || "").toLowerCase();
+                            if (text.includes("cô dâu") || text.includes("nhà gái")) setActiveGiftTab('bride');
+                            else if (text.includes("chú rể") || text.includes("nhà trai")) setActiveGiftTab('groom');
+                            setShowGiftModal(true);
+                        }
+                    }}
+                />
+            )}
+            {comp.type === "element_timeline" && <TimelineBlock props={comp.props} />}
+            {comp.type === "element_dresscode" && <DresscodeBlock props={comp.props} />}
+            {comp.type === "element_album" && <AlbumBlock props={comp.props} onPhotoClick={(src: string) => setSelectedPhoto(src)} />}
+            {comp.type === "element_slider" && <SliderBlock props={comp.props} />}
+            {comp.type === "element_wishes" && <WishesBlock props={comp.props} slug={params.slug} />}
+            {comp.type === "element_event_card" && <EventCardBlock props={comp.props} />}
+            {comp.type === "element_quote" && <QuoteBlock props={comp.props} />}
+            {comp.type === "element_bank" && <BankBlock props={comp.props} wedding={wedding} />}
+            {comp.type === "element_map" && <MapBlock props={comp.props} />}
+        </motion.div>
+    );
+};
 
     return (
         <div className="bg-stone-100 min-h-screen flex justify-center font-sans overflow-x-hidden">
@@ -607,17 +621,20 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                     {canvas?.texture && canvas?.texture !== 'none' && (
                         <div className="absolute inset-0 pointer-events-none opacity-40 mix-blend-multiply z-[50]" style={{ backgroundImage: canvas.texture }} />
                     )}
-                        {(canvasConfig.components || canvasConfig.canvas?.elements || []).map((comp: any) => {
-                            const normalizedComp = {
-                                ...comp,
-                                x: comp.x ?? comp.props?.x ?? 0,
-                                y: comp.y ?? comp.props?.y ?? 0,
-                                w: comp.w ?? comp.props?.w ?? 0,
-                                h: comp.h ?? comp.props?.h ?? 0,
-                                z: comp.z ?? comp.props?.zIndex ?? comp.props?.z ?? comp.zIndex ?? 0
-                            };
-                            return renderCanvasComponent(normalizedComp);
-                        })}
+                        {(canvasConfig.components || canvasConfig.canvas?.elements || []).map((comp: any) => (
+                            <RenderCanvasComponent 
+                                key={comp.id} 
+                                comp={comp} 
+                                wedding={wedding} 
+                                guest={guest} 
+                                params={params} 
+                                replacePlaceholders={replacePlaceholders} 
+                                setShowRSVP={setShowRSVP} 
+                                setShowGiftModal={setShowGiftModal} 
+                                setActiveGiftTab={setActiveGiftTab} 
+                                setSelectedPhoto={setSelectedPhoto} 
+                            />
+                        ))}
 
                         {/* Visual Scroll Indicator for Premium Look */}
                         <motion.div

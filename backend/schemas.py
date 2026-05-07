@@ -1,6 +1,7 @@
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, field_validator
 from typing import List, Optional, Dict, Any
 from datetime import datetime
+import json
 
 class UserBase(BaseModel):
     email: str
@@ -20,6 +21,16 @@ class TemplateBase(BaseModel):
     thumbnail_url: Optional[str] = None
     category: Optional[str] = "Tất cả"
     config_data: Optional[Dict[str, Any]] = None
+
+    @field_validator('config_data', mode='before')
+    @classmethod
+    def parse_config_data(cls, v):
+        if isinstance(v, str):
+            try:
+                return json.loads(v)
+            except Exception:
+                return {}
+        return v
 
 class TemplateCreate(TemplateBase):
     html_content: str
@@ -43,6 +54,16 @@ class WeddingBase(BaseModel):
     bank_account: Optional[str] = None
     bank_account_name: Optional[str] = None
     config_data: Optional[Dict[str, Any]] = None
+
+    @field_validator('config_data', mode='before')
+    @classmethod
+    def parse_config_data(cls, v):
+        if isinstance(v, str):
+            try:
+                return json.loads(v)
+            except Exception:
+                return {}
+        return v
 
 class WeddingCreate(WeddingBase):
     template_id: int

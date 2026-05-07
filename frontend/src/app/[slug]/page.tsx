@@ -324,6 +324,42 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                 });
                 if (!res.ok) throw new Error("Not found");
                 const data = await res.json();
+                
+                // Post-process data to ensure names and Thank You section exist
+                if (data.config_data) {
+                    const comps = data.config_data.components || data.config_data.canvas?.elements || [];
+                    const hasThankYou = comps.some((c: any) => c.id === 'thank-you' || (c.props?.text || "").toLowerCase().includes("cảm ơn"));
+                    
+                    if (!hasThankYou) {
+                        const lastY = comps.reduce((max: number, c: any) => Math.max(max, (c.y || c.props?.y || 0) + (c.h || c.props?.h || 0)), 0);
+                        const thankYouComp = {
+                            id: "thank-you",
+                            type: "element_text",
+                            x: 20,
+                            y: lastY + 50,
+                            w: 535,
+                            h: 150,
+                            z: 100,
+                            props: {
+                                text: "Sự hiện diện của quý vị là niềm vinh hạnh của chúng tôi.\nTrân trọng cảm ơn!",
+                                fontSize: 20,
+                                color: "#6d0208",
+                                align: "center",
+                                fontFamily: "serif"
+                            },
+                            animation: { preset: "miu-fadeInUp", duration: 1000 }
+                        };
+                        
+                        if (data.config_data.components) data.config_data.components.push(thankYouComp);
+                        else if (data.config_data.canvas?.elements) data.config_data.canvas.elements.push(thankYouComp);
+                        
+                        // Ensure canvas height covers the new component
+                        if (data.config_data.canvas) {
+                            data.config_data.canvas.height = Math.max(data.config_data.canvas.height || 0, lastY + 250);
+                        }
+                    }
+                }
+                
                 setWedding(data);
 
                 if (guestSlug) {

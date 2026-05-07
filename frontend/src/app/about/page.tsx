@@ -1,7 +1,8 @@
 "use client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Phone, Mail, MapPin, MessageCircle, CheckCircle2, User, Code, Palette, Briefcase } from "lucide-react";
+import Link from "next/link";
+import { Phone, Mail, MapPin, MessageCircle, User, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function About() {
@@ -12,6 +13,13 @@ export default function About() {
     { id: 4, title: "Thiết kế & Duyệt", desc: "Đội ngũ thiết kế thực hiện, khách duyệt và chỉnh sửa nếu cần" },
     { id: 5, title: "Xuất bản & Hỗ trợ", desc: "Thiệp được xuất bản, hỗ trợ kỹ thuật suốt vòng đời sử dụng" }
   ];
+
+  const scrollToContact = () => {
+    const section = document.getElementById('contact-section');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="min-h-screen bg-white font-sans text-stone-800">
@@ -33,10 +41,13 @@ export default function About() {
                 Chúng tôi tạo ra những thiệp cưới online đẹp và ý nghĩa, giúp mỗi đám cưới trở nên đặc biệt hơn. Mielove ra đời từ mong muốn mang đến những thiệp cưới online hiện đại, tiện lợi và thân thiện cho các cặp đôi Việt Nam.
               </p>
               <div className="flex gap-4">
-                <button className="px-8 py-4 bg-primary-600 text-white rounded-full font-bold shadow-lg shadow-primary-200 hover:bg-primary-700 transition-all">
+                <Link href="/templates" className="px-8 py-4 bg-primary-600 text-white rounded-full font-bold shadow-lg shadow-primary-200 hover:bg-primary-700 transition-all text-center">
                   Xem mẫu thiệp
-                </button>
-                <button className="px-8 py-4 border-2 border-primary-100 text-primary-600 rounded-full font-bold hover:bg-primary-50 transition-all">
+                </Link>
+                <button 
+                  onClick={scrollToContact}
+                  className="px-8 py-4 border-2 border-primary-100 text-primary-600 rounded-full font-bold hover:bg-primary-50 transition-all"
+                >
                   Liên hệ ngay
                 </button>
               </div>
@@ -47,7 +58,7 @@ export default function About() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="rounded-[40px] overflow-hidden shadow-2xl">
+              <div className="rounded-[40px] overflow-hidden shadow-2xl aspect-video">
                 <img 
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop" 
                   alt="Mielove Team" 
@@ -66,7 +77,7 @@ export default function About() {
         </section>
 
         {/* Contact & Founder Section */}
-        <section className="bg-stone-50 py-24 px-6">
+        <section id="contact-section" className="bg-stone-50 py-24 px-6">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-serif font-bold mb-4">Thông tin liên hệ</h2>
@@ -74,9 +85,16 @@ export default function About() {
             </div>
 
             <div className="bg-white rounded-[40px] p-8 md:p-16 shadow-xl border border-stone-100 flex flex-col md:flex-row gap-12 items-center">
-              <div className="w-48 h-48 md:w-64 md:h-64 rounded-[32px] bg-stone-100 shrink-0 overflow-hidden shadow-inner flex items-center justify-center">
-                {/* Profile Image Placeholder */}
-                <User size={80} className="text-stone-300" />
+              <div className="w-48 h-48 md:w-64 md:h-64 rounded-[32px] bg-stone-100 shrink-0 overflow-hidden shadow-inner relative group">
+                <img 
+                  src="https://mielove.vercel.app/assets/liem_profile.jpg" 
+                  alt="Phạm Đức Liêm"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "https://ui-avatars.com/api/?name=Pham+Duc+Liem&background=f0f0f0&color=6d0208&size=512";
+                  }}
+                />
               </div>
               
               <div className="flex-grow">

@@ -52,8 +52,9 @@ class WeddingBase(BaseModel):
     bank_qr_code: Optional[str] = None
     bank_name: Optional[str] = None
     bank_account: Optional[str] = None
-    bank_account_name: Optional[str] = None
     config_data: Optional[Dict[str, Any]] = None
+    is_paid: Optional[bool] = False
+    plan_type: Optional[str] = "free"
 
     @field_validator('config_data', mode='before')
     @classmethod

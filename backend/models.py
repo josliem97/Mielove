@@ -52,6 +52,8 @@ class Wedding(Base):
     bank_account = Column(String)
     bank_account_name = Column(String)
     config_data = Column(JSON, default=dict)
+    is_paid = Column(Boolean, default=False)
+    plan_type = Column(String, default="free")
 
     owner = relationship("User", back_populates="weddings")
     guests = relationship("Guest", back_populates="wedding")

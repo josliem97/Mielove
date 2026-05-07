@@ -135,8 +135,21 @@ export default function Pricing() {
 
       {/* Payment Modal */}
       {selectedPlan && (
-        <div className="fixed inset-0 z-[110] flex items-center justify-center p-6 bg-stone-900/60 backdrop-blur-sm">
-          <div className="bg-white w-full max-w-md rounded-3xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300">
+        <div 
+          className="fixed inset-0 z-[110] flex items-center justify-center p-6 bg-stone-900/80 backdrop-blur-md"
+          onClick={() => setSelectedPlan(null)}
+        >
+          <div 
+            className="bg-white w-full max-w-md rounded-3xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300 relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button 
+              onClick={() => setSelectedPlan(null)}
+              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-black/10 text-stone-600 hover:bg-black/20 transition-colors z-10"
+            >
+              ✕
+            </button>
+
             <div className="bg-primary-600 p-6 text-white text-center">
               <h3 className="text-xl font-bold">Thanh toán chuyển khoản</h3>
               <p className="text-primary-100 text-sm mt-1">Quét mã QR để kích hoạt {selectedPlan.name}</p>
@@ -144,23 +157,24 @@ export default function Pricing() {
             
             <div className="p-8">
               <div className="flex justify-center mb-6">
-                <div className="p-4 bg-white border-2 border-stone-100 rounded-2xl shadow-inner">
+                <div className="p-4 bg-white border-2 border-stone-100 rounded-2xl shadow-inner relative group">
                   <img 
-                    src={getQrUrl(selectedPlan.amount, `MIELOVE ${selectedPlan.name.toUpperCase()}`)} 
+                    src={`https://img.vietqr.io/image/970407-1903893801013-compact2.jpg?amount=${selectedPlan.amount}&addInfo=MIELOVE%20${selectedPlan.name.toUpperCase().replace(/\s/g, '%20')}&accountName=Pham%20Duc%20Liem`} 
                     alt="Payment QR Code"
                     className="w-64 h-64"
                   />
+                  <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-colors pointer-events-none rounded-xl" />
                 </div>
               </div>
 
               <div className="space-y-4 bg-stone-50 p-6 rounded-2xl border border-stone-100">
                 <div className="flex justify-between text-sm">
                   <span className="text-stone-500">Chủ tài khoản:</span>
-                  <span className="font-bold text-stone-800 uppercase">Pham Duc Liem</span>
+                  <span className="font-bold text-stone-800 uppercase text-right">Pham Duc Liem</span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-stone-500">Số tài khoản:</span>
-                  <span className="font-bold text-stone-800 tracking-wider">1903893801013</span>
+                  <span className="font-bold text-stone-800 tracking-wider">1903 8938 9010 13</span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-stone-500">Ngân hàng:</span>
@@ -173,14 +187,15 @@ export default function Pricing() {
               </div>
 
               <div className="mt-6 text-center">
-                <p className="text-[13px] text-stone-500 leading-relaxed">
-                  Hệ thống sẽ tự động kích hoạt sau 1-3 phút kể từ khi nhận được chuyển khoản thành công.
+                <p className="text-[13px] text-stone-500 leading-relaxed italic">
+                  * Hệ thống sẽ tự động kích hoạt sau khi nhận được thanh toán. 
+                  Vui lòng giữ nguyên nội dung chuyển khoản để được xác nhận nhanh nhất.
                 </p>
                 <button 
                   onClick={() => setSelectedPlan(null)}
-                  className="mt-6 text-stone-400 hover:text-stone-600 font-medium text-sm transition-colors"
+                  className="mt-6 w-full py-3 rounded-xl border border-stone-200 text-stone-600 hover:bg-stone-50 font-semibold text-sm transition-all"
                 >
-                  Đóng cửa sổ
+                  Đã hiểu và đóng
                 </button>
               </div>
             </div>

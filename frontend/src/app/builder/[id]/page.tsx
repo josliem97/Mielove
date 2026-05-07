@@ -370,6 +370,15 @@ export default function BuilderPage({ params }: { params: { id: string } }) {
     }, [selectedBlockId, configData.components]);
 
     const handleSave = async () => {
+        // PAYWALL LOGIC: Prevent publishing if not paid
+        if (!weddingConfig?.is_paid) {
+            const confirmUpgrade = confirm("Bạn cần nâng cấp gói dịch vụ để Lưu & Xuất bản thiệp này. Đi tới trang bảng giá?");
+            if (confirmUpgrade) {
+                router.push('/pricing');
+            }
+            return;
+        }
+
         setSaving(true);
         try {
             const token = localStorage.getItem("access_token");
@@ -377,6 +386,7 @@ export default function BuilderPage({ params }: { params: { id: string } }) {
                 ...weddingConfig,
                 config_data: configData
             }, { headers: { Authorization: `Bearer ${token}` } });
+            alert("Lưu thành công!");
         } catch (error) {
             console.error(error);
             alert("Lưu thất bại. Vui lòng thử lại.");
@@ -414,6 +424,16 @@ export default function BuilderPage({ params }: { params: { id: string } }) {
 
     const handlePreview = () => {
         if (!weddingConfig?.slug) return;
+        
+        // PAYWALL LOGIC: Check if wedding is paid
+        if (!weddingConfig?.is_paid) {
+            const confirmUpgrade = confirm("Bạn cần nâng cấp gói dịch vụ (Cơ bản hoặc Cao cấp) để Xem thử và Xuất bản thiệp. Đi tới trang bảng giá?");
+            if (confirmUpgrade) {
+                router.push('/pricing');
+            }
+            return;
+        }
+        
         window.open(`/${weddingConfig.slug}`, '_blank');
     };
 

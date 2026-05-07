@@ -8,16 +8,32 @@ export default function Navbar() {
   const [username, setUsername] = useState<string | null>(null);
 
   useEffect(() => {
-    let token = localStorage.getItem('access_token');
-    if (!token) {
-      token = localStorage.getItem('mielove_token');
-      if (token) {
-        localStorage.setItem('access_token', token);
-        localStorage.removeItem('mielove_token');
+    const checkAuth = () => {
+      let token = localStorage.getItem('access_token');
+      if (!token) {
+        token = localStorage.getItem('mielove_token');
+        if (token) {
+          localStorage.setItem('access_token', token);
+          localStorage.removeItem('mielove_token');
+        }
       }
-    }
-    setIsLoggedIn(!!token);
-    setUsername(localStorage.getItem('mielove_user'));
+      
+      const storedUser = localStorage.getItem('mielove_user');
+      setIsLoggedIn(!!token);
+      
+      // Handle edge cases where localStorage might store string 'undefined'
+      if (storedUser && storedUser !== 'undefined' && storedUser !== 'null') {
+        setUsername(storedUser);
+      } else {
+        setUsername(null);
+      }
+    };
+
+    checkAuth();
+    
+    // Listen for storage changes (helpful for multi-tab sync)
+    window.addEventListener('storage', checkAuth);
+    return () => window.removeEventListener('storage', checkAuth);
   }, []);
 
   const handleLogout = () => {

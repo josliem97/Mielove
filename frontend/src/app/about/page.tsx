@@ -87,7 +87,7 @@ export default function About() {
             <div className="bg-white rounded-[40px] p-8 md:p-16 shadow-xl border border-stone-100 flex flex-col md:flex-row gap-12 items-center">
               <div className="w-48 h-48 md:w-64 md:h-64 rounded-[32px] bg-stone-100 shrink-0 overflow-hidden shadow-inner relative group">
                 <img 
-                  src="https://mielove.vercel.app/assets/liem_profile.jpg" 
+                  src="https://res.cloudinary.com/dkh9m98v0/image/upload/v1715069400/liem_profile.jpg" 
                   alt="Phạm Đức Liêm"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                   onError={(e) => {

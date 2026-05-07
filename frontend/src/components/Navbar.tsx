@@ -62,10 +62,13 @@ export default function Navbar() {
         {isLoggedIn ? (
           <div className="flex items-center gap-3">
             <div className="hidden lg:flex items-center gap-2 text-sm font-medium text-stone-600 mr-2">
-              <div className="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center shrink-0">
                 <User size={14} className="text-stone-400" />
               </div>
-              <span className="max-w-[100px] truncate">{username || "Người dùng"}</span>
+              <div className="flex flex-col leading-tight">
+                <span className="max-w-[100px] truncate text-stone-800 font-bold">{username || "Người dùng"}</span>
+                <span className="text-[10px] font-bold text-primary-500 uppercase tracking-tighter">Thành viên VIP</span>
+              </div>
             </div>
             <Link href="/dashboard" className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 text-primary-600 text-sm font-semibold hover:bg-primary-100 transition-all border border-primary-100">
               <LayoutDashboard size={16} />

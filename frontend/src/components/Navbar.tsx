@@ -52,7 +52,7 @@ export default function Navbar() {
       </div>
       
       <div className="hidden md:flex items-center gap-10 text-[15px] font-medium">
-        <Link href="/" className="text-stone-700 hover:text-primary-600 transition-colors">Trang chủ</Link>
+        <Link href="/about" className="text-stone-700 hover:text-primary-600 transition-colors">Về Mielove</Link>
         <Link href="/templates" className="text-stone-700 hover:text-primary-600 transition-colors">Mẫu thiệp</Link>
         <Link href="/dashboard" className="text-stone-700 hover:text-primary-600 transition-colors">Thiệp đã tạo</Link>
         <Link href="/pricing" className="text-stone-700 hover:text-primary-600 transition-colors">Gói dịch vụ</Link>

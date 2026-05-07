@@ -16,6 +16,7 @@ type Wedding = {
   wedding_date: string;
   guest_count?: number;
   confirmed_count?: number;
+  is_paid?: boolean;
 };
 
 type Stats = {
@@ -220,9 +221,20 @@ function DashboardContent() {
                                 <Link href={`/builder/${w.id}`} className="flex items-center justify-center gap-2 py-3.5 bg-stone-900 text-white rounded-2xl text-[13px] font-bold hover:bg-black transition-all shadow-lg shadow-stone-200">
                                     Thiết kế thiệp
                                 </Link>
-                                <a href={`/${w.slug}`} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 py-3.5 border border-stone-100 rounded-2xl text-[13px] font-bold hover:bg-stone-50 transition-all text-stone-700">
+                                <button 
+                                    onClick={() => {
+                                        if (!w.is_paid) {
+                                            if (confirm("Bạn cần nâng cấp gói dịch vụ để Xem thực tế thiệp mời này. Đi tới trang bảng giá?")) {
+                                                router.push('/pricing');
+                                            }
+                                        } else {
+                                            window.open(`/${w.slug}`, '_blank');
+                                        }
+                                    }}
+                                    className="flex items-center justify-center gap-2 py-3.5 border border-stone-100 rounded-2xl text-[13px] font-bold hover:bg-stone-50 transition-all text-stone-700"
+                                >
                                     Xem thực tế
-                                </a>
+                                </button>
                             </div>
 
                             <div className="grid grid-cols-2 gap-3 mb-3">

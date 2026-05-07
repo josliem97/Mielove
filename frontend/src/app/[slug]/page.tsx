@@ -435,17 +435,25 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                 <motion.div key={p.id} initial={{ opacity: 1, scale: 0.5, x: p.x - 10, y: p.y - 10 }} animate={{ opacity: 0, scale: 2, y: p.y - 100 }} className="fixed pointer-events-none z-[1000] text-[#6d0208] text-2xl">❤</motion.div>
             ))}
 
-            <div className="w-full flex justify-center bg-stone-100 overflow-x-hidden" style={{ minHeight: '100vh' }}>
-                <div className="relative bg-white shadow-2xl" style={{ width: canvas.width * canvasScale, height: canvas.height * canvasScale, overflow: 'hidden' }}>
+            <div className="w-full flex flex-col items-center bg-stone-100" style={{ minHeight: '100vh' }}>
+                <div 
+                    className="relative bg-white shadow-2xl overflow-hidden" 
+                    style={{ 
+                        width: canvas.width * canvasScale, 
+                        height: canvas.height * canvasScale 
+                    }}
+                >
                     <div style={{
-                        width: canvas.width, height: canvas.height,
+                        width: canvas.width, 
+                        height: canvas.height,
                         backgroundColor: canvas.backgroundColor,
                         backgroundImage: canvas.backgroundImage ? `url("${canvas.backgroundImage}")` : undefined,
                         backgroundSize: "cover",
-                        position: "absolute", left: "50%", top: 0,
-                        transform: `scale(${canvasScale}) translateX(-50%)`,
+                        position: "absolute", 
+                        left: 0, 
+                        top: 0,
+                        transform: `scale(${canvasScale})`,
                         transformOrigin: 'top left',
-                        marginLeft: `-${(canvas.width * canvasScale) / 2}px`,
                         overflow: "hidden"
                     }}>
                         {(canvasConfig.components || canvasConfig.canvas?.elements || []).map((comp: any) => (

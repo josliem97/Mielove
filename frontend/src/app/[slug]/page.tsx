@@ -582,41 +582,31 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                 </motion.div>
             ))}
 
-            {/* Main Wedding Card Container */}
             <div 
-                className="w-full flex justify-center bg-stone-100 overflow-x-hidden"
-                style={{ minHeight: '100vh' }}
+                className="w-full max-w-[575px] bg-white relative shadow-2xl mx-auto"
+                style={{ height: canvas.height * canvasScale }}
             >
-                <div 
-                    className="relative bg-white shadow-2xl"
-                    style={{ 
-                        width: canvas.width * canvasScale,
-                        height: canvas.height * canvasScale,
-                        overflow: 'hidden'
+                {/* Render Canvas Elements */}
+                <div
+                    style={{
+                        width: canvas.width,
+                        height: canvas.height,
+                        backgroundColor: canvas.backgroundColor,
+                        backgroundImage: canvas.backgroundImage ? `url("${canvas.backgroundImage}")` : undefined,
+                        backgroundSize: canvas.backgroundSize || "cover",
+                        backgroundRepeat: "repeat-y",
+                        position: "absolute",
+                        left: 0,
+                        top: 0,
+                        transform: `scale(${canvasScale})`,
+                        transformOrigin: 'top left',
+                        overflow: "hidden"
                     }}
                 >
-                    {/* The Scaled Canvas Element */}
-                    <div
-                        style={{
-                            width: canvas.width,
-                            height: canvas.height,
-                            backgroundColor: canvas.backgroundColor,
-                            backgroundImage: canvas.backgroundImage ? `url("${canvas.backgroundImage}")` : undefined,
-                            backgroundSize: canvas.backgroundSize || "cover",
-                            backgroundRepeat: "repeat-y",
-                            position: "absolute",
-                            left: "50%",
-                            top: 0,
-                            transform: `scale(${canvasScale}) translateX(-50%)`,
-                            transformOrigin: 'top left',
-                            marginLeft: `-${(canvas.width * canvasScale) / 2}px`,
-                            overflow: "hidden"
-                        }}
-                    >
-                        {/* Texture Overlay */}
-                        {canvas?.texture && canvas?.texture !== 'none' && (
-                            <div className="absolute inset-0 pointer-events-none opacity-40 mix-blend-multiply z-[50]" style={{ backgroundImage: canvas.texture }} />
-                        )}
+                    {/* Texture Overlay */}
+                    {canvas?.texture && canvas?.texture !== 'none' && (
+                        <div className="absolute inset-0 pointer-events-none opacity-40 mix-blend-multiply z-[50]" style={{ backgroundImage: canvas.texture }} />
+                    )}
                         {(canvasConfig.components || canvasConfig.canvas?.elements || []).map((comp: any) => {
                             const normalizedComp = {
                                 ...comp,
@@ -866,7 +856,6 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                     )}
                 </AnimatePresence>
             </div>
-          </div>
         </div>
     );
 }

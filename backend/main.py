@@ -72,11 +72,11 @@ app.include_router(uploads.router)
 
 @app.get("/ping_deploy")
 def ping_deploy():
-    return {"version": "v5"}
+    return {"version": "v7"}
 
 @app.get("/")
 def read_root():
-    return {"message": "Mielove Backend is running! v5"}
+    return {"message": "Mielove Backend is running! v7"}
 
 from fastapi import Request
 from fastapi.responses import JSONResponse

@@ -123,29 +123,29 @@ export const EventCardBlock = ({ props }: { props: any }) => {
   const address = props?.address || "18 Văn Hòa, Hồng Vân, Hà Nội";
 
   return (
-    <div className="w-full flex flex-col items-center gap-6 py-10">
-      <div className="px-10 py-2 bg-[#6d0208] text-white rounded-full text-xs font-black tracking-[0.2em] uppercase">
+    <div className="w-full flex flex-col items-center gap-8 py-12">
+      <div className="px-12 py-3 bg-[#6d0208] text-white rounded-full text-sm font-black tracking-[0.2em] uppercase shadow-lg">
         {title}
       </div>
       
-      <div className="flex items-center justify-center gap-6 text-[#6d0208]">
-        <div className="text-4xl font-serif font-light">{time}</div>
-        <div className="flex items-center gap-4 border-l border-r border-[#6d0208]/30 px-6">
-          <div className="flex flex-col items-center leading-none text-4xl font-serif">
-            <span>{day}</span>
-            <span className="text-xl border-t border-[#6d0208]/20 mt-1 pt-1 w-full text-center">{month}</span>
-            <span className="text-xl border-t border-[#6d0208]/20 mt-1 pt-1 w-full text-center">{year}</span>
+      <div className="flex items-center justify-center gap-8 text-[#6d0208]">
+        <div className="text-5xl font-serif font-light tracking-tight">{time}</div>
+        <div className="flex items-center gap-6 border-l border-r border-[#6d0208]/30 px-8">
+          <div className="flex flex-col items-center leading-none font-serif">
+            <span className="text-5xl mb-1">{day}</span>
+            <span className="text-2xl border-t border-[#6d0208]/20 mt-1 pt-2 w-full text-center">{month}</span>
+            <span className="text-2xl border-t border-[#6d0208]/20 mt-1 pt-1 w-full text-center">{year}</span>
           </div>
         </div>
-        <div className="text-xl font-serif tracking-widest uppercase [writing-mode:vertical-lr]">{weekday}</div>
+        <div className="text-2xl font-serif tracking-widest uppercase [writing-mode:vertical-lr]">{weekday}</div>
       </div>
       
-      <div className="text-center">
-        <p className="text-[10px] text-stone-500 italic mb-4">Tức ngày 22 tháng 11 năm Bính Ngọ</p>
-        <p className="text-[11px] text-stone-400 uppercase tracking-widest mb-1">Địa điểm</p>
-        <h4 className="text-lg font-serif font-black text-[#6d0208] mb-1">{location}</h4>
-        <p className="text-[12px] text-stone-600 mb-6">{address}</p>
-        <button className="flex items-center gap-2 text-[#6d0208] font-bold text-xs border-b border-[#6d0208]/20 pb-1">
+      <div className="text-center px-4">
+        <p className="text-[12px] text-stone-500 italic mb-5">Tức ngày 22 tháng 11 năm Bính Ngọ</p>
+        <p className="text-[13px] text-stone-400 uppercase tracking-[0.3em] font-bold mb-2">Địa điểm</p>
+        <h4 className="text-2xl font-serif font-black text-[#6d0208] mb-2 leading-tight uppercase tracking-tight">{location}</h4>
+        <p className="text-[15px] text-stone-600 mb-8 max-w-[320px] mx-auto leading-relaxed">{address}</p>
+        <button className="flex items-center gap-2 text-[#6d0208] font-bold text-sm border-b-2 border-[#6d0208]/20 pb-1 hover:border-[#6d0208] transition-all">
           📍 Chỉ đường
         </button>
       </div>

@@ -609,16 +609,8 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                             top: 0,
                             transform: `scale(${canvasScale}) translateX(-50%)`,
                             transformOrigin: 'top left',
-                            marginLeft: `-${(canvas.width * canvasScale) / 2}px`
-                        }}
-                    >
-                    <div
-                        style={{
-                            width: 575,
-                            height: canvas.height,
-                            transform: `scale(${canvasScale})`,
-                            transformOrigin: "top left",
-                            position: "absolute", left: 0, top: 0
+                            marginLeft: `-${(canvas.width * canvasScale) / 2}px`,
+                            overflow: "hidden"
                         }}
                     >
                         {/* Texture Overlay */}
@@ -874,6 +866,7 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                     )}
                 </AnimatePresence>
             </div>
+          </div>
         </div>
     );
 }

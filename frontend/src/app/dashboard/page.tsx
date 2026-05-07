@@ -211,9 +211,6 @@ function DashboardContent() {
                                  <span className="text-[10px] font-bold text-stone-400 uppercase tracking-widest">{w.slug}</span>
                              </div>
                         </div>
-stone-400 uppercase tracking-widest">{w.slug}</span>
-                             </div>
-                        </div>
                         
                         <div className="p-8 flex-grow">
                             <div className="mb-6">

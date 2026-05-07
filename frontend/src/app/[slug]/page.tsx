@@ -332,30 +332,42 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                     
                     if (!hasThankYou) {
                         const lastY = comps.reduce((max: number, c: any) => Math.max(max, (c.y || c.props?.y || 0) + (c.h || c.props?.h || 0)), 0);
-                        const thankYouComp = {
-                            id: "thank-you",
-                            type: "element_text",
-                            x: 20,
-                            y: lastY + 50,
-                            w: 535,
-                            h: 150,
-                            z: 100,
+                        
+                        const thankYouHeader = {
+                            id: "thank-you-header", type: "element_text", x: 20, y: lastY + 80, w: 535, h: 100, z: 100,
                             props: {
-                                text: "Sự hiện diện của quý vị là niềm vinh hạnh của chúng tôi.\nTrân trọng cảm ơn!",
-                                fontSize: 20,
-                                color: "#6d0208",
-                                align: "center",
-                                fontFamily: "serif"
+                                text: "Sự hiện diện của bạn là\nniềm vinh hạnh của gia đình chúng tôi!",
+                                fontSize: 26, color: "#6d0208", align: "center", fontFamily: "serif", fontWeight: "600"
                             },
                             animation: { preset: "miu-fadeInUp", duration: 1000 }
                         };
+
+                        const thankYouImg = {
+                            id: "thank-you-img", type: "element_image", x: 20, y: lastY + 220, w: 535, h: 650, z: 90,
+                            props: {
+                                src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800", // Placeholder elegant wedding photo
+                                borderRadius: 15, objectFit: "cover"
+                            },
+                            animation: { preset: "miu-fadeIn", duration: 1500, delay: 300 }
+                        };
+
+                        const thankYouQuote = {
+                            id: "thank-you-quote", type: "element_text", x: 280, y: lastY + 680, w: 250, h: 150, z: 100,
+                            props: {
+                                text: "I've found my home\nmy heart\nand my forever!",
+                                fontSize: 22, color: "#ffffff", align: "left", fontFamily: "serif",
+                                textShadow: "1px 1px 4px rgba(0,0,0,0.5)"
+                            },
+                            animation: { preset: "miu-slideIn", duration: 1200, delay: 800 }
+                        };
+
+                        const compsTarget = data.config_data.components || data.config_data.canvas?.elements;
+                        if (compsTarget) {
+                            compsTarget.push(thankYouHeader, thankYouImg, thankYouQuote);
+                        }
                         
-                        if (data.config_data.components) data.config_data.components.push(thankYouComp);
-                        else if (data.config_data.canvas?.elements) data.config_data.canvas.elements.push(thankYouComp);
-                        
-                        // Ensure canvas height covers the new component
                         if (data.config_data.canvas) {
-                            data.config_data.canvas.height = Math.max(data.config_data.canvas.height || 0, lastY + 250);
+                            data.config_data.canvas.height = Math.max(data.config_data.canvas.height || 0, lastY + 950);
                         }
                     }
                 }

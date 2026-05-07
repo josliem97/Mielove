@@ -329,7 +329,7 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                 if (data.config_data) {
                     const comps = data.config_data.components || data.config_data.canvas?.elements || [];
                     
-                    // 1. Insert Couple Photos after "Lời hứa trọn đời" (Deep Scan)
+                    // 1. Insert Couple Photos (Dynamic from Album)
                     let promiseComp: any = null;
                     const findPromise = (items: any[]) => {
                         for (const item of items) {
@@ -343,37 +343,54 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                     };
                     findPromise(comps);
                     
-                    if (promiseComp) {
-                        const py = promiseComp.y || promiseComp.props?.y || 0;
-                        const ph = promiseComp.h || promiseComp.props?.h || 0;
-                        const targetY = py + ph + 60;
-                        const hasPhotos = comps.some((c: any) => c.id === 'couple-photo-groom');
-
-                        if (!hasPhotos) {
-                            const groomPhoto = {
-                                id: "couple-photo-groom", type: "element_image", x: 40, y: targetY, w: 235, h: 350, z: 10,
-                                props: { src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=500", borderRadius: 10, objectFit: "cover" },
-                                animation: { preset: "miu-fadeInLeft", duration: 1000 }
-                            };
-                            const bridePhoto = {
-                                id: "couple-photo-bride", type: "element_image", x: 300, y: targetY, w: 235, h: 350, z: 10,
-                                props: { src: "https://images.unsplash.com/photo-1519741497674-611481863552?w=500", borderRadius: 10, objectFit: "cover" },
-                                animation: { preset: "miu-fadeInRight", duration: 1000 }
-                            };
-
-                            comps.forEach((c: any) => {
-                                let cy = c.y || c.props?.y || 0;
-                                if (cy >= py && c.id !== promiseComp.id && c.id !== 'couple-photo-groom' && c.id !== 'couple-photo-bride') {
-                                    if (c.y !== undefined) c.y += 420;
-                                    else if (c.props?.y !== undefined) c.props.y += 420;
-                                }
-                            });
-
-                            if (data.config_data.components) data.config_data.components.push(groomPhoto, bridePhoto);
-                            else if (data.config_data.canvas?.elements) data.config_data.canvas.elements.push(groomPhoto, bridePhoto);
-                            
-                            if (data.config_data.canvas) data.config_data.canvas.height = (data.config_data.canvas.height || 0) + 420;
+                    // Always try to insert if not exists
+                    const hasPhotos = comps.some((c: any) => c.id === 'couple-photo-groom');
+                    if (!hasPhotos) {
+                        // Determine insertion Y coordinate
+                        let py = 1200; // Default fallback Y
+                        let ph = 0;
+                        if (promiseComp) {
+                            py = promiseComp.y || promiseComp.props?.y || 0;
+                            ph = promiseComp.h || promiseComp.props?.h || 0;
+                        } else {
+                            // Find a good spot after main image or intro
+                            const mainImg = comps.find((c: any) => c.id === 'main-img' || c.type === 'element_image');
+                            if (mainImg) {
+                                py = (mainImg.y || mainImg.props?.y || 0) + (mainImg.h || mainImg.props?.h || 0);
+                            }
                         }
+
+                        const targetY = py + ph + 60;
+                        
+                        // Get real photos from album if available
+                        const albumImages = data.config_data.album || [];
+                        const groomImg = albumImages[0] || "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=500";
+                        const brideImg = albumImages[1] || "https://images.unsplash.com/photo-1519741497674-611481863552?w=500";
+
+                        const groomPhoto = {
+                            id: "couple-photo-groom", type: "element_image", x: 40, y: targetY, w: 235, h: 350, z: 10,
+                            props: { src: groomImg, borderRadius: 10, objectFit: "cover" },
+                            animation: { preset: "miu-fadeInLeft", duration: 1000 }
+                        };
+                        const bridePhoto = {
+                            id: "couple-photo-bride", type: "element_image", x: 300, y: targetY, w: 235, h: 350, z: 10,
+                            props: { src: brideImg, borderRadius: 10, objectFit: "cover" },
+                            animation: { preset: "miu-fadeInRight", duration: 1000 }
+                        };
+
+                        // Shift components below
+                        comps.forEach((c: any) => {
+                            let cy = c.y || c.props?.y || 0;
+                            if (cy >= py && c.id !== 'couple-photo-groom' && c.id !== 'couple-photo-bride' && c !== promiseComp) {
+                                if (c.y !== undefined) c.y += 420;
+                                else if (c.props?.y !== undefined) c.props.y += 420;
+                            }
+                        });
+
+                        if (data.config_data.components) data.config_data.components.push(groomPhoto, bridePhoto);
+                        else if (data.config_data.canvas?.elements) data.config_data.canvas.elements.push(groomPhoto, bridePhoto);
+                        
+                        if (data.config_data.canvas) data.config_data.canvas.height = (data.config_data.canvas.height || 0) + 420;
                     }
 
                     // 2. Logic for Thank You section

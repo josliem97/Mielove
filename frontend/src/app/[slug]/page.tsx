@@ -328,8 +328,44 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                 // Post-process data to ensure names and Thank You section exist
                 if (data.config_data) {
                     const comps = data.config_data.components || data.config_data.canvas?.elements || [];
-                    const hasThankYou = comps.some((c: any) => c.id === 'thank-you' || (c.props?.text || "").toLowerCase().includes("cảm ơn"));
                     
+                    // 1. Insert Couple Photos after "Lời hứa trọn đời"
+                    const promiseComp = comps.find((c: any) => (c.props?.text || "").toLowerCase().includes("lời hứa trọn đời"));
+                    if (promiseComp) {
+                        const py = promiseComp.y || promiseComp.props?.y || 0;
+                        const ph = promiseComp.h || promiseComp.props?.h || 0;
+                        const targetY = py + ph + 40;
+                        const hasPhotos = comps.some((c: any) => c.id === 'couple-photo-groom');
+
+                        if (!hasPhotos) {
+                            const groomPhoto = {
+                                id: "couple-photo-groom", type: "element_image", x: 40, y: targetY, w: 235, h: 350, z: 10,
+                                props: { src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=500", borderRadius: 10, objectFit: "cover" },
+                                animation: { preset: "miu-fadeInLeft", duration: 1000 }
+                            };
+                            const bridePhoto = {
+                                id: "couple-photo-bride", type: "element_image", x: 300, y: targetY, w: 235, h: 350, z: 10,
+                                props: { src: "https://images.unsplash.com/photo-1519741497674-611481863552?w=500", borderRadius: 10, objectFit: "cover" },
+                                animation: { preset: "miu-fadeInRight", duration: 1000 }
+                            };
+
+                            comps.forEach((c: any) => {
+                                let cy = c.y || c.props?.y || 0;
+                                if (cy > py) {
+                                    if (c.y !== undefined) c.y += 400;
+                                    else if (c.props?.y !== undefined) c.props.y += 400;
+                                }
+                            });
+
+                            if (data.config_data.components) data.config_data.components.push(groomPhoto, bridePhoto);
+                            else if (data.config_data.canvas?.elements) data.config_data.canvas.elements.push(groomPhoto, bridePhoto);
+                            
+                            if (data.config_data.canvas) data.config_data.canvas.height = (data.config_data.canvas.height || 0) + 400;
+                        }
+                    }
+
+                    // 2. Logic for Thank You section (re-calculating lastY after photo insertion)
+                    const hasThankYou = comps.some((c: any) => c.id === 'thank-you-header' || (c.props?.text || "").toLowerCase().includes("cảm ơn"));
                     if (!hasThankYou) {
                         const lastY = comps.reduce((max: number, c: any) => Math.max(max, (c.y || c.props?.y || 0) + (c.h || c.props?.h || 0)), 0);
                         
@@ -345,7 +381,7 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                         const thankYouImg = {
                             id: "thank-you-img", type: "element_image", x: 20, y: lastY + 220, w: 535, h: 650, z: 90,
                             props: {
-                                src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800", // Placeholder elegant wedding photo
+                                src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800",
                                 borderRadius: 15, objectFit: "cover"
                             },
                             animation: { preset: "miu-fadeIn", duration: 1500, delay: 300 }

@@ -313,13 +313,23 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/weddings/${params.slug}?t=${Date.now()}`);
+                // Disable cache strictly with headers and timestamp
+                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/weddings/${params.slug}?t=${Date.now()}`, {
+                    cache: 'no-store',
+                    headers: {
+                        'Cache-Control': 'no-cache, no-store, must-revalidate',
+                        'Pragma': 'no-cache',
+                        'Expires': '0'
+                    }
+                });
                 if (!res.ok) throw new Error("Not found");
                 const data = await res.json();
                 setWedding(data);
 
                 if (guestSlug) {
-                    const gRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/guests/public/${params.slug}/${guestSlug}`);
+                    const gRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/guests/public/${params.slug}/${guestSlug}`, {
+                        cache: 'no-store'
+                    });
                     if (gRes.ok) {
                         const gData = await gRes.json();
                         setGuest(gData);
@@ -408,8 +418,8 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                 {showEnvelope && (
                     <Opening
                         guestName={guest?.guest_name || guestSlug?.replace(/-/g, ' ') || "Bạn và gia đình"}
-                        groomName={wedding.groom_name}
-                        brideName={wedding.bride_name}
+                        groomName={wedding?.groom_name || "Chú Rể"}
+                        brideName={wedding?.bride_name || "Cô Dâu"}
                         onOpen={openEnvelope}
                     />
                 )}

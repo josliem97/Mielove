@@ -17,6 +17,7 @@ type Wedding = {
   guest_count?: number;
   confirmed_count?: number;
   is_paid?: boolean;
+  plan_type?: string;
 };
 
 type Stats = {
@@ -179,9 +180,21 @@ function DashboardContent() {
 
                     return (
                     <div key={w.id} className="bg-white border border-stone-100 rounded-[32px] p-0 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 overflow-hidden flex flex-col group relative">
-                        {/* Premium Ribbon */}
-                        <div className="absolute top-6 right-[-35px] bg-[#6d0208] text-white text-[9px] font-bold uppercase tracking-[2px] py-1.5 px-10 rotate-45 shadow-sm z-10">
-                            Premium
+                        {/* Dynamic Plan Badge */}
+                        <div className="absolute top-6 right-[-35px] rotate-45 z-10 shadow-sm">
+                            {w.plan_type === 'premium' ? (
+                                <div className="bg-[#6d0208] text-white text-[9px] font-bold uppercase tracking-[2px] py-1.5 px-10">
+                                    Premium
+                                </div>
+                            ) : w.plan_type === 'basic' ? (
+                                <div className="bg-primary-600 text-white text-[9px] font-bold uppercase tracking-[2px] py-1.5 px-10">
+                                    Basic
+                                </div>
+                            ) : (
+                                <div className="bg-stone-400 text-white text-[9px] font-bold uppercase tracking-[2px] py-1.5 px-10">
+                                    Free
+                                </div>
+                            )}
                         </div>
 
                         {/* Top Banner / Status */}
@@ -189,9 +202,16 @@ function DashboardContent() {
                              <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')]"></div>
                              <div className="relative z-10 text-center">
                                  <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mx-auto shadow-sm mb-2 group-hover:scale-110 transition-transform duration-500">
-                                     <Eye size={20} className="text-[#6d0208]" />
+                                     {w.is_paid ? (
+                                         <Eye size={20} className="text-[#6d0208]" />
+                                     ) : (
+                                         <Plus size={20} className="text-stone-300" />
+                                     )}
                                  </div>
                                  <span className="text-[10px] font-bold text-stone-400 uppercase tracking-widest">{w.slug}</span>
+                             </div>
+                        </div>
+stone-400 uppercase tracking-widest">{w.slug}</span>
                              </div>
                         </div>
                         

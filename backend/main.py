@@ -70,6 +70,10 @@ app.include_router(weddings.router)
 app.include_router(guests.router)
 app.include_router(uploads.router)
 
+@app.get("/ping_deploy")
+def ping_deploy():
+    return {"version": "v3"}
+
 @app.get("/")
 def read_root():
     return {"message": "Mielove Backend is running!"}

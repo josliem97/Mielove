@@ -329,18 +329,52 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                 if (data.config_data) {
                     const comps = data.config_data.components || data.config_data.canvas?.elements || [];
                     
-                    // 1. Insert Couple Photos after "Lời hứa trọn đời"
-                    const promiseComp = comps.find((c: any) => {
-                        const txt = (c.props?.text || "").toLowerCase().trim();
-                        // Use regex to match "lời hứa trọn đời" or "lời hứa chọn đời" with any number of spaces
-                        return /l\s*ờ\s*i\s*h\s*ú\s*a\s*(t\s*r\s*ọ\s*n|c\s*h\s*ọ\s*n)\s*đ\s*ờ\s*i/i.test(txt);
-                    });
+                    // 1. Insert Couple Photos after "Lời hứa trọn đời" (Deep Scan)
+                    let promiseComp: any = null;
+                    const findPromise = (items: any[]) => {
+                        for (const item of items) {
+                            const txt = (item.props?.text || "").toLowerCase().trim();
+                            if (/l\s*ờ\s*i\s*h\s*ú\s*a\s*(t\s*r\s*ọ\s*n|c\s*h\s*ọ\s*n)\s*đ\s*ờ\s*i/i.test(txt)) {
+                                promiseComp = item;
+                                return;
+                            }
+                            if (item.components) findPromise(item.components);
+                        }
+                    };
+                    findPromise(comps);
                     
                     if (promiseComp) {
                         const py = promiseComp.y || promiseComp.props?.y || 0;
                         const ph = promiseComp.h || promiseComp.props?.h || 0;
-                        const targetY = py + ph + 40;
+                        const targetY = py + ph + 60;
                         const hasPhotos = comps.some((c: any) => c.id === 'couple-photo-groom');
+
+                        if (!hasPhotos) {
+                            const groomPhoto = {
+                                id: "couple-photo-groom", type: "element_image", x: 40, y: targetY, w: 235, h: 350, z: 10,
+                                props: { src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=500", borderRadius: 10, objectFit: "cover" },
+                                animation: { preset: "miu-fadeInLeft", duration: 1000 }
+                            };
+                            const bridePhoto = {
+                                id: "couple-photo-bride", type: "element_image", x: 300, y: targetY, w: 235, h: 350, z: 10,
+                                props: { src: "https://images.unsplash.com/photo-1519741497674-611481863552?w=500", borderRadius: 10, objectFit: "cover" },
+                                animation: { preset: "miu-fadeInRight", duration: 1000 }
+                            };
+
+                            comps.forEach((c: any) => {
+                                let cy = c.y || c.props?.y || 0;
+                                if (cy >= py && c.id !== promiseComp.id) {
+                                    if (c.y !== undefined) c.y += 420;
+                                    else if (c.props?.y !== undefined) c.props.y += 420;
+                                }
+                            });
+
+                            if (data.config_data.components) data.config_data.components.push(groomPhoto, bridePhoto);
+                            else if (data.config_data.canvas?.elements) data.config_data.canvas.elements.push(groomPhoto, bridePhoto);
+                            
+                            if (data.config_data.canvas) data.config_data.canvas.height = (data.config_data.canvas.height || 0) + 420;
+                        }
+                    }
 
                         if (!hasPhotos) {
                             const groomPhoto = {

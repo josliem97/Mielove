@@ -330,8 +330,13 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                     const comps = data.config_data.components || data.config_data.canvas?.elements || [];
                     
                     // 1. Insert Couple Photos after "Lời hứa trọn đời"
-                    const promiseComp = comps.find((c: any) => (c.props?.text || "").toLowerCase().includes("lời hứa trọn đời"));
+                    const promiseComp = comps.find((c: any) => {
+                        const txt = (c.props?.text || "").toLowerCase();
+                        return txt.includes("lời hứa trọn đời") || txt.includes("lời hứa chọn đời");
+                    });
+                    
                     if (promiseComp) {
+                        console.log("Found promise component at Y:", promiseComp.y || promiseComp.props?.y);
                         const py = promiseComp.y || promiseComp.props?.y || 0;
                         const ph = promiseComp.h || promiseComp.props?.h || 0;
                         const targetY = py + ph + 40;

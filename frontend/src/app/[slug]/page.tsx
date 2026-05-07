@@ -582,30 +582,36 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                 </motion.div>
             ))}
 
+            {/* Main Wedding Card Container */}
             <div 
-                className="w-full max-w-[575px] bg-white relative shadow-2xl mx-auto"
-                style={{ 
-                    height: canvas.height * canvasScale,
-                    margin: '0 auto' 
-                }}
+                className="w-full flex justify-center bg-stone-100 overflow-x-hidden"
+                style={{ minHeight: '100vh' }}
             >
-                {/* Render Canvas Elements */}
-                <div
-                    style={{
-                        width: canvas.width,
-                        height: canvas.height,
-                        backgroundColor: canvas.backgroundColor,
-                        backgroundImage: canvas.backgroundImage ? `url("${canvas.backgroundImage}")` : undefined,
-                        backgroundSize: canvas.backgroundSize || "cover",
-                        backgroundRepeat: "repeat-y",
-                        position: "absolute",
-                        left: "50%",
-                        top: 0,
-                        transform: `scale(${canvasScale}) translate(-50%, 0)`,
-                        transformOrigin: '0 0',
-                        overflow: "hidden"
+                <div 
+                    className="relative bg-white shadow-2xl"
+                    style={{ 
+                        width: canvas.width * canvasScale,
+                        height: canvas.height * canvasScale,
+                        overflow: 'hidden'
                     }}
                 >
+                    {/* The Scaled Canvas Element */}
+                    <div
+                        style={{
+                            width: canvas.width,
+                            height: canvas.height,
+                            backgroundColor: canvas.backgroundColor,
+                            backgroundImage: canvas.backgroundImage ? `url("${canvas.backgroundImage}")` : undefined,
+                            backgroundSize: canvas.backgroundSize || "cover",
+                            backgroundRepeat: "repeat-y",
+                            position: "absolute",
+                            left: "50%",
+                            top: 0,
+                            transform: `scale(${canvasScale}) translateX(-50%)`,
+                            transformOrigin: 'top left',
+                            marginLeft: `-${(canvas.width * canvasScale) / 2}px`
+                        }}
+                    >
                     <div
                         style={{
                             width: 575,

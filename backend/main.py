@@ -72,15 +72,23 @@ app.include_router(uploads.router)
 
 @app.get("/ping_deploy")
 def ping_deploy():
-    return {"version": "v3"}
+    return {"version": "v5"}
 
 @app.get("/")
 def read_root():
-    return {"message": "Mielove Backend is running!"}
+    return {"message": "Mielove Backend is running! v5"}
 
 from fastapi import Request
 from fastapi.responses import JSONResponse
+from fastapi.exceptions import ResponseValidationError
 import traceback
+
+@app.exception_handler(ResponseValidationError)
+async def validation_exception_handler(request: Request, exc: ResponseValidationError):
+    return JSONResponse(
+        status_code=500,
+        content={"detail": "Response Validation Error", "errors": str(exc.errors()), "traceback": traceback.format_exc()}
+    )
 
 @app.exception_handler(Exception)
 async def global_exception_handler(request: Request, exc: Exception):

@@ -583,8 +583,11 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
             ))}
 
             <div 
-                className="w-full max-w-[575px] bg-white relative shadow-2xl"
-                style={{ height: canvas.height * canvasScale }}
+                className="w-full max-w-[575px] bg-white relative shadow-2xl mx-auto"
+                style={{ 
+                    height: canvas.height * canvasScale,
+                    margin: '0 auto' 
+                }}
             >
                 {/* Render Canvas Elements */}
                 <div
@@ -596,10 +599,10 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                         backgroundSize: canvas.backgroundSize || "cover",
                         backgroundRepeat: "repeat-y",
                         position: "absolute",
-                        left: 0,
+                        left: "50%",
                         top: 0,
-                        transform: `scale(${canvasScale})`,
-                        transformOrigin: 'top left',
+                        transform: `scale(${canvasScale}) translate(-50%, 0)`,
+                        transformOrigin: '0 0',
                         overflow: "hidden"
                     }}
                 >

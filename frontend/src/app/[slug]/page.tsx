@@ -405,11 +405,45 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
         if (isPlaying) { audioRef.current.pause(); setIsPlaying(false); }
         else { audioRef.current.play(); setIsPlaying(true); }
     };
-
     if (loading) return <div className="min-h-screen flex items-center justify-center bg-[#FFF0F5] text-rose-500">Đang tải thiệp...</div>;
     if (notFoundError || !wedding) return <div className="min-h-screen flex items-center justify-center">Không tìm thấy thiệp mời.</div>;
 
-    const canvasConfig = wedding.config_data || {};
+    const isCanvasMode = wedding.config_data?.canvasProps !== undefined || wedding.config_data?.canvas !== undefined;
+    const canvasConfig = isCanvasMode ? wedding.config_data : {
+        canvas: { width: 575, height: 1600, backgroundColor: "#fdf8f5" },
+        components: [
+            { id: "bg-shape", type: "element_shape", x: 0, y: 0, w: 575, h: 450, z: 1, props: { fill: "#6d0208", borderRadius: 0 } },
+            {
+                id: "title-text", type: "element_text", x: 20, y: 150, w: 535, h: 100, z: 10,
+                props: { text: "Quang Huy & Thảo Uyên", fontSize: 44, color: "#ffffff", align: "center", fontFamily: "'High Spirited', cursive" },
+                animation: { preset: "miu-baseline", duration: 1200 }
+            },
+            {
+                id: "desc-text", type: "element_text", x: 20, y: 240, w: 535, h: 60, z: 10,
+                props: { text: "TRÂN TRỌNG KÍNH MỜI", fontSize: 14, color: "#fdecd8", align: "center", fontFamily: "serif" },
+                animation: { preset: "miu-fadeIn", duration: 1500, delay: 500 }
+            },
+            {
+                id: "main-img", type: "element_image", x: 50, y: 400, w: 475, h: 600, z: 5,
+                props: { src: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800", borderRadius: 20 },
+                animation: { preset: "miu-zoomIn", duration: 1000, delay: 300 }
+            },
+            {
+                id: "cal", type: "element_calendar", x: 85, y: 1050, w: 405, h: 180, z: 20,
+                props: { date: "2026-12-31", time: "09:00", label: "LỄ THÀNH HÔN" },
+                animation: { preset: "miu-stomp", duration: 800, delay: 800 }
+            },
+            {
+                id: "thank-you", type: "element_text", x: 20, y: 1350, w: 535, h: 150, z: 20,
+                props: { 
+                    text: "Sự hiện diện của quý vị là niềm vinh hạnh của chúng tôi.\nTrân trọng cảm ơn!", 
+                    fontSize: 18, color: "#6d0208", align: "center", fontFamily: "serif", italic: true 
+                },
+                animation: { preset: "miu-fadeInUp", duration: 1200, delay: 1000 }
+            }
+        ]
+    };
+
     const canvas = canvasConfig.canvas || canvasConfig.canvasProps || { width: 575, height: 2000, backgroundColor: "#ffffff" };
 
     return (

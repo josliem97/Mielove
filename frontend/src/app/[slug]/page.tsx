@@ -298,6 +298,327 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
 
     const canvas = (canvasConfig.canvas || canvasConfig.canvasProps) || { width: 575, height: 2000, backgroundColor: "#ffffff" };
 
+    return (
+        <div className="bg-stone-100 min-h-screen flex justify-center font-sans overflow-x-hidden">
+            {/* Envelope Overlay (Global/Full Screen) */}
+            <AnimatePresence>
+                {showEnvelope && (
+                    <Opening
+                        guestName={guest?.guest_name || guestSlug?.replace(/-/g, ' ') || "Bạn và gia đình"}
+                        groomName={wedding?.groom_name || "Chú Rể"}
+                        brideName={wedding?.bride_name || "Cô Dâu"}
+                        onOpen={openEnvelope}
+                    />
+                )}
+            </AnimatePresence>
+
+            {/* Decorative Floating Elements Layer (Luxury Particles) */}
+            {isMounted && (
+                <div className="fixed top-0 bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[575px] pointer-events-none z-[200] overflow-hidden">
+                    {[...Array(20)].map((_, i) => (
+                        <motion.div
+                            key={i}
+                            className={`absolute ${i % 2 === 0 ? 'text-[#c5a059]' : 'text-[#6d0208]'} text-[10px]`}
+                            style={{ left: `${Math.random() * 100}%` }}
+                            initial={{ y: -50, opacity: 0 }}
+                            animate={{ 
+                                y: "110vh", 
+                                opacity: [0, 0.5, 0.5, 0],
+                                rotate: [0, 360],
+                            }}
+                            transition={{
+                                duration: 15 + Math.random() * 10,
+                                repeat: Infinity,
+                                ease: "linear",
+                                delay: Math.random() * 20
+                            }}
+                        >
+                            {i % 3 === 0 ? '✦' : (i % 3 === 1 ? '❤' : '✨')}
+                        </motion.div>
+                    ))}
+                </div>
+            )}
+
+            {/* Main Wedding Card Container - This handles centering and scaling */}
+            <div className="w-full flex justify-center bg-stone-100 overflow-x-hidden" style={{ minHeight: '100vh' }}>
+                <div 
+                    className="relative bg-white shadow-2xl"
+                    style={{ 
+                        width: canvas.width * canvasScale,
+                        height: canvas.height * canvasScale,
+                        overflow: 'hidden'
+                    }}
+                >
+                    {/* The Scaled Canvas Element */}
+                    <div
+                        style={{
+                            width: canvas.width,
+                            height: canvas.height,
+                            backgroundColor: canvas.backgroundColor,
+                            backgroundImage: canvas.backgroundImage ? `url("${canvas.backgroundImage}")` : undefined,
+                            backgroundSize: canvas.backgroundSize || "cover",
+                            backgroundRepeat: "repeat-y",
+                            position: "absolute",
+                            left: "50%",
+                            top: 0,
+                            transform: `scale(${canvasScale}) translateX(-50%)`,
+                            transformOrigin: 'top left',
+                            marginLeft: `-${(canvas.width * canvasScale) / 2}px`,
+                            overflow: "hidden"
+                        }}
+                    >
+                        {/* Texture Overlay */}
+                        {canvas?.texture && canvas?.texture !== 'none' && (
+                            <div className="absolute inset-0 pointer-events-none opacity-40 mix-blend-multiply z-[50]" style={{ backgroundImage: canvas.texture }} />
+                        )}
+                        
+                        {/* Elements */}
+                        {(canvasConfig.components || canvasConfig.canvas?.elements || []).map((comp: any) => (
+                            <RenderCanvasComponent 
+                                key={comp.id} 
+                                comp={comp} 
+                                wedding={wedding} 
+                                guest={guest} 
+                                params={params} 
+                                replacePlaceholders={replacePlaceholders} 
+                                setShowRSVP={setShowRSVP} 
+                                setShowGiftModal={setShowGiftModal} 
+                                setActiveGiftTab={setActiveGiftTab} 
+                                setSelectedPhoto={setSelectedPhoto} 
+                            />
+                        ))}
+
+                        {/* Scroll Indicator */}
+                        <motion.div
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse" }}
+                            className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none"
+                            style={{ zIndex: 1000 }}
+                        >
+                            <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-[#6d0208]/40">Kéo xuống để xem thêm</span>
+                            <div className="w-[1px] h-12 bg-gradient-to-b from-[#6d0208]/40 to-transparent" />
+                        </motion.div>
+                    </div>
+                </div>
+            </div>
+
+            {/* FAB Dock & Global Overlays */}
+            <FABDock
+                isPlaying={isPlaying}
+                scrollProgress={scrollProgress}
+                onToggleMusic={toggleMusic}
+                onOpenGift={() => setShowGiftModal(true)}
+                onOpenMap={wedding.map_url ? () => window.open(wedding.map_url, '_blank') : undefined}
+                onOpenRSVP={() => setShowRSVP(true)}
+            />
+
+            <audio ref={audioRef} src={wedding.music_url} loop className="hidden" />
+
+            <AnimatePresence>
+                {selectedPhoto && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setSelectedPhoto(null)}
+                        className="fixed inset-0 z-[10000] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 cursor-zoom-out"
+                    >
+                        <motion.img
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                            src={selectedPhoto}
+                            className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+                            alt="Full screen preview"
+                        />
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
+            <AnimatePresence>
+                {showGiftModal && (
+                    <motion.div
+                        initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+                        className="fixed inset-0 bg-black/60 z-[10000] flex items-center justify-center p-4 backdrop-blur-sm"
+                    >
+                        <motion.div
+                            initial={{ scale: 0.9, y: 20 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.9, y: 20 }}
+                            className="bg-white rounded-3xl w-full max-w-sm overflow-hidden shadow-2xl relative"
+                        >
+                            <button onClick={() => setShowGiftModal(false)} className="absolute top-4 right-4 text-gray-400 hover:text-black transition-colors z-20">✕</button>
+
+                            <div className="bg-[#6d0208] p-8 text-center">
+                                <Heart className="text-white/30 mx-auto mb-4" size={32} />
+                                <h3 className="text-2xl font-script text-white">Mừng Cưới Online</h3>
+                                <p className="text-[10px] text-white/60 uppercase tracking-widest mt-1">Sự hiện diện của bạn là món quà ý nghĩa nhất</p>
+                            </div>
+
+                            <div className="flex border-b border-gray-100">
+                                <button
+                                    onClick={() => setActiveGiftTab('groom')}
+                                    className={`flex-1 py-4 text-xs font-bold uppercase tracking-widest transition-all ${activeGiftTab === 'groom' ? 'text-[#6d0208] bg-white border-b-2 border-[#6d0208]' : 'text-gray-400 bg-gray-50 hover:bg-white'}`}
+                                >
+                                    Nhà Trai
+                                </button>
+                                <button
+                                    onClick={() => setActiveGiftTab('bride')}
+                                    className={`flex-1 py-4 text-xs font-bold uppercase tracking-widest transition-all ${activeGiftTab === 'bride' ? 'text-[#6d0208] bg-white border-b-2 border-[#6d0208]' : 'text-gray-400 bg-gray-50 hover:bg-white'}`}
+                                >
+                                    Nhà Gái
+                                </button>
+                            </div>
+
+                            <div className="p-8 text-center flex flex-col items-center">
+                                <div className="w-48 h-48 bg-gray-50 rounded-2xl flex items-center justify-center mb-6 border-4 border-white shadow-inner overflow-hidden">
+                                    <img 
+                                        src={activeGiftTab === 'groom' 
+                                            ? (wedding.config_data?.groom_bank?.qr || wedding.bank_qr_code || "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=CHUA_CO_QR")
+                                            : (wedding.config_data?.bride_bank?.qr || wedding.bank_qr_code || "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=CHUA_CO_QR")
+                                        } 
+                                        className="w-full h-full object-contain" 
+                                    />
+                                </div>
+                                <div className="space-y-1">
+                                    <p className="text-xs text-stone-400 font-medium">Số tài khoản:</p>
+                                    <p className="text-lg font-bold text-[#6d0208] select-all">
+                                        {activeGiftTab === 'groom' 
+                                            ? (wedding.config_data?.groom_bank?.account || wedding.bank_account || "Đang cập nhật")
+                                            : (wedding.config_data?.bride_bank?.account || wedding.bank_account || "Đang cập nhật")
+                                        }
+                                    </p>
+                                    <p className="text-xs font-bold text-gray-800">
+                                        {activeGiftTab === 'groom' 
+                                            ? (wedding.config_data?.groom_bank?.name || wedding.bank_account_name || "CHÚ RỂ")
+                                            : (wedding.config_data?.bride_bank?.name || wedding.bank_account_name || "CÔ DÂU")
+                                        }
+                                    </p>
+                                    <p className="text-[9px] text-stone-400 uppercase tracking-tighter">
+                                        {activeGiftTab === 'groom' 
+                                            ? (wedding.config_data?.groom_bank?.bank || wedding.bank_name || "")
+                                            : (wedding.config_data?.bride_bank?.bank || wedding.bank_name || "")
+                                        }
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="px-8 pb-8">
+                                <button onClick={() => setShowGiftModal(false)} className="w-full py-4 bg-[#6d0208] text-white rounded-xl font-bold uppercase tracking-widest text-[10px] shadow-lg">Đã Gửi Lời Chúc</button>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
+            <AnimatePresence>
+                {showRSVP && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 bg-stone-900/60 z-[10000] flex items-center justify-center p-4"
+                    >
+                        <motion.div
+                            initial={{ scale: 0.9, y: 20 }}
+                            animate={{ scale: 1, y: 0 }}
+                            exit={{ scale: 0.9, y: 20 }}
+                            className="bg-white rounded-3xl p-8 max-w-sm w-full shadow-2xl relative"
+                        >
+                            <button
+                                onClick={() => setShowRSVP(false)}
+                                className="absolute top-4 right-4 text-stone-400 hover:text-stone-600 outline-none"
+                            >
+                                ✕
+                            </button>
+
+                            {rsvpSuccess ? (
+                                <div className="text-center py-10">
+                                    <div className="w-20 h-20 bg-[#fbf9f6] border-2 border-[#6d0208]/20 text-[#6d0208] rounded-full flex items-center justify-center mx-auto mb-6 text-4xl shadow-inner">♥</div>
+                                    <h3 className="text-3xl font-script text-[#6d0208] mb-2">Lời Cảm Ơn</h3>
+                                    <p className="text-stone-600 font-lora italic px-4">Xác nhận của bạn đã được gửi tới cô dâu chú rể. Trân trọng cảm ơn!</p>
+                                </div>
+                            ) : (
+                                <>
+                                    <div className="relative text-center mb-6 pb-6 border-b border-[#6d0208]/10">
+                                        <h2 className="text-4xl font-script text-[#6d0208] mb-2">Lời Phản Hồi</h2>
+                                        <p className="text-[10px] uppercase tracking-[0.2em] text-stone-500 font-lora">Xác nhận tham dự</p>
+                                    </div>
+                                    <form onSubmit={handleRSVPSubmit} className="space-y-4 font-sans relative z-10">
+                                        {guest ? (
+                                            <div className="text-center mb-6 bg-[#fff8f8] p-4 rounded-xl border border-[#6d0208]/10 shadow-sm">
+                                                <div className="text-stone-500 text-xs uppercase tracking-wider mb-1">Khách mời</div>
+                                                <div className="font-bold text-[#6d0208] text-xl font-serif">{guest.guest_name}</div>
+                                            </div>
+                                        ) : (
+                                            <div className="text-sm text-stone-500 mb-6 italic text-center font-lora">Bạn đang xem ở chế độ khách vãng lai.</div>
+                                        )}
+
+                                        <div>
+                                            <label className="block text-xs font-bold text-[#8b0000] mb-2 uppercase tracking-wide">Bạn có thể tham dự không?</label>
+                                            <select
+                                                value={rsvpData.status}
+                                                onChange={(e) => setRsvpData({ ...rsvpData, status: e.target.value })}
+                                                className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:border-[#6d0208] focus:ring-1 focus:ring-[#6d0208] outline-none transition bg-[#fbf9f6] text-stone-700 font-medium"
+                                            >
+                                                <option value="attending">♥ Có, tôi sẽ đến chung vui</option>
+                                                <option value="wishes_only">✉ Tôi bận nhưng xin gửi lời chúc</option>
+                                                <option value="not_attending">✗ Rất tiếc, tôi không thể tham dự</option>
+                                            </select>
+                                        </div>
+
+                                        {rsvpData.status === "attending" && (
+                                            <div className="grid grid-cols-2 gap-4 pt-2">
+                                                <div>
+                                                    <label className="block text-xs font-bold text-[#8b0000] mb-2 uppercase tracking-wide">Người lớn</label>
+                                                    <input
+                                                        type="number"
+                                                        min="1"
+                                                        value={rsvpData.adult_count}
+                                                        onChange={(e) => setRsvpData({ ...rsvpData, adult_count: parseInt(e.target.value) || 1 })}
+                                                        className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:border-[#6d0208] focus:ring-1 focus:ring-[#6d0208] outline-none transition bg-[#fbf9f6] text-center font-bold text-lg text-stone-800"
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <label className="block text-xs font-bold text-[#8b0000] mb-2 uppercase tracking-wide">Trẻ em</label>
+                                                    <input
+                                                        type="number"
+                                                        min="0"
+                                                        value={rsvpData.children_count}
+                                                        onChange={(e) => setRsvpData({ ...rsvpData, children_count: parseInt(e.target.value) || 0 })}
+                                                        className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:border-[#6d0208] focus:ring-1 focus:ring-[#6d0208] outline-none transition bg-[#fbf9f6] text-center font-bold text-lg text-stone-800"
+                                                    />
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        <div className="pt-2">
+                                            <label className="block text-xs font-bold text-[#8b0000] mb-2 uppercase tracking-wide">Lời chúc</label>
+                                            <textarea
+                                                rows={3}
+                                                value={rsvpData.wish_message}
+                                                onChange={(e) => setRsvpData({ ...rsvpData, wish_message: e.target.value })}
+                                                placeholder="Gửi lời chúc tới cô dâu chú rể..."
+                                                className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:border-[#6d0208] focus:ring-1 focus:ring-[#6d0208] outline-none transition resize-none bg-[#fbf9f6] text-stone-700 font-lora italic"
+                                            ></textarea>
+                                        </div>
+
+                                        <div className="pt-4 pb-2">
+                                            <button
+                                                type="submit"
+                                                disabled={submitting}
+                                                className="w-full py-4 bg-[#6d0208] text-white rounded-lg font-bold uppercase tracking-widest text-xs hover:bg-[#8b0000] transition disabled:opacity-70 shadow-md"
+                                            >
+                                                {submitting ? "Đang gửi..." : "Gửi Xác Nhận"}
+                                            </button>
+                                        </div>
+                                    </form>
+                                </>
+                            )}
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
+    );
 }
 
 const getAnimationVariants = (preset: string) => {

@@ -362,19 +362,30 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
 
                         const targetY = py + ph + 60;
                         
-                        // Get real photos from album if available
-                        const albumImages = data.config_data.album || [];
-                        const groomImg = albumImages[0] || "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=500";
-                        const brideImg = albumImages[1] || "https://images.unsplash.com/photo-1519741497674-611481863552?w=500";
+                        // Get photos: use provided links as primary, then album as fallback
+                        const groomImg = "https://i.postimg.cc/6pJ97gvg/1773995332651-1770736796361-0438933dad2723797a361.webp";
+                        const brideImg = "https://i.postimg.cc/66P6Ky6k/1773995329499-1770736612197-12597987462083336082.webp";
 
                         const groomPhoto = {
                             id: "couple-photo-groom", type: "element_image", x: 40, y: targetY, w: 235, h: 350, z: 10,
-                            props: { src: groomImg, borderRadius: 10, objectFit: "cover" },
+                            props: { 
+                                src: groomImg, 
+                                borderRadius: 10, 
+                                objectFit: "cover",
+                                border: "4px solid #ffffff",
+                                boxShadow: "0 10px 25px rgba(0,0,0,0.1)"
+                            },
                             animation: { preset: "miu-fadeInLeft", duration: 1000 }
                         };
                         const bridePhoto = {
                             id: "couple-photo-bride", type: "element_image", x: 300, y: targetY, w: 235, h: 350, z: 10,
-                            props: { src: brideImg, borderRadius: 10, objectFit: "cover" },
+                            props: { 
+                                src: brideImg, 
+                                borderRadius: 10, 
+                                objectFit: "cover",
+                                border: "4px solid #ffffff",
+                                boxShadow: "0 10px 25px rgba(0,0,0,0.1)"
+                            },
                             animation: { preset: "miu-fadeInRight", duration: 1000 }
                         };
 

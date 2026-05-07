@@ -72,10 +72,23 @@ class Wedding(WeddingBase):
     id: int
     owner_id: int
     template_id: int
-    gallery_images: list = []
+    gallery_images: Optional[List[Any]] = []
     guest_count: Optional[int] = 0
     confirmed_count: Optional[int] = 0
     model_config = ConfigDict(from_attributes=True)
+
+    @field_validator('gallery_images', mode='before')
+    @classmethod
+    def parse_gallery_images(cls, v):
+        if v is None:
+            return []
+        if isinstance(v, str):
+            try:
+                import json
+                return json.loads(v)
+            except:
+                return []
+        return v
 
 class GuestBase(BaseModel):
     guest_name: str

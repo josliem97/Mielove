@@ -331,12 +331,12 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                     
                     // 1. Insert Couple Photos after "Lời hứa trọn đời"
                     const promiseComp = comps.find((c: any) => {
-                        const txt = (c.props?.text || "").toLowerCase();
-                        return txt.includes("lời hứa trọn đời") || txt.includes("lời hứa chọn đời");
+                        const txt = (c.props?.text || "").toLowerCase().trim();
+                        // Use regex to match "lời hứa trọn đời" or "lời hứa chọn đời" with any number of spaces
+                        return /l\s*ờ\s*i\s*h\s*ú\s*a\s*(t\s*r\s*ọ\s*n|c\s*h\s*ọ\s*n)\s*đ\s*ờ\s*i/i.test(txt);
                     });
                     
                     if (promiseComp) {
-                        console.log("Found promise component at Y:", promiseComp.y || promiseComp.props?.y);
                         const py = promiseComp.y || promiseComp.props?.y || 0;
                         const ph = promiseComp.h || promiseComp.props?.h || 0;
                         const targetY = py + ph + 40;

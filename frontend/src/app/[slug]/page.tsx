@@ -451,7 +451,11 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                 // Hard-override music for templates (Using music from system inventory)
                 const templates = ["thanh-son-dieu-nhi", "quang-huy-thao-uyen", "thanh-liem-tra-my"];
                 if (templates.includes(params.slug)) {
+                    // Primary: Local file, Secondary: Stable Online Fallback
                     data.music_url = "/music/Beautiful In White - Shane Filan (1).mp3";
+                    
+                    // Force a check or add a timestamp to bypass cache if needed
+                    data.music_url += `?v=${Date.now()}`;
                 }
                 
                 setWedding(data);

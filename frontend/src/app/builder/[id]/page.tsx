@@ -777,6 +777,72 @@ export default function BuilderPage({ params }: { params: { id: string } }) {
                         </div>
 
                         <div className="flex-1 overflow-y-auto p-6 custom-scrollbar">
+                            {activeTab === 'music' && (
+                                <div className="space-y-6">
+                                    <div className="bg-blue-50 p-4 rounded-xl border border-blue-100 mb-6">
+                                        <div className="flex items-start gap-3">
+                                            <div className="p-2 bg-white rounded-lg text-blue-500 shadow-sm">
+                                                <Music size={18} />
+                                            </div>
+                                            <div>
+                                                <p className="text-[13px] font-bold text-blue-900 leading-tight mb-1">Kho nhạc Mielove</p>
+                                                <p className="text-[11px] text-blue-700/70">Chọn giai điệu lãng mạn cho ngày trọng đại của bạn</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="space-y-3">
+                                        {[
+                                            { id: 1, title: "Beautiful In White", artist: "Shane Filan", url: "/music/Beautiful In White - Shane Filan (1).mp3" },
+                                            { id: 2, title: "Em Đồng Ý (I Do)", artist: "Đức Phúc x 911", url: "/music/Em Đồng Ý (I Do) - Đức Phúc x 911.mp3" },
+                                            { id: 3, title: "Hơn Cả Yêu", artist: "Đức Phúc", url: "/music/Hơn Cả Yêu - Đức Phúc.mp3" },
+                                            { id: 4, title: "Perfect", artist: "Ed Sheeran", url: "/music/Perfect - Ed Sheeran.mp3" },
+                                            { id: 5, title: "Marry You", artist: "Bruno Mars", url: "/music/Marry You - Bruno Mars.mp3" },
+                                            { id: 6, title: "My Love", artist: "Westlife", url: "/music/My Love - Westlife.mp3" },
+                                            { id: 7, title: "Cưới Thôi", artist: "Masew x Masiu x B Ray", url: "/music/Cưới Thôi - Masew x Masiu x B Ray.mp3" },
+                                            { id: 8, title: "Yêu Là Cưới", artist: "Phát Hồ", url: "/music/Yêu Là Cưới - Phát Hồ.mp3" },
+                                            { id: 9, title: "Đám Cưới Nha", artist: "Hồng Thanh x Mie", url: "/music/Đám Cưới Nha - Hồng Thanh x Mie.mp3" },
+                                            { id: 10, title: "Một Đời", artist: "14 Casper & Bon Nghiêm", url: "/music/Một Đời - 14 Casper & Bon Nghiêm.mp3" }
+                                        ].map((song) => (
+                                            <div key={song.id} className={`group flex items-center justify-between p-3 rounded-xl border transition-all ${weddingConfig?.music_url?.includes(song.url) ? "bg-blue-50 border-blue-200" : "bg-white border-gray-100 hover:border-gray-300"}`}>
+                                                <div className="flex-1 min-w-0 pr-3">
+                                                    <p className="text-[13px] font-bold text-[#1D1D1F] truncate">{song.title}</p>
+                                                    <p className="text-[10px] text-gray-500 truncate">{song.artist}</p>
+                                                </div>
+                                                <div className="flex items-center gap-2">
+                                                    <button 
+                                                        onClick={() => {
+                                                            const audio = document.getElementById('preview-player') as HTMLAudioElement;
+                                                            if (audio) {
+                                                                if (audio.src.includes(song.url) && !audio.paused) {
+                                                                    audio.pause();
+                                                                } else {
+                                                                    audio.src = song.url;
+                                                                    audio.play();
+                                                                }
+                                                            }
+                                                        }}
+                                                        className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors"
+                                                    >
+                                                        <Music size={14} />
+                                                    </button>
+                                                    <button 
+                                                        onClick={() => {
+                                                            setWeddingConfig({ ...weddingConfig, music_url: song.url });
+                                                            // Trigger auto-save or manual save is needed
+                                                            alert(`Đã chọn: ${song.title}`);
+                                                        }}
+                                                        className={`h-8 px-3 text-[11px] font-bold rounded-lg transition-all ${weddingConfig?.music_url?.includes(song.url) ? "bg-blue-600 text-white shadow-lg" : "bg-white border border-gray-200 text-gray-600 hover:bg-gray-50"}`}
+                                                    >
+                                                        {weddingConfig?.music_url?.includes(song.url) ? "Đã chọn" : "Chọn"}
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <audio id="preview-player" className="hidden" />
+                                </div>
+                            )}
                             {activeTab === 'templates' && (
                                 <div className="space-y-6">
                                     <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest">Giao diện hệ thống</p>

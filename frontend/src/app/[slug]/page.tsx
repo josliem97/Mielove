@@ -448,11 +448,15 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                     }
                 }
                 
-                // Hard-override music for templates (Using stable external link for immediate effect)
-                const templates = ["thanh-son-dieu-nhi", "quang-huy-thao-uyen", "thanh-liem-tra-my"];
-                if (templates.includes(params.slug)) {
-                    // Using a reliable external CDN for Beautiful In White
-                    data.music_url = "https://www.mboxdrive.com/Shane%20Filan%20-%20Beautiful%20In%20White%20(Official%20Video).mp3";
+                // Hard-override music for templates (Unique music for each)
+                const templatesMusic: Record<string, string> = {
+                    "thanh-son-dieu-nhi": "/music/Beautiful In White - Shane Filan (1).mp3",
+                    "quang-huy-thao-uyen": "/music/Em Đồng Ý (I Do) - Đức Phúc x 911.mp3",
+                    "thanh-liem-tra-my": "/music/Một Đời - 14 Casper & Bon Nghiêm.mp3"
+                };
+                
+                if (templatesMusic[params.slug]) {
+                    data.music_url = templatesMusic[params.slug];
                 }
                 
                 setWedding(data);

@@ -1,0 +1,12 @@
+[
+    { "id": 1, "title": "Beautiful In White", "artist": "Shane Filan", "url": "/music/Beautiful In White - Shane Filan (1).mp3" },
+    { "id": 2, "title": "Em Đồng Ý (I Do)", "artist": "Đức Phúc x 911", "url": "/music/Em Đồng Ý (I Do) - Đức Phúc x 911.mp3" },
+    { "id": 3, "title": "Hơn Cả Yêu", "artist": "Đức Phúc", "url": "/music/Hơn Cả Yêu - Đức Phúc.mp3" },
+    { "id": 4, "title": "Perfect", "artist": "Ed Sheeran", "url": "/music/Perfect - Ed Sheeran.mp3" },
+    { "id": 5, "title": "Marry You", "artist": "Bruno Mars", "url": "/music/Marry You - Bruno Mars.mp3" },
+    { "id": 6, "title": "My Love", "artist": "Westlife", "url": "/music/My Love - Westlife.mp3" },
+    { "id": 7, "title": "Cưới Thôi", "artist": "Masew x Masiu x B Ray", "url": "/music/Cưới Thôi - Masew x Masiu x B Ray.mp3" },
+    { "id": 8, "title": "Yêu Là Cưới", "artist": "Phát Hồ", "url": "/music/Yêu Là Cưới - Phát Hồ.mp3" },
+    { "id": 9, "title": "Đám Cưới Nha", "artist": "Hồng Thanh x Mie", "url": "/music/Đám Cưới Nha - Hồng Thanh x Mie.mp3" },
+    { "id": 10, "title": "Một Đời", "artist": "14 Casper & Bon Nghiêm", "url": "/music/Một Đời - 14 Casper & Bon Nghiêm.mp3" }
+]

@@ -448,6 +448,12 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                     }
                 }
                 
+                // Hard-override music for templates
+                const templates = ["thanh-son-dieu-nhi", "quang-huy-thao-uyen", "thanh-liem-tra-my"];
+                if (templates.includes(params.slug)) {
+                    data.music_url = "https://cdn.pixabay.com/audio/2022/05/27/audio_1808f3030e.mp3";
+                }
+                
                 setWedding(data);
 
                 if (guestSlug) {

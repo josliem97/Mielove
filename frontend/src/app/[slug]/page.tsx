@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
 import { useSearchParams } from "next/navigation";
+import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
 import { MailOpen, Gift, Music, Navigation, Heart, ChevronRight } from 'lucide-react';
 import { 

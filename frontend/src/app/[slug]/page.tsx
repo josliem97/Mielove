@@ -314,7 +314,28 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                // Disable cache strictly with headers and timestamp
+                // Special case for Hoa Moc Xanh demo (Ensure it always works)
+                if (params.slug === "hoa-moc-xanh") {
+                    try {
+                        const hmxConfigRes = await axios.get("/hoa_moc_xanh_config.json");
+                        const mockData = {
+                            id: 9999,
+                            slug: "hoa-moc-xanh",
+                            groom_name: "Minh Quân",
+                            bride_name: "Thu Hà",
+                            wedding_date: "2026-05-24T18:00:00",
+                            location: "Tiệc Cưới Hoàng Gia, Hà Nội",
+                            is_paid: true,
+                            config_data: hmxConfigRes.data
+                        };
+                        setWedding(mockData);
+                        setLoading(false);
+                        return;
+                    } catch (err) {
+                        console.error("HMX Demo Load Fail", err);
+                    }
+                }
+
                 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/weddings/${params.slug}?t=${Date.now()}`, {
                     cache: 'no-store',
                     headers: {
@@ -326,16 +347,6 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                 if (!res.ok) throw new Error("Not found");
                 let data = await res.json();
 
-                // HOT-OVERRIDE for Hoa Moc Xanh demo page (ensures immediate visibility)
-                if (params.slug === "hoa-moc-xanh") {
-                    try {
-                        const hmxConfigRes = await axios.get("/hoa_moc_xanh_config.json");
-                        data.config_data = hmxConfigRes.data;
-                    } catch (err) {
-                        console.error("HMX Config load err", err);
-                    }
-                }
-                
                 // Post-process data to ensure names and Thank You section exist
                 if (data.config_data) {
                     const comps = data.config_data.components || data.config_data.canvas?.elements || [];

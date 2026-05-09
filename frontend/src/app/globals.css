@@ -120,3 +120,22 @@
 .animate-zoomIn-subtle {
   animation: miu-zoomIn-subtle 2s ease-in-out infinite;
 }
+
+/* --- Boho Floral Theme Utilities --- */
+.boho-shadow {
+  box-shadow: 15px 15px 40px rgba(193, 155, 118, 0.2);
+}
+
+.boho-border {
+  border: 8px solid #C19B76;
+}
+
+@keyframes miu-float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: miu-float 4s ease-in-out infinite;
+}

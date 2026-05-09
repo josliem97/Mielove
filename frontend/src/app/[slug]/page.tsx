@@ -323,7 +323,17 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                     }
                 });
                 if (!res.ok) throw new Error("Not found");
-                const data = await res.json();
+                let data = await res.json();
+
+                // HOT-OVERRIDE for Hoa Moc Xanh demo page (ensures immediate visibility)
+                if (params.slug === "hoa-moc-xanh") {
+                    try {
+                        const hmxConfigRes = await axios.get("/hoa_moc_xanh_config.json");
+                        data.config_data = hmxConfigRes.data;
+                    } catch (err) {
+                        console.error("HMX Config load err", err);
+                    }
+                }
                 
                 // Post-process data to ensure names and Thank You section exist
                 if (data.config_data) {
@@ -452,7 +462,8 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                 const templatesMusic: Record<string, string> = {
                     "thanh-son-dieu-nhi": "/music/Beautiful In White - Shane Filan (1).mp3",
                     "quang-huy-thao-uyen": "/music/Em Đồng Ý (I Do) - Đức Phúc x 911.mp3",
-                    "thanh-liem-tra-my": "/music/Một Đời - 14 Casper & Bon Nghiêm.mp3"
+                    "thanh-liem-tra-my": "/music/Một Đời - 14 Casper & Bon Nghiêm.mp3",
+                    "hoa-moc-xanh": "/music/My Love - Westlife.mp3"
                 };
                 
                 if (templatesMusic[params.slug]) {

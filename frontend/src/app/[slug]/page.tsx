@@ -320,6 +320,8 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                         const hmxConfigRes = await axios.get("/hoa_moc_xanh_config.json");
                         const mockData = {
                             id: 9999,
+                            owner_id: 1,
+                            template_id: 1,
                             slug: "hoa-moc-xanh",
                             groom_name: "Minh Quân",
                             bride_name: "Thu Hà",
@@ -328,7 +330,7 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                             is_paid: true,
                             config_data: hmxConfigRes.data
                         };
-                        setWedding(mockData);
+                        setWedding(mockData as any);
                         setLoading(false);
                         return;
                     } catch (err) {

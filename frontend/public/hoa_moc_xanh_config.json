@@ -1,7 +1,7 @@
 {
   "canvas": {
     "width": 575,
-    "height": 10200,
+    "height": 10500,
     "backgroundColor": "#FFFAF7",
     "texture": "none"
   },
@@ -9,73 +9,60 @@
     {
       "id": "hero-bg-flower",
       "type": "element_image",
-      "x": -100,
+      "x": -150,
       "y": -100,
-      "w": 700,
-      "h": 700,
+      "w": 800,
+      "h": 800,
       "z": 1,
       "props": {
         "src": "/templates/hoa-moc-xanh/flower.webp",
         "objectFit": "contain",
-        "opacity": 0.4
+        "opacity": 0.3
       }
     },
     {
-      "id": "main-photo-hero",
+      "id": "main-photo",
       "type": "element_image",
       "x": 40,
       "y": 120,
-      "w": 320,
-      "h": 450,
+      "w": 330,
+      "h": 460,
       "z": 5,
-      "rotation": -5,
+      "rotation": -4,
       "props": {
         "src": "https://cdn.chungdoi.com/uploads/296d082d-c2bf-4510-a9e3-c7bdea13f850.webp",
         "objectFit": "cover",
         "border": "8px solid #C19B76",
-        "boxShadow": "15px 15px 30px rgba(0,0,0,0.15)"
+        "boxShadow": "15px 15px 35px rgba(0,0,0,0.1)"
       }
     },
     {
-      "id": "accent-photo-hero",
+      "id": "accent-photo",
       "type": "element_image",
-      "x": 280,
+      "x": 270,
       "y": 380,
-      "w": 220,
-      "h": 300,
+      "w": 250,
+      "h": 320,
       "z": 10,
-      "rotation": 8,
+      "rotation": 6,
       "props": {
         "src": "https://cdn.chungdoi.com/uploads/0ac5a43c-3c7b-4650-a2de-c64d1d30f5ed.webp",
         "objectFit": "cover",
         "border": "8px solid #C19B76",
-        "boxShadow": "10px 10px 20px rgba(0,0,0,0.1)"
-      }
-    },
-    {
-      "id": "decoration-bar",
-      "type": "element_image",
-      "x": -50,
-      "y": 550,
-      "w": 675,
-      "h": 100,
-      "z": 2,
-      "props": {
-        "src": "/templates/hoa-moc-xanh/decoration_bar.webp",
-        "objectFit": "cover"
+        "boxShadow": "10px 10px 25px rgba(0,0,0,0.1)"
       }
     },
     {
       "id": "hero-names",
       "type": "element_text",
       "x": 0,
-      "y": 750,
+      "y": 780,
       "w": 575,
       "h": 100,
       "z": 15,
       "props": {
         "text": "Minh Quân & Thu Hà",
-        "fontSize": 52,
+        "fontSize": 54,
         "color": "#30530F",
         "fontFamily": "serif",
         "align": "center",
@@ -86,44 +73,29 @@
       "id": "hero-date-line",
       "type": "element_text",
       "x": 0,
-      "y": 840,
+      "y": 880,
       "w": 575,
       "h": 40,
       "z": 15,
       "props": {
-        "text": "SAVE THE DATE — 24 . 05 . 2026",
-        "fontSize": 18,
+        "text": "CHỦ NHẬT, NGÀY 24 THÁNG 05 NĂM 2026",
+        "fontSize": 16,
         "color": "#C19B76",
         "fontFamily": "serif",
         "align": "center",
-        "letterSpacing": 6
+        "letterSpacing": 4
       }
     },
     {
-      "id": "journey-img",
-      "type": "element_image",
-      "x": 87,
-      "y": 950,
-      "w": 400,
-      "h": 300,
-      "z": 10,
-      "props": {
-        "src": "https://cdn.chungdoi.com/uploads/1174458a-fd65-41ed-b86c-626e9366faa2.webp",
-        "objectFit": "cover",
-        "borderRadius": 0,
-        "border": "2px solid #C19B76"
-      }
-    },
-    {
-      "id": "journey-title",
+      "id": "parents-title",
       "type": "element_text",
       "x": 0,
-      "y": 1300,
+      "y": 1050,
       "w": 575,
       "h": 60,
       "z": 10,
       "props": {
-        "text": "CÂU CHUYỆN TÌNH YÊU",
+        "text": "GIA ĐÌNH HAI BÊN",
         "fontSize": 24,
         "color": "#30530F",
         "fontFamily": "serif",
@@ -133,76 +105,95 @@
       }
     },
     {
-      "id": "journey-desc",
+      "id": "groom-family-block",
       "type": "element_text",
-      "x": 60,
-      "y": 1400,
-      "w": 455,
-      "h": 300,
+      "x": 40,
+      "y": 1150,
+      "w": 235,
+      "h": 250,
       "z": 10,
       "props": {
-        "text": "Từ những ngày đầu gặp gỡ, chúng mình đã nhận ra nửa kia của cuộc đời. Hành trình tình yêu 5 năm đi qua bao kỷ niệm, và giờ đây là lúc bắt đầu một chương mới hạnh phúc hơn.",
-        "fontSize": 18,
-        "color": "#464646",
-        "fontFamily": "serif",
-        "align": "center",
-        "lineHeight": 1.8,
-        "fontStyle": "italic"
-      }
-    },
-    {
-      "id": "info-title",
-      "type": "element_text",
-      "x": 0,
-      "y": 2100,
-      "w": 575,
-      "h": 60,
-      "z": 10,
-      "props": {
-        "text": "TRÂN TRỌNG KÍNH MỜI",
-        "fontSize": 26,
+        "text": "NHÀ TRAI\nÔng: Trần Văn Hùng\nBà: Phạm Thị Lan\nĐịa chỉ: Số 12, Ngõ 34, Phố Huế, Hai Bà Trưng, Hà Nội",
+        "fontSize": 16,
         "color": "#30530F",
         "fontFamily": "serif",
-        "align": "center",
-        "letterSpacing": 2
+        "align": "left",
+        "lineHeight": 1.6
       }
     },
     {
-      "id": "parents-block",
+      "id": "bride-family-block",
       "type": "element_text",
-      "x": 20,
-      "y": 2200,
-      "w": 535,
+      "x": 300,
+      "y": 1150,
+      "w": 235,
+      "h": 250,
+      "z": 10,
+      "props": {
+        "text": "NHÀ GÁI\nÔng: Nguyễn Văn Bình\nBà: Phan Thị Hương\nĐịa chỉ: Số 56, Đường Láng, Đống Đa, Hà Nội",
+        "fontSize": 16,
+        "color": "#30530F",
+        "fontFamily": "serif",
+        "align": "right",
+        "lineHeight": 1.6
+      }
+    },
+    {
+      "id": "vu-quy-box",
+      "type": "element_text",
+      "x": 40,
+      "y": 1450,
+      "w": 495,
       "h": 200,
       "z": 10,
       "props": {
-        "text": "Đại diện gia đình Nhà trai:\nÔng Trần Văn Hùng & Bà Phạm Thị Lan\n\nĐại diện gia đình Nhà gái:\nÔng Nguyễn Văn Bình & Bà Phan Thị Hương",
+        "text": "LỄ VU QUY\nTại tư gia nhà gái vào hồi 09:00\nNgày 24 tháng 05 năm 2026",
         "fontSize": 18,
         "color": "#30530F",
         "fontFamily": "serif",
         "align": "center",
-        "lineHeight": 2
+        "lineHeight": 1.8,
+        "border": "1px solid #C19B76",
+        "padding": "20px"
+      }
+    },
+    {
+      "id": "thanh-hon-box",
+      "type": "element_text",
+      "x": 40,
+      "y": 1680,
+      "w": 495,
+      "h": 200,
+      "z": 10,
+      "props": {
+        "text": "LỄ THÀNH HÔN\nTại Trung tâm Tiệc cưới Hoàng Gia vào hồi 18:00\nNgày 24 tháng 05 năm 2026",
+        "fontSize": 18,
+        "color": "#30530F",
+        "fontFamily": "serif",
+        "align": "center",
+        "lineHeight": 1.8,
+        "backgroundColor": "rgba(48, 83, 15, 0.05)",
+        "padding": "20px"
       }
     },
     {
       "id": "calendar-widget",
       "type": "element_calendar",
       "x": 87,
-      "y": 2600,
+      "y": 2000,
       "w": 400,
       "h": 400,
       "z": 10,
       "props": {
         "date": "2026-05-24",
-        "primaryColor": "#30530F",
-        "label": "Ngày trọng đại"
+        "primaryColor": "#30530F"
       }
     },
     {
       "id": "countdown-widget",
       "type": "element_countdown",
       "x": 77,
-      "y": 3100,
+      "y": 2450,
       "w": 420,
       "h": 120,
       "z": 10,
@@ -212,69 +203,16 @@
       }
     },
     {
-      "id": "timeline-title",
-      "type": "element_text",
-      "x": 0,
-      "y": 3500,
-      "w": 575,
-      "h": 60,
-      "z": 10,
-      "props": {
-        "text": "LỊCH TRÌNH LỄ CƯỚI",
-        "fontSize": 24,
-        "color": "#30530F",
-        "fontFamily": "serif",
-        "align": "center",
-        "letterSpacing": 4,
-        "fontWeight": "bold"
-      }
-    },
-    {
-      "id": "timeline-widget",
-      "type": "element_timeline",
-      "x": 50,
-      "y": 3650,
-      "w": 475,
-      "h": 800,
-      "z": 10,
-      "props": {
-        "accentColor": "#30530F",
-        "lineColor": "#C19B76",
-        "items": [
-          {
-            "time": "17:30",
-            "title": "WELCOME DRINK",
-            "desc": "Đón khách và tiệc trà nhẹ"
-          },
-          {
-            "time": "18:30",
-            "title": "WEDDING CEREMONY",
-            "desc": "Lễ thành hôn và trao nhẫn"
-          },
-          {
-            "time": "19:00",
-            "title": "DINNER PARTY",
-            "desc": "Khai tiệc và chúc mừng"
-          },
-          {
-            "time": "20:30",
-            "title": "MUSIC & DANCE",
-            "desc": "Giao lưu âm nhạc cùng bạn bè"
-          }
-        ]
-      }
-    },
-    {
       "id": "album-title",
       "type": "element_text",
       "x": 0,
-      "y": 4700,
+      "y": 2800,
       "w": 575,
       "h": 60,
       "z": 10,
       "props": {
-        "text": "KHOẢNH KHẮC HẠNH PHÚC",
-        "fontSize": 24,
+        "text": "OUR WEDDING ALBUM",
+        "fontSize": 28,
         "color": "#30530F",
         "fontFamily": "serif",
         "align": "center",
@@ -285,27 +223,88 @@
       "id": "album-widget",
       "type": "element_album",
       "x": 37,
-      "y": 4850,
+      "y": 2900,
       "w": 500,
-      "h": 1000,
+      "h": 1200,
       "z": 10,
       "props": {
         "columns": 2,
-        "gap": 20
+        "gap": 15
       }
     },
     {
-      "id": "footer-deco",
-      "type": "element_image",
-      "x": 180,
-      "y": 8500,
-      "w": 220,
-      "h": 220,
-      "z": 1,
+      "id": "timeline-widget",
+      "type": "element_timeline",
+      "x": 50,
+      "y": 4200,
+      "w": 475,
+      "h": 800,
+      "z": 10,
       "props": {
-        "src": "/templates/hoa-moc-xanh/flower.webp",
-        "objectFit": "contain",
-        "opacity": 0.8
+        "accentColor": "#30530F",
+        "items": [
+          {
+            "time": "17:30",
+            "title": "Đón khách",
+            "desc": "Tea break & Chụp ảnh lưu niệm"
+          },
+          {
+            "time": "18:30",
+            "title": "Lễ thành hôn",
+            "desc": "Nghi lễ chính thức"
+          },
+          {
+            "time": "19:00",
+            "title": "Khai tiệc",
+            "desc": "Thưởng thức ẩm thực"
+          },
+          {
+            "time": "20:30",
+            "title": "Âm nhạc",
+            "desc": "Giao lưu văn nghệ"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gift-title",
+      "type": "element_text",
+      "x": 0,
+      "y": 5200,
+      "w": 575,
+      "h": 60,
+      "z": 10,
+      "props": {
+        "text": "HỘP MỪNG CƯỚI",
+        "fontSize": 28,
+        "color": "#30530F",
+        "fontFamily": "serif",
+        "align": "center",
+        "letterSpacing": 4
+      }
+    },
+    {
+      "id": "bank-widget",
+      "type": "element_bank",
+      "x": 37,
+      "y": 5350,
+      "w": 500,
+      "h": 600,
+      "z": 10,
+      "props": {
+        "primaryColor": "#30530F",
+        "accounts": [
+          {
+            "bank": "VietinBank",
+            "account": "1012345678",
+            "name": "Trần Minh Quân"
+          },
+          {
+            "bank": "BIDV",
+            "account": "1234567890",
+            "name": "Nguyễn Thu Hà"
+          }
+        ]
       }
     }
   ]

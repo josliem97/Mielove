@@ -318,7 +318,7 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                 // Special case for Hoa Moc Xanh demo (Ensure it always works)
                 if (params.slug === "hoa-moc-xanh") {
                     try {
-                        const hmxConfigRes = await axios.get("/hoa_moc_xanh_config.json");
+                        const hmxConfigRes = await axios.get("/hoa_moc_xanh_config_v2.json");
                         const mockData = {
                             id: 9999,
                             owner_id: 1,

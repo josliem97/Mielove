@@ -155,7 +155,38 @@ export const EventCardBlock = ({ props }: { props: any }) => {
 
 // -- Timeline Block --
 export const TimelineBlock = ({ props }: { props: any }) => {
-  return null; 
+  const items = props?.items || [];
+  const accentColor = props?.accentColor || "#30530F";
+
+  return (
+    <div className="w-full flex flex-col gap-10 py-6 relative">
+      <div className="absolute left-1/2 top-0 bottom-0 w-px bg-stone-200 -translate-x-1/2 hidden md:block"></div>
+      {items.map((item: any, i: number) => (
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          key={i} 
+          className={`flex flex-col md:flex-row items-center gap-4 relative z-10 ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+        >
+          <div className="flex-1 text-center md:text-right hidden md:block">
+            {i % 2 === 0 && <span className="text-xl font-serif font-bold text-[#30530F]">{item.time}</span>}
+            {i % 2 !== 0 && <span className="text-sm font-medium text-stone-600 uppercase tracking-widest">{item.title}</span>}
+          </div>
+          
+          <div className="w-12 h-12 rounded-full border-4 border-white shadow-md flex items-center justify-center z-20" style={{ backgroundColor: accentColor }}>
+             <span className="text-white text-[10px] font-bold">{item.time}</span>
+          </div>
+          
+          <div className="flex-1 text-center md:text-left">
+            <div className="md:hidden text-xs font-black text-[#30530F] mb-1">{item.time}</div>
+            <div className="text-lg font-serif font-bold text-stone-800">{item.title}</div>
+            <div className="md:hidden text-sm font-medium text-stone-400 uppercase tracking-widest mt-1">{item.title === 'Đón khách' ? 'Welcome' : 'Event'}</div>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  );
 };
 
 // -- Dresscode Block --

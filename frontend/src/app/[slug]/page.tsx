@@ -320,18 +320,42 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                 // Special case for Hoa Moc Xanh demo (Ensure it always works)
                 if (params.slug === "hoa-moc-xanh") {
                     try {
-                        const hmxConfigRes = await axios.get("/hoa_moc_xanh_config_v9.json");
+                        const hmxConfigRes = await axios.get("/hoa_moc_xanh_config_v10.json");
                         const mockData = {
                             id: 9999,
                             owner_id: 1,
-                            template_id: 1,
-                            slug: "hoa-moc-xanh",
                             groom_name: "Minh Quân",
                             bride_name: "Thu Hà",
-                            wedding_date: "2026-05-24T18:00:00",
-                            location: "Tiệc Cưới Hoàng Gia, Hà Nội",
-                            is_paid: true,
-                            config_data: hmxConfigRes.data
+                            wedding_date: "2026-05-24T09:00:00",
+                            location: "Tư gia nhà trai",
+                            map_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.924403936355!2d105.8164543!3d21.0357106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab0d127a01e7%3A0xabed7c36b11bc638!2zVmluaG9tZXMgTWV0cm9wb2xpcw!5e0!3m2!1svi!2s!4v1713580000000!5m2!1svi!2s",
+                            music_url: "/music/My Love - Westlife.mp3",
+                            bank_qr_code: "https://img.vietqr.io/image/970415-8866886688-compact2.jpg?amount=0&addInfo=Mung%20cuoi%20Minh%20Quan%20Thu%20Ha",
+                            bank_name: "VietinBank",
+                            bank_account: "8866886688",
+                            bank_account_name: "TRẦN MINH QUÂN",
+                            template_id: 53,
+                            config_data: {
+                                ...hmxConfigRes.data,
+                                groom_bank: {
+                                    name: "Trần Minh Quân",
+                                    bank: "VietinBank",
+                                    account: "8866886688",
+                                    qr: "https://img.vietqr.io/image/970415-8866886688-compact2.jpg?amount=0&addInfo=Mung%20cuoi%20Minh%20Quan"
+                                },
+                                bride_bride: { // Special key for popup logic
+                                    name: "Nguyễn Thu Hà",
+                                    bank: "BIDV",
+                                    account: "6665558888",
+                                    qr: "https://img.vietqr.io/image/970418-6665558888-compact2.jpg?amount=0&addInfo=Mung%20cuoi%20Thu%20Ha"
+                                },
+                                bride_bank: {
+                                    name: "Nguyễn Thu Hà",
+                                    bank: "BIDV",
+                                    account: "6665558888",
+                                    qr: "https://img.vietqr.io/image/970418-6665558888-compact2.jpg?amount=0&addInfo=Mung%20cuoi%20Thu%20Ha"
+                                }
+                            }
                         };
                         setWedding(mockData as any);
                         setLoading(false);
@@ -692,19 +716,35 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
             <AnimatePresence>
                 {showGiftModal && (
                     <div className="fixed inset-0 bg-black/60 z-[10000] flex items-center justify-center p-4 backdrop-blur-sm">
-                        <motion.div initial={{ scale: 0.9 }} animate={{ scale: 1 }} className="bg-white rounded-3xl w-full max-w-sm overflow-hidden shadow-2xl relative p-8 text-center">
+                        <motion.div initial={{ scale: 0.9 }} animate={{ scale: 1 }} className="bg-white rounded-3xl w-full max-w-3xl overflow-hidden shadow-2xl relative p-8 text-center">
                             <button onClick={() => setShowGiftModal(false)} className="absolute top-4 right-4 text-gray-400">✕</button>
-                            <h3 className="text-2xl font-serif text-[#6d0208] mb-6">Mừng Cưới Online</h3>
-                            <div className="flex mb-6 bg-gray-50 rounded-xl p-1">
-                                <button onClick={() => setActiveGiftTab('groom')} className={`flex-1 py-2 rounded-lg text-xs font-bold ${activeGiftTab === 'groom' ? 'bg-white text-[#6d0208] shadow-sm' : 'text-gray-400'}`}>Nhà Trai</button>
-                                <button onClick={() => setActiveGiftTab('bride')} className={`flex-1 py-2 rounded-lg text-xs font-bold ${activeGiftTab === 'bride' ? 'bg-white text-[#6d0208] shadow-sm' : 'text-gray-400'}`}>Nhà Gái</button>
+                            <h3 className="text-3xl font-serif text-[#30530F] mb-8">Hộp Mừng Cưới</h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                {/* Groom Bank */}
+                                <div className="bg-[#fcf9f6] p-6 rounded-2xl border border-[#30530F]/10 shadow-sm flex flex-col items-center">
+                                    <p className="text-sm font-bold text-[#30530F] mb-4 uppercase tracking-widest">Chú Rể - Minh Quân</p>
+                                    <div className="w-44 h-44 bg-white p-2 rounded-xl shadow-inner mb-4">
+                                        <img src={wedding.config_data?.groom_bank?.qr || wedding.bank_qr_code} className="w-full h-full object-contain" />
+                                    </div>
+                                    <p className="text-sm font-black text-stone-800 uppercase">{wedding.config_data?.groom_bank?.name || "Trần Minh Quân"}</p>
+                                    <p className="text-xs text-stone-500">{wedding.config_data?.groom_bank?.bank || "VietinBank"} - {wedding.config_data?.groom_bank?.account || "8866886688"}</p>
+                                    <button className="mt-4 flex items-center gap-2 text-[10px] font-bold text-[#30530F] border border-[#30530F]/20 px-4 py-1.5 rounded-full bg-white hover:bg-[#30530F] hover:text-white transition-all">
+                                        📥 Lưu QR
+                                    </button>
+                                </div>
+                                {/* Bride Bank */}
+                                <div className="bg-[#fcf9f6] p-6 rounded-2xl border border-[#30530F]/10 shadow-sm flex flex-col items-center">
+                                    <p className="text-sm font-bold text-[#30530F] mb-4 uppercase tracking-widest">Cô Dâu - Thu Hà</p>
+                                    <div className="w-44 h-44 bg-white p-2 rounded-xl shadow-inner mb-4">
+                                        <img src={wedding.config_data?.bride_bank?.qr || wedding.bank_qr_code} className="w-full h-full object-contain" />
+                                    </div>
+                                    <p className="text-sm font-black text-stone-800 uppercase">{wedding.config_data?.bride_bank?.name || "Nguyễn Thu Hà"}</p>
+                                    <p className="text-xs text-stone-500">{wedding.config_data?.bride_bank?.bank || "BIDV"} - {wedding.config_data?.bride_bank?.account || "6665558888"}</p>
+                                    <button className="mt-4 flex items-center gap-2 text-[10px] font-bold text-[#30530F] border border-[#30530F]/20 px-4 py-1.5 rounded-full bg-white hover:bg-[#30530F] hover:text-white transition-all">
+                                        📥 Lưu QR
+                                    </button>
+                                </div>
                             </div>
-                            <img 
-                                src={activeGiftTab === 'groom' ? (wedding.config_data?.groom_bank?.qr || wedding.bank_qr_code) : (wedding.config_data?.bride_bank?.qr || wedding.bank_qr_code)} 
-                                className="w-48 h-48 mx-auto mb-4 object-contain" 
-                            />
-                            <p className="font-bold text-[#6d0208]">{activeGiftTab === 'groom' ? (wedding.config_data?.groom_bank?.account || wedding.bank_account) : (wedding.config_data?.bride_bank?.account || wedding.bank_account)}</p>
-                            <p className="text-xs text-gray-500 uppercase">{activeGiftTab === 'groom' ? (wedding.config_data?.groom_bank?.name || wedding.bank_account_name) : (wedding.config_data?.bride_bank?.name || wedding.bank_account_name)}</p>
                         </motion.div>
                     </div>
                 )}

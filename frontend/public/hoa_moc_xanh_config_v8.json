@@ -1,0 +1,340 @@
+{
+  "canvas": {
+    "width": 575,
+    "height": 7500,
+    "backgroundColor": "#FFFFFF",
+    "texture": "none"
+  },
+  "components": [
+    {
+      "id": "bg-flower-top",
+      "type": "element_image",
+      "x": -100,
+      "y": 0,
+      "w": 800,
+      "h": 800,
+      "z": 1,
+      "props": {
+        "src": "/templates/hoa-moc-xanh/flower.webp",
+        "objectFit": "contain",
+        "opacity": 0.1
+      }
+    },
+    {
+      "id": "bg-flower-mid",
+      "type": "element_image",
+      "x": -150,
+      "y": 1500,
+      "w": 900,
+      "h": 900,
+      "z": 1,
+      "props": {
+        "src": "/templates/hoa-moc-xanh/flower.webp",
+        "objectFit": "contain",
+        "opacity": 0.08,
+        "rotation": 180
+      }
+    },
+    {
+      "id": "hero-deco",
+      "type": "element_image",
+      "x": 0,
+      "y": 420,
+      "w": 575,
+      "h": 110,
+      "z": 2,
+      "props": {
+        "src": "/templates/hoa-moc-xanh/decoration_bar.webp",
+        "objectFit": "cover"
+      }
+    },
+    {
+      "id": "groom-img",
+      "type": "element_image",
+      "x": 265,
+      "y": 140,
+      "w": 275,
+      "h": 330,
+      "z": 5,
+      "rotation": -8,
+      "props": {
+        "src": "https://cdn.chungdoi.com/uploads/296d082d-c2bf-4510-a9e3-c7bdea13f850.webp",
+        "objectFit": "cover",
+        "border": "10px solid #C19B76",
+        "boxShadow": "15px 15px 30px rgba(0,0,0,0.15)"
+      }
+    },
+    {
+      "id": "bride-img",
+      "type": "element_image",
+      "x": 40,
+      "y": 440,
+      "w": 275,
+      "h": 330,
+      "z": 6,
+      "rotation": 8,
+      "props": {
+        "src": "https://cdn.chungdoi.com/uploads/0ac5a43c-3c7b-4650-a2de-c64d1d30f5ed.webp",
+        "objectFit": "cover",
+        "border": "10px solid #C19B76",
+        "boxShadow": "-15px 15px 30px rgba(0,0,0,0.15)"
+      }
+    },
+    {
+      "id": "groom-name",
+      "type": "element_text",
+      "x": 280,
+      "y": 490,
+      "w": 250,
+      "h": 60,
+      "z": 15,
+      "props": {
+        "text": "Trần Minh Quân",
+        "fontSize": 32,
+        "color": "#30530F",
+        "fontFamily": "serif",
+        "align": "right",
+        "fontWeight": "bold",
+        "textShadow": "2px 2px 4px #fff"
+      }
+    },
+    {
+      "id": "bride-name",
+      "type": "element_text",
+      "x": 45,
+      "y": 790,
+      "w": 250,
+      "h": 60,
+      "z": 15,
+      "props": {
+        "text": "Nguyễn Thu Hà",
+        "fontSize": 32,
+        "color": "#30530F",
+        "fontFamily": "serif",
+        "align": "left",
+        "fontWeight": "bold",
+        "textShadow": "2px 2px 4px #fff"
+      }
+    },
+    {
+      "id": "info-h",
+      "type": "element_text",
+      "x": 0,
+      "y": 920,
+      "w": 575,
+      "h": 50,
+      "z": 10,
+      "props": {
+        "text": "THÔNG TIN LỄ CƯỚI",
+        "fontSize": 24,
+        "color": "#30530F",
+        "fontFamily": "serif",
+        "align": "center",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": "p-g",
+      "type": "element_text",
+      "x": 40,
+      "y": 1000,
+      "w": 235,
+      "h": 120,
+      "z": 10,
+      "props": {
+        "text": "Ông Bà\nTrần Văn Hùng\nPhạm Thị Lan\n(Đống Đa, Hà Nội)",
+        "fontSize": 17,
+        "color": "#30530F",
+        "align": "center",
+        "fontWeight": "bold",
+        "lineHeight": 1.4
+      }
+    },
+    {
+      "id": "p-b",
+      "type": "element_text",
+      "x": 300,
+      "y": 1000,
+      "w": 235,
+      "h": 120,
+      "z": 10,
+      "props": {
+        "text": "Ông Bà\nNguyễn Văn Bình\nPhan Thị Hương\n(Cầu Giấy, Hà Nội)",
+        "fontSize": 17,
+        "color": "#30530F",
+        "align": "center",
+        "fontWeight": "bold",
+        "lineHeight": 1.4
+      }
+    },
+    {
+      "id": "ann",
+      "type": "element_text",
+      "x": 0,
+      "y": 1150,
+      "w": 575,
+      "h": 60,
+      "z": 10,
+      "props": {
+        "text": "TRÂN TRỌNG BÁO TIN\nLỄ THÀNH HÔN CỦA CON CHÚNG TÔI",
+        "fontSize": 14,
+        "color": "#30530F",
+        "align": "center",
+        "letterSpacing": 2
+      }
+    },
+    {
+      "id": "c-g",
+      "type": "element_text",
+      "x": 0,
+      "y": 1250,
+      "w": 575,
+      "h": 60,
+      "z": 10,
+      "props": {
+        "text": "Trần Minh Quân",
+        "fontSize": 44,
+        "color": "#30530F",
+        "fontFamily": "serif",
+        "align": "center",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": "c-b",
+      "type": "element_text",
+      "x": 0,
+      "y": 1440,
+      "w": 575,
+      "h": 60,
+      "z": 10,
+      "props": {
+        "text": "Nguyễn Thu Hà",
+        "fontSize": 44,
+        "color": "#30530F",
+        "fontFamily": "serif",
+        "align": "center",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": "date",
+      "type": "element_text",
+      "x": 0,
+      "y": 1650,
+      "w": 575,
+      "h": 200,
+      "z": 10,
+      "props": {
+        "text": "LỄ THÀNH HÔN ĐƯỢC CỬ HÀNH TẠI\nTƯ GIA\nVÀO LÚC: 09:00\nCHỦ NHẬT | 24 | THÁNG 05 | 2026\n(Tức ngày 08/04 năm Bính Ngọ)",
+        "fontSize": 18,
+        "color": "#30530F",
+        "align": "center",
+        "lineHeight": 1.6
+      }
+    },
+    {
+      "id": "alb-h",
+      "type": "element_text",
+      "x": 0,
+      "y": 2100,
+      "w": 575,
+      "h": 60,
+      "z": 10,
+      "props": {
+        "text": "ALBUM ẢNH CƯỚI",
+        "fontSize": 24,
+        "color": "#30530F",
+        "fontFamily": "serif",
+        "align": "center",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": "alb-w",
+      "type": "element_album",
+      "x": 37,
+      "y": 2200,
+      "w": 500,
+      "h": 1000,
+      "z": 10,
+      "props": {
+        "columns": 2,
+        "gap": 15,
+        "images": [
+          "https://cdn.chungdoi.com/uploads/296d082d-c2bf-4510-a9e3-c7bdea13f850.webp",
+          "https://cdn.chungdoi.com/uploads/0ac5a43c-3c7b-4650-a2de-c64d1d30f5ed.webp",
+          "https://cdn.chungdoi.com/uploads/1174458a-fd65-41ed-b86c-626e9366faa2.webp",
+          "https://cdn.chungdoi.com/uploads/3d851ee4-2624-4e33-9c00-e82ae1507c91.webp"
+        ]
+      }
+    },
+    {
+      "id": "map-w",
+      "type": "element_map",
+      "x": 40,
+      "y": 3400,
+      "w": 495,
+      "h": 350,
+      "z": 10,
+      "props": {
+        "location": "Tiệc Cưới Hoàng Gia 2"
+      }
+    },
+    {
+      "id": "tl-w",
+      "type": "element_timeline",
+      "x": 100,
+      "y": 3900,
+      "w": 375,
+      "h": 600,
+      "z": 10,
+      "props": {
+        "accentColor": "#30530F",
+        "items": [
+          {
+            "time": "17:30",
+            "title": "Đón khách"
+          },
+          {
+            "time": "18:30",
+            "title": "Khai tiệc"
+          },
+          {
+            "time": "21:00",
+            "title": "Kết thúc"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bank-w",
+      "type": "element_bank",
+      "x": 37,
+      "y": 4600,
+      "w": 500,
+      "h": 400,
+      "z": 10,
+      "props": {
+        "primaryColor": "#30530F"
+      }
+    },
+    {
+      "id": "thank",
+      "type": "element_text",
+      "x": 0,
+      "y": 5200,
+      "w": 575,
+      "h": 150,
+      "z": 10,
+      "props": {
+        "text": "TRÂN TRỌNG CẢM ƠN\nSự hiện diện của bạn là niềm vinh hạnh của chúng tôi",
+        "fontSize": 20,
+        "color": "#30530F",
+        "fontFamily": "serif",
+        "align": "center",
+        "lineHeight": 1.6
+      }
+    }
+  ]
+}

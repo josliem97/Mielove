@@ -1,7 +1,7 @@
 {
   "canvas": {
     "width": 575,
-    "height": 11000,
+    "height": 10500,
     "backgroundColor": "#FFFFFF",
     "texture": "none"
   },
@@ -18,7 +18,8 @@
         "src": "/templates/hoa-moc-xanh/flower.webp",
         "objectFit": "contain",
         "opacity": 0.25
-      }
+      },
+      "className": "animate-float"
     },
     {
       "id": "bg-flower-2",
@@ -33,21 +34,8 @@
         "objectFit": "contain",
         "opacity": 0.15,
         "rotation": 180
-      }
-    },
-    {
-      "id": "bg-flower-3",
-      "type": "element_image",
-      "x": -100,
-      "y": 3500,
-      "w": 750,
-      "h": 750,
-      "z": 1,
-      "props": {
-        "src": "/templates/hoa-moc-xanh/flower.webp",
-        "objectFit": "contain",
-        "opacity": 0.2
-      }
+      },
+      "className": "animate-float"
     },
     {
       "id": "hero-deco-bar",
@@ -60,10 +48,14 @@
       "props": {
         "src": "/templates/hoa-moc-xanh/decoration_bar.webp",
         "objectFit": "cover"
+      },
+      "animation": {
+        "preset": "miu-fadeIn",
+        "duration": 1500
       }
     },
     {
-      "id": "groom-img-styled",
+      "id": "groom-img",
       "type": "element_image",
       "x": 260,
       "y": 150,
@@ -74,29 +66,15 @@
       "props": {
         "src": "https://cdn.chungdoi.com/uploads/296d082d-c2bf-4510-a9e3-c7bdea13f850.webp",
         "objectFit": "cover",
-        "border": "6px solid #C19B76",
-        "boxShadow": "15px 15px 30px rgba(0,0,0,0.15)"
+        "border": "6px solid #C19B76"
+      },
+      "animation": {
+        "preset": "miu-fadeInRight",
+        "duration": 1000
       }
     },
     {
-      "id": "groom-name-outside",
-      "type": "element_text",
-      "x": 280,
-      "y": 480,
-      "w": 250,
-      "h": 50,
-      "z": 15,
-      "props": {
-        "text": "Trần Minh Quân",
-        "fontSize": 28,
-        "color": "#30530F",
-        "fontFamily": "serif",
-        "align": "right",
-        "fontWeight": "bold"
-      }
-    },
-    {
-      "id": "bride-img-styled",
+      "id": "bride-img",
       "type": "element_image",
       "x": 40,
       "y": 450,
@@ -107,77 +85,34 @@
       "props": {
         "src": "https://cdn.chungdoi.com/uploads/0ac5a43c-3c7b-4650-a2de-c64d1d30f5ed.webp",
         "objectFit": "cover",
-        "border": "6px solid #C19B76",
-        "boxShadow": "-15px 15px 30px rgba(0,0,0,0.15)"
+        "border": "6px solid #C19B76"
+      },
+      "animation": {
+        "preset": "miu-fadeInLeft",
+        "duration": 1000,
+        "delay": 300
       }
     },
     {
-      "id": "bride-name-outside",
-      "type": "element_text",
-      "x": 40,
-      "y": 780,
-      "w": 250,
-      "h": 50,
-      "z": 15,
-      "props": {
-        "text": "Nguyễn Thu Hà",
-        "fontSize": 28,
-        "color": "#30530F",
-        "fontFamily": "serif",
-        "align": "left",
-        "fontWeight": "bold"
-      }
-    },
-    {
-      "id": "info-title",
+      "id": "hero-names",
       "type": "element_text",
       "x": 0,
-      "y": 950,
+      "y": 800,
       "w": 575,
-      "h": 60,
+      "h": 80,
       "z": 10,
       "props": {
-        "text": "THÔNG TIN LỄ CƯỚI",
-        "fontSize": 24,
-        "color": "#30530F",
-        "fontFamily": "serif",
-        "align": "center",
-        "fontWeight": "bold",
-        "letterSpacing": 2
-      }
-    },
-    {
-      "id": "parents-block",
-      "type": "element_text",
-      "x": 40,
-      "y": 1050,
-      "w": 495,
-      "h": 250,
-      "z": 10,
-      "props": {
-        "text": "NHÀ TRAI: Ông Trần Văn Hùng & Bà Phạm Thị Lan\nNHÀ GÁI: Ông Nguyễn Văn Bình & Bà Phan Thị Hương",
-        "fontSize": 18,
-        "color": "#30530F",
-        "fontFamily": "serif",
-        "align": "center",
-        "lineHeight": 2
-      }
-    },
-    {
-      "id": "album-title",
-      "type": "element_text",
-      "x": 0,
-      "y": 1400,
-      "w": 575,
-      "h": 60,
-      "z": 10,
-      "props": {
-        "text": "ALBUM ẢNH CƯỚI",
-        "fontSize": 24,
+        "text": "Minh Quân & Thu Hà",
+        "fontSize": 42,
         "color": "#30530F",
         "fontFamily": "serif",
         "align": "center",
         "fontWeight": "bold"
+      },
+      "animation": {
+        "preset": "miu-fadeInUp",
+        "duration": 1200,
+        "delay": 600
       }
     },
     {
@@ -190,60 +125,11 @@
       "z": 10,
       "props": {
         "columns": 2,
-        "gap": 15,
-        "images": [
-          "https://cdn.chungdoi.com/uploads/296d082d-c2bf-4510-a9e3-c7bdea13f850.webp",
-          "https://cdn.chungdoi.com/uploads/0ac5a43c-3c7b-4650-a2de-c64d1d30f5ed.webp",
-          "https://cdn.chungdoi.com/uploads/1174458a-fd65-41ed-b86c-626e9366faa2.webp",
-          "https://cdn.chungdoi.com/uploads/3d851ee4-2624-4e33-9c00-e82ae1507c91.webp"
-        ]
-      }
-    },
-    {
-      "id": "timeline-title",
-      "type": "element_text",
-      "x": 0,
-      "y": 2650,
-      "w": 575,
-      "h": 60,
-      "z": 10,
-      "props": {
-        "text": "LỊCH TRÌNH NGÀY CƯỚI",
-        "fontSize": 24,
-        "color": "#30530F",
-        "fontFamily": "serif",
-        "align": "center",
-        "fontWeight": "bold"
-      }
-    },
-    {
-      "id": "timeline-widget",
-      "type": "element_timeline",
-      "x": 100,
-      "y": 2750,
-      "w": 375,
-      "h": 600,
-      "z": 10,
-      "props": {
-        "accentColor": "#30530F",
-        "items": [
-          {
-            "time": "17:30",
-            "title": "Đón khách"
-          },
-          {
-            "time": "18:30",
-            "title": "Khai tiệc"
-          },
-          {
-            "time": "19:00",
-            "title": "Lễ chính"
-          },
-          {
-            "time": "21:00",
-            "title": "Kết thúc"
-          }
-        ]
+        "gap": 15
+      },
+      "animation": {
+        "preset": "miu-fadeIn",
+        "duration": 1000
       }
     }
   ]

@@ -16,11 +16,13 @@ export const CalendarBlock = ({ props }: { props: any }) => {
   // Calculate first day of month and days in month for a real calendar grid if needed
   // But for now, we'll follow the visual layout of the image
   
+  const primaryColor = props?.primaryColor || '#30530F';
+  
   return (
     <div className="w-full flex flex-col items-center justify-center bg-transparent py-10 select-none">
       <div className="flex flex-col items-center mb-10 relative">
-        <div className="text-[100px] font-serif text-[#6d0208] leading-none opacity-90 tracking-tighter" style={{ fontFamily: 'Cormorant Garamond' }}>{year}</div>
-        <div className="text-[42px] font-script text-[#6d0208] -mt-8 italic drop-shadow-sm" style={{ fontFamily: 'OpeningScript' }}>{monthName}</div>
+        <div className="text-[100px] font-serif leading-none opacity-90 tracking-tighter" style={{ fontFamily: 'Cormorant Garamond', color: primaryColor }}>{year}</div>
+        <div className="text-[42px] font-script -mt-8 italic drop-shadow-sm" style={{ fontFamily: 'OpeningScript', color: primaryColor }}>{monthName}</div>
       </div>
       
       <div className="grid grid-cols-7 gap-2 w-full max-w-[360px] px-4">
@@ -32,11 +34,11 @@ export const CalendarBlock = ({ props }: { props: any }) => {
           const isWeddingDay = d === day;
           return (
             <div key={i} className={`
-              h-10 flex items-center justify-center text-[15px] border border-[#6d0208]/10 rounded-lg shadow-sm bg-white/50 backdrop-blur-sm transition-all
-              ${isWeddingDay ? 'ring-2 ring-[#6d0208] ring-offset-2' : ''}
-            `}>
+              h-10 flex items-center justify-center text-[15px] border border-stone-100 rounded-lg shadow-sm bg-white/50 backdrop-blur-sm transition-all
+              ${isWeddingDay ? 'ring-2 ring-offset-2' : ''}
+            `} style={{ ringColor: isWeddingDay ? primaryColor : 'transparent' }}>
               {isWeddingDay ? (
-                <div className="relative flex items-center justify-center w-full h-full bg-[#6d0208] rounded-lg text-white font-black">
+                <div className="relative flex items-center justify-center w-full h-full rounded-lg text-white font-black" style={{ backgroundColor: primaryColor }}>
                   <span className="text-[10px] absolute -top-1 -right-1">❤️</span>
                   {d}
                 </div>

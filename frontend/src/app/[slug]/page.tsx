@@ -140,6 +140,7 @@ const RenderCanvasComponent = ({ comp, wedding, guest, params, replacePlaceholde
             style={{
                 position: "absolute",
                 left: normalizedComp.x, top: normalizedComp.y, width: normalizedComp.w, height: normalizedComp.h, zIndex: normalizedComp.z,
+                rotate: normalizedComp.rotation || 0,
                 "--miu-node-rotate": `${normalizedComp.rotation || 0}deg`,
                 animationName: (normalizedComp.animation?.loop) ? (normalizedComp.animation?.preset || "none") : "none",
                 animationDuration: `${normalizedComp.animation?.duration || 1000}ms`,
@@ -180,7 +181,7 @@ const RenderCanvasComponent = ({ comp, wedding, guest, params, replacePlaceholde
                     whiteSpace: "pre-wrap",
                     display: 'flex', flexDirection: 'column',
                     justifyContent: normalizedComp.props?.valign || 'center',
-                    textShadow: normalizedComp.props?.fontFamily === 'OpeningScript' ? '2px 2px 4px rgba(0,0,0,0.1)' : 'none',
+                    textShadow: normalizedComp.props?.textShadow || (normalizedComp.props?.fontFamily === 'OpeningScript' ? '2px 2px 4px rgba(0,0,0,0.1)' : 'none'),
                     ...(normalizedComp.style || {})
                 }}>
                     {replacePlaceholders(String(normalizedComp.props?.text || ""))}
@@ -202,6 +203,7 @@ const RenderCanvasComponent = ({ comp, wedding, guest, params, replacePlaceholde
                         width: "100%", height: "100%",
                         overflow: "hidden",
                         borderRadius: normalizedComp.props?.borderRadius || 0,
+                        border: normalizedComp.props?.border || 'none',
                         boxShadow: normalizedComp.props?.isDecor ? 'none' : (normalizedComp.props?.boxShadow || 'none'),
                         ...(normalizedComp.style || {})
                     }}

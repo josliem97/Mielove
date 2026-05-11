@@ -249,8 +249,13 @@ export const WishesBlock = ({ props, slug }: { props: any, slug: string }) => {
   const fetchWishes = async () => {
     try {
       const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL || "https://mielove.onrender.com"}/api/v1/guests/wishes/${slug}`);
-      setWishes(res.data);
-    } catch (e) {}
+      const apiWishes = res.data || [];
+      const mockWishes = props?.mockWishes || [];
+      // Combine and sort by date if possible, or just mock first
+      setWishes([...mockWishes, ...apiWishes]);
+    } catch (e) {
+      setWishes(props?.mockWishes || []);
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {

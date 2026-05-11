@@ -320,7 +320,7 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                 // Special case for Hoa Moc Xanh demo (Ensure it always works)
                 if (params.slug === "hoa-moc-xanh") {
                     try {
-                        const hmxConfigRes = await axios.get("/hoa_moc_xanh_config_v16.json");
+                        const hmxConfigRes = await axios.get("/hoa_moc_xanh_config_v17.json");
                         const mockData = {
                             id: 9999,
                             owner_id: 1,
@@ -772,6 +772,24 @@ export default function WeddingCard({ params }: { params: { slug: string } }) {
                     </div>
                 )}
             </AnimatePresence>
+            <style jsx global>{`
+                @keyframes shake {
+                    0%, 100% { transform: rotate(0deg); }
+                    25% { transform: rotate(-5deg); }
+                    75% { transform: rotate(5deg); }
+                }
+                .animate-shake {
+                    display: inline-block;
+                    animation: shake 0.5s ease-in-out infinite;
+                }
+                @keyframes spin-slow {
+                    from { transform: rotate(0deg); }
+                    to { transform: rotate(360deg); }
+                }
+                .animate-spin-slow {
+                    animation: spin-slow 8s linear infinite;
+                }
+            `}</style>
         </div>
     );
 }

@@ -9,6 +9,7 @@ import {
     DresscodeBlock, AlbumBlock, WishesBlock, BankBlock, MapBlock, SliderBlock, EventCardBlock, QuoteBlock, RSVPBlock
 } from "@/components/canvas/blocks";
 import { Opening } from "@/components/canvas/Opening";
+import { PetalRain } from "@/components/canvas/PetalRain";
 import { FABDock } from "@/components/canvas/FABDock";
 
 type WeddingData = {

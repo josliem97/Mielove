@@ -30,7 +30,7 @@
       "z": 5,
       "rotation": -5,
       "props": {
-        "src": "https://images.unsplash.com/photo-1519741497674-611481863552?w=800",
+        "src": "https://cdn.chungdoi.com/uploads/296d082d-c2bf-4510-a9e3-c7bdea13f850.webp",
         "objectFit": "cover",
         "border": "8px solid #C19B76",
         "boxShadow": "15px 15px 30px rgba(0,0,0,0.15)"
@@ -46,7 +46,7 @@
       "z": 10,
       "rotation": 8,
       "props": {
-        "src": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800",
+        "src": "https://cdn.chungdoi.com/uploads/0ac5a43c-3c7b-4650-a2de-c64d1d30f5ed.webp",
         "objectFit": "cover",
         "border": "8px solid #C19B76",
         "boxShadow": "10px 10px 20px rgba(0,0,0,0.1)"
@@ -100,18 +100,18 @@
       }
     },
     {
-      "id": "section-flower-bg-1",
+      "id": "journey-img",
       "type": "element_image",
-      "x": 350,
-      "y": 1200,
-      "w": 300,
+      "x": 87,
+      "y": 950,
+      "w": 400,
       "h": 300,
-      "z": 1,
+      "z": 10,
       "props": {
-        "src": "/templates/hoa-moc-xanh/flower.webp",
-        "objectFit": "contain",
-        "opacity": 0.2,
-        "rotation": 45
+        "src": "https://cdn.chungdoi.com/uploads/1174458a-fd65-41ed-b86c-626e9366faa2.webp",
+        "objectFit": "cover",
+        "borderRadius": 0,
+        "border": "2px solid #C19B76"
       }
     },
     {
@@ -148,20 +148,6 @@
         "align": "center",
         "lineHeight": 1.8,
         "fontStyle": "italic"
-      }
-    },
-    {
-      "id": "info-flower-bg",
-      "type": "element_image",
-      "x": -100,
-      "y": 2000,
-      "w": 400,
-      "h": 400,
-      "z": 1,
-      "props": {
-        "src": "/templates/hoa-moc-xanh/flower.webp",
-        "objectFit": "contain",
-        "opacity": 0.3
       }
     },
     {
@@ -213,22 +199,6 @@
       }
     },
     {
-      "id": "countdown-title",
-      "type": "element_text",
-      "x": 0,
-      "y": 3050,
-      "w": 575,
-      "h": 40,
-      "z": 10,
-      "props": {
-        "text": "Dành cho ngày hạnh phúc chỉ còn:",
-        "fontSize": 16,
-        "color": "#C19B76",
-        "fontFamily": "serif",
-        "align": "center"
-      }
-    },
-    {
       "id": "countdown-widget",
       "type": "element_countdown",
       "x": 77,
@@ -238,8 +208,7 @@
       "z": 10,
       "props": {
         "targetDate": "2026-05-24T18:00",
-        "color": "#30530F",
-        "backgroundColor": "rgba(48, 83, 15, 0.05)"
+        "color": "#30530F"
       }
     },
     {
@@ -322,82 +291,7 @@
       "z": 10,
       "props": {
         "columns": 2,
-        "gap": 20,
-        "borderRadius": 0,
-        "border": "2px solid #C19B76"
-      }
-    },
-    {
-      "id": "wishes-bg",
-      "type": "element_image",
-      "x": 0,
-      "y": 6200,
-      "w": 575,
-      "h": 800,
-      "z": 1,
-      "props": {
-        "src": "/templates/hoa-moc-xanh/flower.webp",
-        "objectFit": "contain",
-        "opacity": 0.1
-      }
-    },
-    {
-      "id": "wishes-title",
-      "type": "element_text",
-      "x": 0,
-      "y": 6300,
-      "w": 575,
-      "h": 60,
-      "z": 10,
-      "props": {
-        "text": "GỬI LỜI CHÚC MỪNG",
-        "fontSize": 24,
-        "color": "#30530F",
-        "fontFamily": "serif",
-        "align": "center",
-        "letterSpacing": 4
-      }
-    },
-    {
-      "id": "wishes-widget",
-      "type": "element_wishes",
-      "x": 37,
-      "y": 6450,
-      "w": 500,
-      "h": 600,
-      "z": 10,
-      "props": {
-        "cardStyle": "minimal"
-      }
-    },
-    {
-      "id": "bank-title",
-      "type": "element_text",
-      "x": 0,
-      "y": 7500,
-      "w": 575,
-      "h": 60,
-      "z": 10,
-      "props": {
-        "text": "GỬI QUÀ CHÚC MỪNG",
-        "fontSize": 24,
-        "color": "#30530F",
-        "fontFamily": "serif",
-        "align": "center",
-        "letterSpacing": 4
-      }
-    },
-    {
-      "id": "bank-widget",
-      "type": "element_bank",
-      "x": 37,
-      "y": 7650,
-      "w": 500,
-      "h": 400,
-      "z": 10,
-      "props": {
-        "accentColor": "#30530F",
-        "qrSize": 180
+        "gap": 20
       }
     },
     {
@@ -412,23 +306,6 @@
         "src": "/templates/hoa-moc-xanh/flower.webp",
         "objectFit": "contain",
         "opacity": 0.8
-      }
-    },
-    {
-      "id": "thank-you-footer",
-      "type": "element_text",
-      "x": 0,
-      "y": 8800,
-      "w": 575,
-      "h": 120,
-      "z": 10,
-      "props": {
-        "text": "TRÂN TRỌNG CẢM ƠN\nSự hiện diện của bạn là niềm vinh hạnh của chúng tôi",
-        "fontSize": 20,
-        "color": "#30530F",
-        "fontFamily": "serif",
-        "align": "center",
-        "lineHeight": 1.6
       }
     }
   ]

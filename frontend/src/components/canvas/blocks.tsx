@@ -36,7 +36,7 @@ export const CalendarBlock = ({ props }: { props: any }) => {
             <div key={i} className={`
               h-10 flex items-center justify-center text-[15px] border border-stone-100 rounded-lg shadow-sm bg-white/50 backdrop-blur-sm transition-all
               ${isWeddingDay ? 'ring-2 ring-offset-2' : ''}
-            `} style={{ ringColor: isWeddingDay ? primaryColor : 'transparent' }}>
+            `} style={{ boxShadow: isWeddingDay ? `0 0 0 2px white, 0 0 0 4px ${primaryColor}` : 'none' }}>
               {isWeddingDay ? (
                 <div className="relative flex items-center justify-center w-full h-full rounded-lg text-white font-black" style={{ backgroundColor: primaryColor }}>
                   <span className="text-[10px] absolute -top-1 -right-1">❤️</span>

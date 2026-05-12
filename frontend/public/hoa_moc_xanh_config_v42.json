@@ -184,19 +184,70 @@
       }
     },
     {
+      "id": "ev-announce",
+      "type": "element_text",
+      "x": 0,
+      "y": 2530,
+      "w": 575,
+      "h": 50,
+      "z": 10,
+      "props": {
+        "text": "TRÂN TRỌNG BÁO TIN\nLỄ THÀNH HÔN CỦA CON CHÚNG TÔI",
+        "fontSize": 13,
+        "color": "#30530F",
+        "align": "center",
+        "letterSpacing": 1.5,
+        "lineHeight": 1.8
+      }
+    },
+    {
       "id": "g-hl",
       "type": "element_text",
       "x": 0,
-      "y": 2580,
+      "y": 2600,
       "w": 575,
-      "h": 60,
+      "h": 70,
       "z": 10,
       "props": {
         "text": "Trần Minh Quân",
-        "fontSize": 52,
+        "fontSize": 54,
         "color": "#30530F",
         "align": "center",
-        "fontWeight": "bold",
+        "fontWeight": "400",
+        "fontFamily": "'Cormorant Garamond', serif",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "id": "g-role",
+      "type": "element_text",
+      "x": 0,
+      "y": 2668,
+      "w": 575,
+      "h": 25,
+      "z": 10,
+      "props": {
+        "text": "TRƯỞNG NAM",
+        "fontSize": 11,
+        "color": "#30530F",
+        "align": "center",
+        "letterSpacing": 3
+      }
+    },
+    {
+      "id": "ev-amp",
+      "type": "element_text",
+      "x": 0,
+      "y": 2700,
+      "w": 575,
+      "h": 40,
+      "z": 10,
+      "props": {
+        "text": "&",
+        "fontSize": 34,
+        "color": "#30530F",
+        "align": "center",
+        "fontStyle": "italic",
         "fontFamily": "'Cormorant Garamond', serif"
       }
     },
@@ -204,17 +255,34 @@
       "id": "b-hl",
       "type": "element_text",
       "x": 0,
-      "y": 2690,
+      "y": 2742,
       "w": 575,
-      "h": 60,
+      "h": 70,
       "z": 10,
       "props": {
         "text": "Nguyễn Thu Hà",
-        "fontSize": 52,
+        "fontSize": 54,
         "color": "#30530F",
         "align": "center",
-        "fontWeight": "bold",
-        "fontFamily": "'Cormorant Garamond', serif"
+        "fontWeight": "400",
+        "fontFamily": "'Cormorant Garamond', serif",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "id": "b-role",
+      "type": "element_text",
+      "x": 0,
+      "y": 2810,
+      "w": 575,
+      "h": 25,
+      "z": 10,
+      "props": {
+        "text": "ÚT NỮ",
+        "fontSize": 11,
+        "color": "#30530F",
+        "align": "center",
+        "letterSpacing": 3
       }
     },
     {

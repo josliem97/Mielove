@@ -1,0 +1,596 @@
+{
+  "canvas": {
+    "width": 575,
+    "height": 9600,
+    "backgroundColor": "#FFFFFF",
+    "texture": "paper"
+  },
+  "components": [
+    {
+      "id": "f-tl",
+      "type": "element_image",
+      "x": -100,
+      "y": -100,
+      "w": 400,
+      "h": 400,
+      "z": 1,
+      "props": {
+        "src": "/templates/hoa-moc-xanh/flower.webp",
+        "opacity": 0.8
+      }
+    },
+    {
+      "id": "f-tr",
+      "type": "element_image",
+      "x": 300,
+      "y": -120,
+      "w": 350,
+      "h": 350,
+      "z": 1,
+      "props": {
+        "src": "/templates/hoa-moc-xanh/flower.webp",
+        "opacity": 0.6,
+        "rotation": 90
+      }
+    },
+    {
+      "id": "g-img",
+      "type": "element_image",
+      "x": 280,
+      "y": 80,
+      "w": 260,
+      "h": 340,
+      "z": 5,
+      "rotation": -4,
+      "props": {
+        "src": "https://cdn.chungdoi.com/uploads/296d082d-c2bf-4510-a9e3-c7bdea13f850.webp",
+        "objectFit": "cover",
+        "border": "10px solid #C19B76"
+      }
+    },
+    {
+      "id": "b-img",
+      "type": "element_image",
+      "x": 35,
+      "y": 480,
+      "w": 260,
+      "h": 340,
+      "z": 6,
+      "rotation": 4,
+      "props": {
+        "src": "https://cdn.chungdoi.com/uploads/0ac5a43c-3c7b-4650-a2de-c64d1d30f5ed.webp",
+        "objectFit": "cover",
+        "border": "10px solid #C19B76"
+      }
+    },
+    {
+      "id": "names",
+      "type": "element_text",
+      "x": 0,
+      "y": 750,
+      "w": 575,
+      "h": 80,
+      "z": 10,
+      "props": {
+        "text": "MINH QUÂN & THU HÀ",
+        "fontSize": 48,
+        "color": "#30530F",
+        "fontFamily": "'Cormorant Garamond', serif",
+        "align": "center",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": "info-header",
+      "type": "element_text",
+      "x": 0,
+      "y": 880,
+      "w": 575,
+      "h": 60,
+      "z": 10,
+      "props": {
+        "text": "THÔNG TIN LỄ CƯỚI",
+        "fontSize": 26,
+        "color": "#30530F",
+        "align": "center",
+        "fontWeight": "bold",
+        "letterSpacing": 2
+      }
+    },
+    {
+      "id": "info-bg-f",
+      "type": "element_image",
+      "x": 50,
+      "y": 950,
+      "w": 475,
+      "h": 475,
+      "z": 1,
+      "props": {
+        "src": "/templates/hoa-moc-xanh/flower.webp",
+        "opacity": 0.15
+      }
+    },
+    {
+      "id": "groom-p-label",
+      "type": "element_text",
+      "x": 40,
+      "y": 960,
+      "w": 230,
+      "h": 30,
+      "z": 10,
+      "props": {
+        "text": "Ông Bà",
+        "fontSize": 15,
+        "color": "#30530F",
+        "align": "center",
+        "fontFamily": "serif",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "id": "groom-p-names",
+      "type": "element_text",
+      "x": 40,
+      "y": 995,
+      "w": 230,
+      "h": 60,
+      "z": 10,
+      "props": {
+        "text": "Trần Văn Hùng\nPhạm Thị Lan",
+        "fontSize": 19,
+        "color": "#30530F",
+        "align": "center",
+        "fontWeight": "bold",
+        "lineHeight": 1.4
+      }
+    },
+    {
+      "id": "groom-addr",
+      "type": "element_text",
+      "x": 40,
+      "y": 1060,
+      "w": 230,
+      "h": 40,
+      "z": 10,
+      "props": {
+        "text": "25 Ngõ 12 Đặng Văn Ngữ, Đống Đa, Hà Nội",
+        "fontSize": 10,
+        "color": "#30530F",
+        "align": "center",
+        "opacity": 0.8
+      }
+    },
+    {
+      "id": "bride-p-label",
+      "type": "element_text",
+      "x": 305,
+      "y": 960,
+      "w": 230,
+      "h": 30,
+      "z": 10,
+      "props": {
+        "text": "Ông Bà",
+        "fontSize": 15,
+        "color": "#30530F",
+        "align": "center",
+        "fontFamily": "serif",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "id": "bride-p-names",
+      "type": "element_text",
+      "x": 305,
+      "y": 995,
+      "w": 230,
+      "h": 60,
+      "z": 10,
+      "props": {
+        "text": "Nguyễn Văn Bình\nPhan Thị Hương",
+        "fontSize": 19,
+        "color": "#30530F",
+        "align": "center",
+        "fontWeight": "bold",
+        "lineHeight": 1.4
+      }
+    },
+    {
+      "id": "bride-addr",
+      "type": "element_text",
+      "x": 305,
+      "y": 1060,
+      "w": 230,
+      "h": 40,
+      "z": 10,
+      "props": {
+        "text": "18 Ngõ 86 Chùa Hà, Cầu Giấy, Hà Nội",
+        "fontSize": 10,
+        "color": "#30530F",
+        "align": "center",
+        "opacity": 0.8
+      }
+    },
+    {
+      "id": "report-text",
+      "type": "element_text",
+      "x": 0,
+      "y": 1150,
+      "w": 575,
+      "h": 80,
+      "z": 10,
+      "props": {
+        "text": "TRÂN TRỌNG BÁO TIN\nLỄ THÀNH HÔN CỦA CON CHÚNG TÔI",
+        "fontSize": 16,
+        "color": "#30530F",
+        "align": "center",
+        "letterSpacing": 1,
+        "lineHeight": 1.5
+      }
+    },
+    {
+      "id": "g-name-big",
+      "type": "element_text",
+      "x": 0,
+      "y": 1240,
+      "w": 575,
+      "h": 80,
+      "z": 10,
+      "props": {
+        "text": "Trần Minh Quân",
+        "fontSize": 52,
+        "color": "#30530F",
+        "align": "center",
+        "fontFamily": "'Cormorant Garamond', serif"
+      }
+    },
+    {
+      "id": "g-role",
+      "type": "element_text",
+      "x": 0,
+      "y": 1315,
+      "w": 575,
+      "h": 20,
+      "z": 10,
+      "props": {
+        "text": "TRƯỞNG NAM",
+        "fontSize": 10,
+        "color": "#30530F",
+        "align": "center",
+        "letterSpacing": 2,
+        "opacity": 0.7
+      }
+    },
+    {
+      "id": "amp-small",
+      "type": "element_text",
+      "x": 0,
+      "y": 1360,
+      "w": 575,
+      "h": 40,
+      "z": 10,
+      "props": {
+        "text": "&",
+        "fontSize": 32,
+        "color": "#30530F",
+        "align": "center",
+        "fontFamily": "serif",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "id": "b-name-big",
+      "type": "element_text",
+      "x": 0,
+      "y": 1430,
+      "w": 575,
+      "h": 80,
+      "z": 10,
+      "props": {
+        "text": "Nguyễn Thu Hà",
+        "fontSize": 52,
+        "color": "#30530F",
+        "align": "center",
+        "fontFamily": "'Cormorant Garamond', serif"
+      }
+    },
+    {
+      "id": "b-role",
+      "type": "element_text",
+      "x": 0,
+      "y": 1505,
+      "w": 575,
+      "h": 20,
+      "z": 10,
+      "props": {
+        "text": "ÚT NỮ",
+        "fontSize": 10,
+        "color": "#30530F",
+        "align": "center",
+        "letterSpacing": 2,
+        "opacity": 0.7
+      }
+    },
+    {
+      "id": "mid-ph-1",
+      "type": "element_image",
+      "x": 40,
+      "y": 1600,
+      "w": 495,
+      "h": 320,
+      "z": 5,
+      "props": {
+        "src": "https://cdn.chungdoi.com/uploads/1174458a-fd65-41ed-b86c-626e9366faa2.webp",
+        "objectFit": "cover",
+        "borderRadius": "12px"
+      }
+    },
+    {
+      "id": "inv-box-new",
+      "type": "element_text",
+      "x": 50,
+      "y": 1960,
+      "w": 475,
+      "h": 180,
+      "z": 10,
+      "props": {
+        "text": "Vào lúc 09:00\nCHỦ NHẬT 24.05.2026\nTẠI TƯ GIA NHÀ TRAI",
+        "fontSize": 20,
+        "color": "#30530F",
+        "align": "center",
+        "lineHeight": 1.6,
+        "border": "1px solid rgba(48,83,15,0.1)",
+        "padding": "15px",
+        "borderRadius": "12px"
+      }
+    },
+    {
+      "id": "alb-w",
+      "type": "element_album",
+      "x": 37,
+      "y": 2200,
+      "w": 500,
+      "h": 1600,
+      "z": 10,
+      "props": {
+        "columns": 2,
+        "gap": 15,
+        "images": [
+          "https://cdn.chungdoi.com/uploads/296d082d-c2bf-4510-a9e3-c7bdea13f850.webp",
+          "https://cdn.chungdoi.com/uploads/0ac5a43c-3c7b-4650-a2de-c64d1d30f5ed.webp",
+          "https://cdn.chungdoi.com/uploads/1174458a-fd65-41ed-b86c-626e9366faa2.webp",
+          "https://cdn.chungdoi.com/uploads/3d851ee4-2624-4e33-9c00-e82ae1507c91.webp",
+          "https://i.postimg.cc/6pJ97gvg/1773995332651-1770736796361-0438933dad2723797a361.webp",
+          "https://i.postimg.cc/66P6Ky6k/1773995329499-1770736612197-12597987462083336082.webp",
+          "https://cdn.chungdoi.com/uploads/296d082d-c2bf-4510-a9e3-c7bdea13f850.webp",
+          "https://cdn.chungdoi.com/uploads/0ac5a43c-3c7b-4650-a2de-c64d1d30f5ed.webp",
+          "https://cdn.chungdoi.com/uploads/1174458a-fd65-41ed-b86c-626e9366faa2.webp"
+        ]
+      }
+    },
+    {
+      "id": "cd-w",
+      "type": "element_countdown",
+      "x": 77,
+      "y": 3950,
+      "w": 420,
+      "h": 80,
+      "z": 10,
+      "props": {
+        "targetDate": "2026-05-24T18:00",
+        "color": "#30530F"
+      }
+    },
+    {
+      "id": "cal-w",
+      "type": "element_calendar",
+      "x": 87,
+      "y": 4050,
+      "w": 400,
+      "h": 360,
+      "z": 10,
+      "props": {
+        "date": "2026-05-24",
+        "primaryColor": "#30530F",
+        "headerColor": "#30530F",
+        "heartColor": "#30530F"
+      }
+    },
+    {
+      "id": "mid-ph-2",
+      "type": "element_image",
+      "x": 100,
+      "y": 4550,
+      "w": 375,
+      "h": 450,
+      "z": 5,
+      "props": {
+        "src": "https://cdn.chungdoi.com/uploads/3d851ee4-2624-4e33-9c00-e82ae1507c91.webp",
+        "objectFit": "cover",
+        "borderRadius": "80px 80px 0 0"
+      }
+    },
+    {
+      "id": "tl-h",
+      "type": "element_text",
+      "x": 0,
+      "y": 5100,
+      "w": 575,
+      "h": 50,
+      "z": 10,
+      "props": {
+        "text": "LỊCH TRÌNH",
+        "fontSize": 28,
+        "color": "#30530F",
+        "align": "center",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": "tl-w",
+      "type": "element_timeline",
+      "x": 87,
+      "y": 5200,
+      "w": 400,
+      "h": 650,
+      "z": 10,
+      "props": {
+        "accentColor": "#30530F",
+        "items": [
+          {
+            "time": "17:30",
+            "title": "Đón khách"
+          },
+          {
+            "time": "18:30",
+            "title": "Khai tiệc"
+          },
+          {
+            "time": "19:00",
+            "title": "Món chính"
+          }
+        ]
+      }
+    },
+    {
+      "id": "wish-h",
+      "type": "element_text",
+      "x": 0,
+      "y": 5950,
+      "w": 575,
+      "h": 50,
+      "z": 10,
+      "props": {
+        "text": "LỜI CHÚC",
+        "fontSize": 28,
+        "color": "#30530F",
+        "align": "center",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": "wish-w",
+      "type": "element_wishes",
+      "x": 40,
+      "y": 6050,
+      "w": 495,
+      "h": 1000,
+      "z": 10,
+      "props": {
+        "primaryColor": "#30530F",
+        "mockWishes": [
+          {
+            "guest_name": "Gia đình Bác Hùng",
+            "wish_message": "Chúc hai cháu trăm năm hạnh phúc."
+          },
+          {
+            "guest_name": "Bạn Thảo My",
+            "wish_message": "Mừng ngày trọng đại!"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gift-h",
+      "type": "element_text",
+      "x": 0,
+      "y": 7150,
+      "w": 575,
+      "h": 50,
+      "z": 10,
+      "props": {
+        "text": "Hộp Mừng Cưới",
+        "fontSize": 28,
+        "color": "#30530F",
+        "align": "center",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": "gift-sticker",
+      "type": "element_image",
+      "x": 187,
+      "y": 7250,
+      "w": 200,
+      "h": 200,
+      "z": 20,
+      "props": {
+        "src": "https://i.postimg.cc/026XzsXD/pngtree-green-gift-box-present-png-image-11541909.png",
+        "objectFit": "contain",
+        "action": "gift"
+      },
+      "className": "animate-shake cursor-pointer"
+    },
+    {
+      "id": "map-h",
+      "type": "element_text",
+      "x": 0,
+      "y": 7550,
+      "w": 575,
+      "h": 50,
+      "z": 10,
+      "props": {
+        "text": "ĐỊA ĐIỂM",
+        "fontSize": 28,
+        "color": "#30530F",
+        "align": "center",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": "map-w",
+      "type": "element_map",
+      "x": 40,
+      "y": 7650,
+      "w": 495,
+      "h": 320,
+      "z": 10,
+      "props": {
+        "location": "Tiệc Cưới Hoàng Gia 2"
+      }
+    },
+    {
+      "id": "ft-photo",
+      "type": "element_image",
+      "x": 87,
+      "y": 8100,
+      "w": 400,
+      "h": 550,
+      "z": 10,
+      "props": {
+        "src": "https://cdn.chungdoi.com/uploads/1174458a-fd65-41ed-b86c-626e9366faa2.webp",
+        "objectFit": "cover",
+        "borderRadius": "15px",
+        "border": "6px solid white"
+      }
+    },
+    {
+      "id": "thank-u",
+      "type": "element_text",
+      "x": 0,
+      "y": 8700,
+      "w": 575,
+      "h": 100,
+      "z": 15,
+      "props": {
+        "text": "TRÂN TRỌNG CẢM ƠN!",
+        "fontSize": 24,
+        "color": "#30530F",
+        "align": "center",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": "f-min-ft",
+      "type": "element_image",
+      "x": -50,
+      "y": 8750,
+      "w": 180,
+      "h": 180,
+      "z": 1,
+      "props": {
+        "src": "/templates/hoa-moc-xanh/flower.webp",
+        "opacity": 0.4
+      }
+    }
+  ]
+}

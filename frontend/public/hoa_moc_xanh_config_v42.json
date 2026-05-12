@@ -184,6 +184,37 @@
       }
     },
     {
+      "id": "deco-1-l",
+      "type": "element_image",
+      "x": -60,
+      "y": 2460,
+      "w": 220,
+      "h": 220,
+      "z": 2,
+      "props": {
+        "src": "/templates/hoa-moc-xanh/flower.webp",
+        "opacity": 0.5,
+        "objectFit": "contain",
+        "isDecor": true
+      }
+    },
+    {
+      "id": "deco-1-r",
+      "type": "element_image",
+      "x": 390,
+      "y": 2440,
+      "w": 200,
+      "h": 200,
+      "z": 2,
+      "rotation": 120,
+      "props": {
+        "src": "/templates/hoa-moc-xanh/flower.webp",
+        "opacity": 0.4,
+        "objectFit": "contain",
+        "isDecor": true
+      }
+    },
+    {
       "id": "ev-announce",
       "type": "element_text",
       "x": 0,
@@ -300,6 +331,38 @@
         "align": "center",
         "lineHeight": 1.8,
         "fontFamily": "'Cormorant Garamond', serif"
+      }
+    },
+    {
+      "id": "deco-2-l",
+      "type": "element_image",
+      "x": -50,
+      "y": 3160,
+      "w": 180,
+      "h": 180,
+      "z": 2,
+      "rotation": 200,
+      "props": {
+        "src": "/templates/hoa-moc-xanh/flower.webp",
+        "opacity": 0.45,
+        "objectFit": "contain",
+        "isDecor": true
+      }
+    },
+    {
+      "id": "deco-2-r",
+      "type": "element_image",
+      "x": 420,
+      "y": 3150,
+      "w": 160,
+      "h": 160,
+      "z": 2,
+      "rotation": 60,
+      "props": {
+        "src": "/templates/hoa-moc-xanh/flower.webp",
+        "opacity": 0.4,
+        "objectFit": "contain",
+        "isDecor": true
       }
     },
     {
@@ -518,6 +581,38 @@
       }
     },
     {
+      "id": "deco-3-l",
+      "type": "element_image",
+      "x": -70,
+      "y": 4650,
+      "w": 200,
+      "h": 200,
+      "z": 2,
+      "rotation": 160,
+      "props": {
+        "src": "/templates/hoa-moc-xanh/flower.webp",
+        "opacity": 0.45,
+        "objectFit": "contain",
+        "isDecor": true
+      }
+    },
+    {
+      "id": "deco-3-r",
+      "type": "element_image",
+      "x": 430,
+      "y": 4640,
+      "w": 170,
+      "h": 170,
+      "z": 2,
+      "rotation": 300,
+      "props": {
+        "src": "/templates/hoa-moc-xanh/flower.webp",
+        "opacity": 0.4,
+        "objectFit": "contain",
+        "isDecor": true
+      }
+    },
+    {
       "id": "w-h",
       "type": "element_text",
       "x": 0,
@@ -583,6 +678,38 @@
       }
     },
     {
+      "id": "deco-4-l",
+      "type": "element_image",
+      "x": -60,
+      "y": 5760,
+      "w": 190,
+      "h": 190,
+      "z": 2,
+      "rotation": 240,
+      "props": {
+        "src": "/templates/hoa-moc-xanh/flower.webp",
+        "opacity": 0.45,
+        "objectFit": "contain",
+        "isDecor": true
+      }
+    },
+    {
+      "id": "deco-4-r",
+      "type": "element_image",
+      "x": 410,
+      "y": 5750,
+      "w": 180,
+      "h": 180,
+      "z": 2,
+      "rotation": 80,
+      "props": {
+        "src": "/templates/hoa-moc-xanh/flower.webp",
+        "opacity": 0.4,
+        "objectFit": "contain",
+        "isDecor": true
+      }
+    },
+    {
       "id": "g-h",
       "type": "element_text",
       "x": 0,
@@ -638,6 +765,38 @@
       "z": 10,
       "props": {
         "location": "Tiệc Cưới Hoàng Gia 2"
+      }
+    },
+    {
+      "id": "deco-5-l",
+      "type": "element_image",
+      "x": -50,
+      "y": 6860,
+      "w": 170,
+      "h": 170,
+      "z": 2,
+      "rotation": 30,
+      "props": {
+        "src": "/templates/hoa-moc-xanh/flower.webp",
+        "opacity": 0.4,
+        "objectFit": "contain",
+        "isDecor": true
+      }
+    },
+    {
+      "id": "deco-5-r",
+      "type": "element_image",
+      "x": 420,
+      "y": 6870,
+      "w": 160,
+      "h": 160,
+      "z": 2,
+      "rotation": 190,
+      "props": {
+        "src": "/templates/hoa-moc-xanh/flower.webp",
+        "opacity": 0.35,
+        "objectFit": "contain",
+        "isDecor": true
       }
     },
     {

@@ -474,7 +474,44 @@
       "h": 800,
       "z": 10,
       "props": {
-        "primaryColor": "#30530F"
+        "primaryColor": "#30530F",
+        "mockWishes": [
+          {
+            "guest_name": "Bạn Hoàng dev",
+            "wish_message": "Chúc 2 bạn mãi yêu nhau, đầu bạc răng long",
+            "created_at": "2026-04-07T13:44:27"
+          },
+          {
+            "guest_name": "Hoài Nam",
+            "wish_message": "Chúc hai bạn luôn nắm tay nhau qua mọi chặng đường!!!",
+            "created_at": "2026-04-07T13:43:31"
+          },
+          {
+            "guest_name": "Bạn Linh",
+            "wish_message": "Mừng ngày trọng đại! Chúc hai bạn cười nhiều hơn cãi, yêu nhiều hơn giận nhen!",
+            "created_at": "2026-04-07T13:42:43"
+          },
+          {
+            "guest_name": "Chị Huyền",
+            "wish_message": "Chúc hai em trăm năm hạnh phúc, vợ chồng đồng lòng <3",
+            "created_at": "2026-04-07T13:42:15"
+          },
+          {
+            "guest_name": "Cô My",
+            "wish_message": "Chúc vợ chồng son mãi yêu thương, sớm có tin vui :D",
+            "created_at": "2026-04-07T13:41:50"
+          },
+          {
+            "guest_name": "Chị Thanh",
+            "wish_message": "Mừng ngày vu quy, chúc đôi uyên ương hạnh phúc bền lâu <3",
+            "created_at": "2026-04-07T13:41:09"
+          },
+          {
+            "guest_name": "Bạn Luân",
+            "wish_message": "Mong rằng cuộc sống hôn nhân sẽ là hành trình tuyệt vời nhất của hai bạn.",
+            "created_at": "2026-04-07T13:40:53"
+          }
+        ]
       }
     },
     {

@@ -49,6 +49,7 @@ export default function Home() {
         
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
             {[
+                { name: "Hoa Mộc Xanh", style: "Premium", img: "https://cdn.chungdoi.com/uploads/296d082d-c2bf-4510-a9e3-c7bdea13f850.webp", premium: true, preview_url: "/hoa-moc-xanh" },
                 { name: "Quang Huy - Thảo Uyên", style: "Hiện đại", img: "/images/templates/53/1773995333916-1770739033371-z7522565669715_eece88b42ebab4a5b591cf73c816cf19.webp", premium: true, preview_url: "/quang-huy-thao-uyen-2026-05-09" },
                 { name: "Thanh Sơn - Diệu Nhi", style: "Tối giản", img: "/uploads/69b95065dcc4597893deb84b/1773752594568-1768964174030-615120422_925471073144357_5596178545909683221_n.webp", premium: true, preview_url: "/thanh-son-dieu-nhi-demo" },
             ].map((tpl, id) => (
@@ -162,13 +163,13 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 px-6">
              {[
+                 { couple: "Minh Quân & Thu Hà", date: "24/05/2026", img: "https://cdn.chungdoi.com/uploads/296d082d-c2bf-4510-a9e3-c7bdea13f850.webp", link: "/hoa-moc-xanh" },
                  { couple: "Quang Huy & Thảo Uyên", date: "09/05/2026", img: "/images/templates/53/1773995333916-1770739033371-z7522565669715_eece88b42ebab4a5b591cf73c816cf19.webp", link: "/quang-huy-thao-uyen-2026-05-09" },
                  { couple: "Thành Liêm & Trà My", date: "16/05/2026", img: "/uploads/69b95065dcc4597893deb84b/1773752594568-1768964174030-615120422_925471073144357_5596178545909683221_n.webp", link: "/thanh-liem-tra-my-2026-05-16" },
                  { couple: "Thanh Sơn & Diệu Nhi", date: "31/12/2026", img: "/uploads/69b95065dcc4597893deb84b/1774080179841-1768964157102-615400830_925471493144315_1411328482513847053_n.webp", link: "/thanh-son-dieu-nhi-demo" },
                  { couple: "Hoàng Long & Ngọc Mai", date: "05/05/2026", img: "/previews/template_4.png" },
                  { couple: "Văn Khoa & Bích Ngọc", date: "10/06/2026", img: "/previews/template_5.png" },
                  { couple: "Thanh Tùng & Hải Yến", date: "25/09/2026", img: "/previews/template_1.png" },
-                 { couple: "Quốc Bảo & Thuỳ Linh", date: "12/11/2026", img: "/previews/template_3.png" },
              ].map((item, i) => (
                  <motion.div 
                      key={i}

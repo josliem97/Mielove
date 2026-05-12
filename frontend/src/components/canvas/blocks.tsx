@@ -16,7 +16,7 @@ export const CalendarBlock = ({ props }: { props: any }) => {
   // Calculate first day of month and days in month for a real calendar grid if needed
   // But for now, we'll follow the visual layout of the image
   
-  const primaryColor = props?.primaryColor || '#30530F';
+  const primaryColor = props?.primaryColor || '#6d0208';
   
   return (
     <div className="w-full flex flex-col items-center justify-center bg-transparent py-10 select-none">

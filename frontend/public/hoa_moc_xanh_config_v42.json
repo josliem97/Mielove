@@ -252,6 +252,19 @@
       }
     },
     {
+      "id": "cd-w",
+      "type": "element_countdown",
+      "x": 77,
+      "y": 3210,
+      "w": 420,
+      "h": 80,
+      "z": 10,
+      "props": {
+        "targetDate": "2026-05-24T18:00",
+        "color": "#30530F"
+      }
+    },
+    {
       "id": "cal-w",
       "type": "element_calendar",
       "x": 87,

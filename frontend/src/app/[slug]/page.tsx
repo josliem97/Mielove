@@ -205,7 +205,13 @@ const RenderCanvasComponent = ({ comp, wedding, guest, params, replacePlaceholde
                         borderRadius: normalizedComp.props?.borderRadius || 0,
                         border: normalizedComp.props?.border || 'none',
                         boxShadow: normalizedComp.props?.isDecor ? 'none' : (normalizedComp.props?.boxShadow || 'none'),
+                        cursor: normalizedComp.props?.action ? 'pointer' : 'default',
                         ...(normalizedComp.style || {})
+                    }}
+                    onClick={() => {
+                        if (normalizedComp.props?.action === 'gift') {
+                            setShowGiftModal(true);
+                        }
                     }}
                 >
                     <motion.img
@@ -221,6 +227,7 @@ const RenderCanvasComponent = ({ comp, wedding, guest, params, replacePlaceholde
                     />
                 </motion.div>
             )}
+
             {normalizedComp.type === "element_rsvp" && (
                 <RSVPBlock props={normalizedComp.props} slug={params.slug} guest={guest} />
             )}

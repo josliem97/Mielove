@@ -109,7 +109,7 @@ def seed_templates(db: Session = Depends(database.get_db)):
     }
 
     default_templates = [
-        {"name": "Miu Master Reference", "thumb": "https://images.unsplash.com/photo-1519741497674-611481863552?w=800", "cat": "Premium", "cfg": config_miu_master}
+        {"name": "Hoa Mộc Xanh", "thumb": "https://cdn.chungdoi.com/uploads/296d082d-c2bf-4510-a9e3-c7bdea13f850.webp", "cat": "Premium Featured", "cfg": config_miu_master}
     ]
 
     for t_data in default_templates:

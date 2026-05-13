@@ -1,832 +1,832 @@
 {
-  "canvas": {
-    "width": 575,
-    "height": 7800,
-    "backgroundColor": "#FFFFFF",
-    "texture": "paper"
-  },
-  "components": [
-    {
-      "id": "f-tl",
-      "type": "element_image",
-      "x": -100,
-      "y": -100,
-      "w": 400,
-      "h": 400,
-      "z": 1,
-      "props": {
-        "src": "/templates/hoa-moc-xanh/flower.webp",
-        "opacity": 0.8
-      }
+    "canvas": {
+        "width": 575,
+        "height": 8100,
+        "backgroundColor": "#FFFFFF",
+        "texture": "paper"
     },
-    {
-      "id": "f-tr",
-      "type": "element_image",
-      "x": 300,
-      "y": -120,
-      "w": 350,
-      "h": 350,
-      "z": 1,
-      "props": {
-        "src": "/templates/hoa-moc-xanh/flower.webp",
-        "opacity": 0.6,
-        "rotation": 90
-      }
-    },
-    {
-      "id": "g-img",
-      "type": "element_image",
-      "x": 280,
-      "y": 80,
-      "w": 260,
-      "h": 340,
-      "z": 5,
-      "rotation": -4,
-      "props": {
-        "src": "https://cdn.chungdoi.com/uploads/296d082d-c2bf-4510-a9e3-c7bdea13f850.webp",
-        "objectFit": "cover",
-        "border": "10px solid #C19B76"
-      }
-    },
-    {
-      "id": "b-img",
-      "type": "element_image",
-      "x": 35,
-      "y": 280,
-      "w": 260,
-      "h": 340,
-      "z": 6,
-      "rotation": 4,
-      "props": {
-        "src": "https://cdn.chungdoi.com/uploads/0ac5a43c-3c7b-4650-a2de-c64d1d30f5ed.webp",
-        "objectFit": "cover",
-        "border": "10px solid #C19B76"
-      }
-    },
-    {
-      "id": "names",
-      "type": "element_text",
-      "x": 0,
-      "y": 720,
-      "w": 575,
-      "h": 80,
-      "z": 10,
-      "props": {
-        "text": "MINH QUÂN & THU HÀ",
-        "fontSize": 48,
-        "color": "#30530F",
-        "fontFamily": "'Cormorant Garamond', serif",
-        "align": "center",
-        "fontWeight": "bold"
-      }
-    },
-    {
-      "id": "info-f-top",
-      "type": "element_image",
-      "x": 212,
-      "y": 830,
-      "w": 150,
-      "h": 80,
-      "z": 2,
-      "props": {
-        "src": "/templates/hoa-moc-xanh/flower.webp",
-        "opacity": 0.6,
-        "objectFit": "contain"
-      }
-    },
-    {
-      "id": "info-header",
-      "type": "element_text",
-      "x": 0,
-      "y": 910,
-      "w": 575,
-      "h": 60,
-      "z": 10,
-      "props": {
-        "text": "THÔNG TIN LỄ CƯỚI",
-        "fontSize": 24,
-        "color": "#30530F",
-        "align": "center",
-        "fontWeight": "bold",
-        "letterSpacing": 2
-      }
-    },
-    {
-      "id": "groom-p-names",
-      "type": "element_text",
-      "x": 40,
-      "y": 980,
-      "w": 230,
-      "h": 100,
-      "z": 10,
-      "props": {
-        "text": "Ông Bà\nTrần Văn Hùng\nPhạm Thị Lan\nĐống Đa, Hà Nội",
-        "fontSize": 14,
-        "color": "#30530F",
-        "align": "center",
-        "lineHeight": 1.5
-      }
-    },
-    {
-      "id": "bride-p-names",
-      "type": "element_text",
-      "x": 305,
-      "y": 980,
-      "w": 230,
-      "h": 100,
-      "z": 10,
-      "props": {
-        "text": "Ông Bà\nNguyễn Văn Bình\nPhan Thị Hương\nCầu Giấy, Hà Nội",
-        "fontSize": 14,
-        "color": "#30530F",
-        "align": "center",
-        "lineHeight": 1.5
-      }
-    },
-    {
-      "id": "alb-h",
-      "type": "element_text",
-      "x": 0,
-      "y": 1180,
-      "w": 575,
-      "h": 40,
-      "z": 10,
-      "props": {
-        "text": "ALBUM ẢNH CƯỚI",
-        "fontSize": 22,
-        "color": "#30530F",
-        "align": "center",
-        "fontWeight": "bold",
-        "letterSpacing": 3
-      }
-    },
-    {
-      "id": "alb-w",
-      "type": "element_album",
-      "x": 37,
-      "y": 1240,
-      "w": 500,
-      "h": 1250,
-      "z": 10,
-      "props": {
-        "columns": 2,
-        "gap": 15,
-        "images": [
-          "https://cdn.chungdoi.com/uploads/296d082d-c2bf-4510-a9e3-c7bdea13f850.webp",
-          "https://cdn.chungdoi.com/uploads/0ac5a43c-3c7b-4650-a2de-c64d1d30f5ed.webp",
-          "https://cdn.chungdoi.com/uploads/1174458a-fd65-41ed-b86c-626e9366faa2.webp",
-          "https://cdn.chungdoi.com/uploads/3d851ee4-2624-4e33-9c00-e82ae1507c91.webp",
-          "https://i.postimg.cc/6pJ97gvg/1773995332651-1770736796361-0438933dad2723797a361.webp",
-          "https://i.postimg.cc/66P6Ky6k/1773995329499-1770736612197-12597987462083336082.webp",
-          "https://cdn.chungdoi.com/uploads/296d082d-c2bf-4510-a9e3-c7bdea13f850.webp",
-          "https://cdn.chungdoi.com/uploads/0ac5a43c-3c7b-4650-a2de-c64d1d30f5ed.webp"
-        ]
-      }
-    },
-    {
-      "id": "deco-1-l",
-      "type": "element_image",
-      "x": -60,
-      "y": 2460,
-      "w": 220,
-      "h": 220,
-      "z": 2,
-      "props": {
-        "src": "/templates/hoa-moc-xanh/flower.webp",
-        "opacity": 0.5,
-        "objectFit": "contain",
-        "isDecor": true
-      }
-    },
-    {
-      "id": "deco-1-r",
-      "type": "element_image",
-      "x": 390,
-      "y": 2440,
-      "w": 200,
-      "h": 200,
-      "z": 2,
-      "rotation": 120,
-      "props": {
-        "src": "/templates/hoa-moc-xanh/flower.webp",
-        "opacity": 0.4,
-        "objectFit": "contain",
-        "isDecor": true
-      }
-    },
-    {
-      "id": "ev-announce",
-      "type": "element_text",
-      "x": 0,
-      "y": 2530,
-      "w": 575,
-      "h": 50,
-      "z": 10,
-      "props": {
-        "text": "TRÂN TRỌNG BÁO TIN\nLỄ THÀNH HÔN CỦA CON CHÚNG TÔI",
-        "fontSize": 13,
-        "color": "#30530F",
-        "align": "center",
-        "letterSpacing": 1.5,
-        "lineHeight": 1.8
-      }
-    },
-    {
-      "id": "g-hl",
-      "type": "element_text",
-      "x": 0,
-      "y": 2600,
-      "w": 575,
-      "h": 70,
-      "z": 10,
-      "props": {
-        "text": "Trần Minh Quân",
-        "fontSize": 54,
-        "color": "#30530F",
-        "align": "center",
-        "fontWeight": "400",
-        "fontFamily": "'Cormorant Garamond', serif",
-        "fontStyle": "italic"
-      }
-    },
-    {
-      "id": "g-role",
-      "type": "element_text",
-      "x": 0,
-      "y": 2668,
-      "w": 575,
-      "h": 25,
-      "z": 10,
-      "props": {
-        "text": "TRƯỞNG NAM",
-        "fontSize": 11,
-        "color": "#30530F",
-        "align": "center",
-        "letterSpacing": 3
-      }
-    },
-    {
-      "id": "ev-amp",
-      "type": "element_text",
-      "x": 0,
-      "y": 2700,
-      "w": 575,
-      "h": 40,
-      "z": 10,
-      "props": {
-        "text": "&",
-        "fontSize": 34,
-        "color": "#30530F",
-        "align": "center",
-        "fontStyle": "italic",
-        "fontFamily": "'Cormorant Garamond', serif"
-      }
-    },
-    {
-      "id": "b-hl",
-      "type": "element_text",
-      "x": 0,
-      "y": 2742,
-      "w": 575,
-      "h": 70,
-      "z": 10,
-      "props": {
-        "text": "Nguyễn Thu Hà",
-        "fontSize": 54,
-        "color": "#30530F",
-        "align": "center",
-        "fontWeight": "400",
-        "fontFamily": "'Cormorant Garamond', serif",
-        "fontStyle": "italic"
-      }
-    },
-    {
-      "id": "b-role",
-      "type": "element_text",
-      "x": 0,
-      "y": 2810,
-      "w": 575,
-      "h": 25,
-      "z": 10,
-      "props": {
-        "text": "ÚT NỮ",
-        "fontSize": 11,
-        "color": "#30530F",
-        "align": "center",
-        "letterSpacing": 3
-      }
-    },
-    {
-      "id": "ev-det",
-      "type": "element_text",
-      "x": 0,
-      "y": 2860,
-      "w": 575,
-      "h": 300,
-      "z": 10,
-      "props": {
-        "text": "LỄ THÀNH HÔN ĐƯỢC CỬ HÀNH TẠI\nTƯ GIA\nVÀO LÚC\n\n09:00\n\nCHỦ NHẬT | 24 | THÁNG 05\n\n2026\n\n(TỨC NGÀY 08/04 NĂM BÍNH NGỌ)",
-        "fontSize": 17,
-        "color": "#30530F",
-        "align": "center",
-        "lineHeight": 1.8,
-        "fontFamily": "'Cormorant Garamond', serif"
-      }
-    },
-    {
-      "id": "deco-2-l",
-      "type": "element_image",
-      "x": -50,
-      "y": 3160,
-      "w": 180,
-      "h": 180,
-      "z": 2,
-      "rotation": 200,
-      "props": {
-        "src": "/templates/hoa-moc-xanh/flower.webp",
-        "opacity": 0.45,
-        "objectFit": "contain",
-        "isDecor": true
-      }
-    },
-    {
-      "id": "deco-2-r",
-      "type": "element_image",
-      "x": 420,
-      "y": 3150,
-      "w": 160,
-      "h": 160,
-      "z": 2,
-      "rotation": 60,
-      "props": {
-        "src": "/templates/hoa-moc-xanh/flower.webp",
-        "opacity": 0.4,
-        "objectFit": "contain",
-        "isDecor": true
-      }
-    },
-    {
-      "id": "cd-h",
-      "type": "element_text",
-      "x": 0,
-      "y": 3230,
-      "w": 575,
-      "h": 40,
-      "z": 10,
-      "props": {
-        "text": "CÙNG ĐẾM NGƯỢC",
-        "fontSize": 18,
-        "color": "#30530F",
-        "align": "center",
-        "letterSpacing": 3,
-        "fontWeight": "600"
-      }
-    },
-    {
-      "id": "cd-w",
-      "type": "element_countdown",
-      "x": 77,
-      "y": 3290,
-      "w": 420,
-      "h": 80,
-      "z": 10,
-      "props": {
-        "targetDate": "2026-05-24T18:00",
-        "color": "#30530F"
-      }
-    },
-    {
-      "id": "cal-w",
-      "type": "element_calendar",
-      "x": 87,
-      "y": 3380,
-      "w": 400,
-      "h": 360,
-      "z": 10,
-      "props": {
-        "date": "2026-05-24",
-        "primaryColor": "#30530F"
-      }
-    },
-    {
-      "id": "tl-header",
-      "type": "element_text",
-      "x": 0,
-      "y": 3930,
-      "w": 575,
-      "h": 50,
-      "z": 10,
-      "props": {
-        "text": "LỊCH TRÌNH",
-        "fontSize": 28,
-        "color": "#30530F",
-        "align": "center",
-        "fontWeight": "bold"
-      }
-    },
-    {
-      "id": "tl-line",
-      "type": "element_text",
-      "x": 287,
-      "y": 4030,
-      "w": 2,
-      "h": 400,
-      "z": 5,
-      "props": {
-        "text": "|",
-        "fontSize": 20,
-        "color": "#D1D5DB",
-        "align": "center"
-      }
-    },
-    {
-      "id": "tl-1-dot",
-      "type": "element_text",
-      "x": 272,
-      "y": 4080,
-      "w": 30,
-      "h": 30,
-      "z": 10,
-      "props": {
-        "text": "●",
-        "fontSize": 24,
-        "color": "#30530F",
-        "align": "center"
-      }
-    },
-    {
-      "id": "tl-1-time",
-      "type": "element_text",
-      "x": 310,
-      "y": 4085,
-      "w": 100,
-      "h": 30,
-      "z": 10,
-      "props": {
-        "text": "17:30",
-        "fontSize": 20,
-        "color": "#30530F",
-        "fontWeight": "bold",
-        "fontFamily": "'Cormorant Garamond', serif"
-      }
-    },
-    {
-      "id": "tl-1-title",
-      "type": "element_text",
-      "x": 100,
-      "y": 4085,
-      "w": 160,
-      "h": 30,
-      "z": 10,
-      "props": {
-        "text": "ĐÓN KHÁCH",
-        "fontSize": 18,
-        "color": "#30530F",
-        "align": "right",
-        "fontWeight": "500"
-      }
-    },
-    {
-      "id": "tl-2-dot",
-      "type": "element_text",
-      "x": 272,
-      "y": 4200,
-      "w": 30,
-      "h": 30,
-      "z": 10,
-      "props": {
-        "text": "●",
-        "fontSize": 24,
-        "color": "#30530F",
-        "align": "center"
-      }
-    },
-    {
-      "id": "tl-2-time",
-      "type": "element_text",
-      "x": 310,
-      "y": 4205,
-      "w": 100,
-      "h": 30,
-      "z": 10,
-      "props": {
-        "text": "18:30",
-        "fontSize": 20,
-        "color": "#30530F",
-        "fontWeight": "bold",
-        "fontFamily": "'Cormorant Garamond', serif"
-      }
-    },
-    {
-      "id": "tl-2-title",
-      "type": "element_text",
-      "x": 100,
-      "y": 4205,
-      "w": 160,
-      "h": 30,
-      "z": 10,
-      "props": {
-        "text": "KHAI TIỆC",
-        "fontSize": 18,
-        "color": "#30530F",
-        "align": "right",
-        "fontWeight": "500"
-      }
-    },
-    {
-      "id": "tl-3-dot",
-      "type": "element_text",
-      "x": 272,
-      "y": 4320,
-      "w": 30,
-      "h": 30,
-      "z": 10,
-      "props": {
-        "text": "●",
-        "fontSize": 24,
-        "color": "#30530F",
-        "align": "center"
-      }
-    },
-    {
-      "id": "tl-3-time",
-      "type": "element_text",
-      "x": 310,
-      "y": 4325,
-      "w": 100,
-      "h": 30,
-      "z": 10,
-      "props": {
-        "text": "19:00",
-        "fontSize": 20,
-        "color": "#30530F",
-        "fontWeight": "bold",
-        "fontFamily": "'Cormorant Garamond', serif"
-      }
-    },
-    {
-      "id": "tl-3-title",
-      "type": "element_text",
-      "x": 100,
-      "y": 4325,
-      "w": 160,
-      "h": 30,
-      "z": 10,
-      "props": {
-        "text": "MÓN CHÍNH",
-        "fontSize": 18,
-        "color": "#30530F",
-        "align": "right",
-        "fontWeight": "500"
-      }
-    },
-    {
-      "id": "deco-3-l",
-      "type": "element_image",
-      "x": -70,
-      "y": 4650,
-      "w": 200,
-      "h": 200,
-      "z": 2,
-      "rotation": 160,
-      "props": {
-        "src": "/templates/hoa-moc-xanh/flower.webp",
-        "opacity": 0.45,
-        "objectFit": "contain",
-        "isDecor": true
-      }
-    },
-    {
-      "id": "deco-3-r",
-      "type": "element_image",
-      "x": 430,
-      "y": 4640,
-      "w": 170,
-      "h": 170,
-      "z": 2,
-      "rotation": 300,
-      "props": {
-        "src": "/templates/hoa-moc-xanh/flower.webp",
-        "opacity": 0.4,
-        "objectFit": "contain",
-        "isDecor": true
-      }
-    },
-    {
-      "id": "w-h",
-      "type": "element_text",
-      "x": 0,
-      "y": 4730,
-      "w": 575,
-      "h": 50,
-      "z": 10,
-      "props": {
-        "text": "SỔ LƯU BÚT",
-        "fontSize": 28,
-        "color": "#30530F",
-        "align": "center",
-        "fontWeight": "bold"
-      }
-    },
-    {
-      "id": "w-w",
-      "type": "element_wishes",
-      "x": 40,
-      "y": 4830,
-      "w": 495,
-      "h": 800,
-      "z": 10,
-      "props": {
-        "primaryColor": "#30530F",
-        "mockWishes": [
-          {
-            "guest_name": "Bạn Hoàng dev",
-            "wish_message": "Chúc 2 bạn mãi yêu nhau, đầu bạc răng long",
-            "created_at": "2026-04-07T13:44:27"
-          },
-          {
-            "guest_name": "Hoài Nam",
-            "wish_message": "Chúc hai bạn luôn nắm tay nhau qua mọi chặng đường!!!",
-            "created_at": "2026-04-07T13:43:31"
-          },
-          {
-            "guest_name": "Bạn Linh",
-            "wish_message": "Mừng ngày trọng đại! Chúc hai bạn cười nhiều hơn cãi, yêu nhiều hơn giận nhen!",
-            "created_at": "2026-04-07T13:42:43"
-          },
-          {
-            "guest_name": "Chị Huyền",
-            "wish_message": "Chúc hai em trăm năm hạnh phúc, vợ chồng đồng lòng <3",
-            "created_at": "2026-04-07T13:42:15"
-          },
-          {
-            "guest_name": "Cô My",
-            "wish_message": "Chúc vợ chồng son mãi yêu thương, sớm có tin vui :D",
-            "created_at": "2026-04-07T13:41:50"
-          },
-          {
-            "guest_name": "Chị Thanh",
-            "wish_message": "Mừng ngày vu quy, chúc đôi uyên ương hạnh phúc bền lâu <3",
-            "created_at": "2026-04-07T13:41:09"
-          },
-          {
-            "guest_name": "Bạn Luân",
-            "wish_message": "Mong rằng cuộc sống hôn nhân sẽ là hành trình tuyệt vời nhất của hai bạn.",
-            "created_at": "2026-04-07T13:40:53"
-          }
-        ]
-      }
-    },
-    {
-      "id": "deco-4-l",
-      "type": "element_image",
-      "x": -60,
-      "y": 5760,
-      "w": 190,
-      "h": 190,
-      "z": 2,
-      "rotation": 240,
-      "props": {
-        "src": "/templates/hoa-moc-xanh/flower.webp",
-        "opacity": 0.45,
-        "objectFit": "contain",
-        "isDecor": true
-      }
-    },
-    {
-      "id": "deco-4-r",
-      "type": "element_image",
-      "x": 410,
-      "y": 5750,
-      "w": 180,
-      "h": 180,
-      "z": 2,
-      "rotation": 80,
-      "props": {
-        "src": "/templates/hoa-moc-xanh/flower.webp",
-        "opacity": 0.4,
-        "objectFit": "contain",
-        "isDecor": true
-      }
-    },
-    {
-      "id": "g-h",
-      "type": "element_text",
-      "x": 0,
-      "y": 5830,
-      "w": 575,
-      "h": 50,
-      "z": 10,
-      "props": {
-        "text": "Hộp Mừng Cưới",
-        "fontSize": 28,
-        "color": "#30530F",
-        "align": "center",
-        "fontWeight": "bold"
-      }
-    },
-    {
-      "id": "g-s",
-      "type": "element_image",
-      "x": 187,
-      "y": 5930,
-      "w": 180,
-      "h": 180,
-      "z": 100,
-      "props": {
-        "src": "https://i.postimg.cc/026XzsXD/pngtree-green-gift-box-present-png-image-11541909.png",
-        "action": "gift"
-      },
-      "className": "animate-shake cursor-pointer"
-    },
-    {
-      "id": "m-h",
-      "type": "element_text",
-      "x": 0,
-      "y": 6330,
-      "w": 575,
-      "h": 50,
-      "z": 10,
-      "props": {
-        "text": "ĐỊA ĐIỂM",
-        "fontSize": 28,
-        "color": "#30530F",
-        "align": "center",
-        "fontWeight": "bold"
-      }
-    },
-    {
-      "id": "m-w",
-      "type": "element_map",
-      "x": 40,
-      "y": 6430,
-      "w": 495,
-      "h": 320,
-      "z": 10,
-      "props": {
-        "location": "Tiệc Cưới Hoàng Gia 2"
-      }
-    },
-    {
-      "id": "deco-5-l",
-      "type": "element_image",
-      "x": -50,
-      "y": 6860,
-      "w": 170,
-      "h": 170,
-      "z": 2,
-      "rotation": 30,
-      "props": {
-        "src": "/templates/hoa-moc-xanh/flower.webp",
-        "opacity": 0.4,
-        "objectFit": "contain",
-        "isDecor": true
-      }
-    },
-    {
-      "id": "deco-5-r",
-      "type": "element_image",
-      "x": 420,
-      "y": 6870,
-      "w": 160,
-      "h": 160,
-      "z": 2,
-      "rotation": 190,
-      "props": {
-        "src": "/templates/hoa-moc-xanh/flower.webp",
-        "opacity": 0.35,
-        "objectFit": "contain",
-        "isDecor": true
-      }
-    },
-    {
-      "id": "f-p",
-      "type": "element_image",
-      "x": 87,
-      "y": 6930,
-      "w": 400,
-      "h": 500,
-      "z": 10,
-      "props": {
-        "src": "https://cdn.chungdoi.com/uploads/1174458a-fd65-41ed-b86c-626e9366faa2.webp",
-        "borderRadius": "15px"
-      }
-    },
-    {
-      "id": "t-u",
-      "type": "element_text",
-      "x": 0,
-      "y": 7530,
-      "w": 575,
-      "h": 80,
-      "z": 15,
-      "props": {
-        "text": "TRÂN TRỌNG CẢM ƠN!",
-        "fontSize": 24,
-        "color": "#30530F",
-        "align": "center",
-        "fontWeight": "bold"
-      }
-    }
-  ]
+    "components": [
+        {
+            "id": "f-tl",
+            "type": "element_image",
+            "x": -100,
+            "y": -100,
+            "w": 400,
+            "h": 400,
+            "z": 1,
+            "props": {
+                "src": "/templates/hoa-moc-xanh/flower.webp",
+                "opacity": 0.8
+            }
+        },
+        {
+            "id": "f-tr",
+            "type": "element_image",
+            "x": 300,
+            "y": -120,
+            "w": 350,
+            "h": 350,
+            "z": 1,
+            "props": {
+                "src": "/templates/hoa-moc-xanh/flower.webp",
+                "opacity": 0.6,
+                "rotation": 90
+            }
+        },
+        {
+            "id": "g-img",
+            "type": "element_image",
+            "x": 280,
+            "y": 80,
+            "w": 260,
+            "h": 340,
+            "z": 5,
+            "rotation": -4,
+            "props": {
+                "src": "https://cdn.chungdoi.com/uploads/296d082d-c2bf-4510-a9e3-c7bdea13f850.webp",
+                "objectFit": "cover",
+                "border": "10px solid #C19B76"
+            }
+        },
+        {
+            "id": "b-img",
+            "type": "element_image",
+            "x": 35,
+            "y": 280,
+            "w": 260,
+            "h": 340,
+            "z": 6,
+            "rotation": 4,
+            "props": {
+                "src": "https://cdn.chungdoi.com/uploads/0ac5a43c-3c7b-4650-a2de-c64d1d30f5ed.webp",
+                "objectFit": "cover",
+                "border": "10px solid #C19B76"
+            }
+        },
+        {
+            "id": "names",
+            "type": "element_text",
+            "x": 0,
+            "y": 720,
+            "w": 575,
+            "h": 80,
+            "z": 10,
+            "props": {
+                "text": "MINH QUÂN & THU HÀ",
+                "fontSize": 48,
+                "color": "#30530F",
+                "fontFamily": "'Cormorant Garamond', serif",
+                "align": "center",
+                "fontWeight": "bold"
+            }
+        },
+        {
+            "id": "info-f-top",
+            "type": "element_image",
+            "x": 212,
+            "y": 830,
+            "w": 150,
+            "h": 80,
+            "z": 2,
+            "props": {
+                "src": "/templates/hoa-moc-xanh/flower.webp",
+                "opacity": 0.6,
+                "objectFit": "contain"
+            }
+        },
+        {
+            "id": "info-header",
+            "type": "element_text",
+            "x": 0,
+            "y": 910,
+            "w": 575,
+            "h": 60,
+            "z": 10,
+            "props": {
+                "text": "THÔNG TIN LỄ CƯỚI",
+                "fontSize": 24,
+                "color": "#30530F",
+                "align": "center",
+                "fontWeight": "bold",
+                "letterSpacing": 2
+            }
+        },
+        {
+            "id": "groom-p-names",
+            "type": "element_text",
+            "x": 40,
+            "y": 980,
+            "w": 230,
+            "h": 100,
+            "z": 10,
+            "props": {
+                "text": "Ông Bà\nTrần Văn Hùng\nPhạm Thị Lan\nĐống Đa, Hà Nội",
+                "fontSize": 14,
+                "color": "#30530F",
+                "align": "center",
+                "lineHeight": 1.5
+            }
+        },
+        {
+            "id": "bride-p-names",
+            "type": "element_text",
+            "x": 305,
+            "y": 980,
+            "w": 230,
+            "h": 100,
+            "z": 10,
+            "props": {
+                "text": "Ông Bà\nNguyễn Văn Bình\nPhan Thị Hương\nCầu Giấy, Hà Nội",
+                "fontSize": 14,
+                "color": "#30530F",
+                "align": "center",
+                "lineHeight": 1.5
+            }
+        },
+        {
+            "id": "alb-h",
+            "type": "element_text",
+            "x": 0,
+            "y": 1180,
+            "w": 575,
+            "h": 40,
+            "z": 10,
+            "props": {
+                "text": "ALBUM ẢNH CƯỚI",
+                "fontSize": 22,
+                "color": "#30530F",
+                "align": "center",
+                "fontWeight": "bold",
+                "letterSpacing": 3
+            }
+        },
+        {
+            "id": "alb-w",
+            "type": "element_album",
+            "x": 37,
+            "y": 1240,
+            "w": 500,
+            "h": 1250,
+            "z": 10,
+            "props": {
+                "columns": 2,
+                "gap": 15,
+                "images": [
+                    "https://cdn.chungdoi.com/uploads/296d082d-c2bf-4510-a9e3-c7bdea13f850.webp",
+                    "https://cdn.chungdoi.com/uploads/0ac5a43c-3c7b-4650-a2de-c64d1d30f5ed.webp",
+                    "https://cdn.chungdoi.com/uploads/1174458a-fd65-41ed-b86c-626e9366faa2.webp",
+                    "https://cdn.chungdoi.com/uploads/3d851ee4-2624-4e33-9c00-e82ae1507c91.webp",
+                    "https://i.postimg.cc/6pJ97gvg/1773995332651-1770736796361-0438933dad2723797a361.webp",
+                    "https://i.postimg.cc/66P6Ky6k/1773995329499-1770736612197-12597987462083336082.webp",
+                    "https://cdn.chungdoi.com/uploads/296d082d-c2bf-4510-a9e3-c7bdea13f850.webp",
+                    "https://cdn.chungdoi.com/uploads/0ac5a43c-3c7b-4650-a2de-c64d1d30f5ed.webp"
+                ]
+            }
+        },
+        {
+            "id": "deco-1-l",
+            "type": "element_image",
+            "x": -60,
+            "y": 2760,
+            "w": 220,
+            "h": 220,
+            "z": 2,
+            "props": {
+                "src": "/templates/hoa-moc-xanh/flower.webp",
+                "opacity": 0.5,
+                "objectFit": "contain",
+                "isDecor": true
+            }
+        },
+        {
+            "id": "deco-1-r",
+            "type": "element_image",
+            "x": 390,
+            "y": 2740,
+            "w": 200,
+            "h": 200,
+            "z": 2,
+            "rotation": 120,
+            "props": {
+                "src": "/templates/hoa-moc-xanh/flower.webp",
+                "opacity": 0.4,
+                "objectFit": "contain",
+                "isDecor": true
+            }
+        },
+        {
+            "id": "ev-announce",
+            "type": "element_text",
+            "x": 0,
+            "y": 2830,
+            "w": 575,
+            "h": 50,
+            "z": 10,
+            "props": {
+                "text": "TRÂN TRỌNG BÁO TIN\nLỄ THÀNH HÔN CỦA CON CHÚNG TÔI",
+                "fontSize": 13,
+                "color": "#30530F",
+                "align": "center",
+                "letterSpacing": 1.5,
+                "lineHeight": 1.8
+            }
+        },
+        {
+            "id": "g-hl",
+            "type": "element_text",
+            "x": 0,
+            "y": 2900,
+            "w": 575,
+            "h": 70,
+            "z": 10,
+            "props": {
+                "text": "Trần Minh Quân",
+                "fontSize": 54,
+                "color": "#30530F",
+                "align": "center",
+                "fontWeight": "400",
+                "fontFamily": "'Cormorant Garamond', serif",
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "id": "g-role",
+            "type": "element_text",
+            "x": 0,
+            "y": 2968,
+            "w": 575,
+            "h": 25,
+            "z": 10,
+            "props": {
+                "text": "TRƯỞNG NAM",
+                "fontSize": 11,
+                "color": "#30530F",
+                "align": "center",
+                "letterSpacing": 3
+            }
+        },
+        {
+            "id": "ev-amp",
+            "type": "element_text",
+            "x": 0,
+            "y": 3000,
+            "w": 575,
+            "h": 40,
+            "z": 10,
+            "props": {
+                "text": "&",
+                "fontSize": 34,
+                "color": "#30530F",
+                "align": "center",
+                "fontStyle": "italic",
+                "fontFamily": "'Cormorant Garamond', serif"
+            }
+        },
+        {
+            "id": "b-hl",
+            "type": "element_text",
+            "x": 0,
+            "y": 3042,
+            "w": 575,
+            "h": 70,
+            "z": 10,
+            "props": {
+                "text": "Nguyễn Thu Hà",
+                "fontSize": 54,
+                "color": "#30530F",
+                "align": "center",
+                "fontWeight": "400",
+                "fontFamily": "'Cormorant Garamond', serif",
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "id": "b-role",
+            "type": "element_text",
+            "x": 0,
+            "y": 3110,
+            "w": 575,
+            "h": 25,
+            "z": 10,
+            "props": {
+                "text": "ÚT NỮ",
+                "fontSize": 11,
+                "color": "#30530F",
+                "align": "center",
+                "letterSpacing": 3
+            }
+        },
+        {
+            "id": "ev-det",
+            "type": "element_text",
+            "x": 0,
+            "y": 3160,
+            "w": 575,
+            "h": 300,
+            "z": 10,
+            "props": {
+                "text": "LỄ THÀNH HÔN ĐƯỢC CỬ HÀNH TẠI\nTƯ GIA\nVÀO LÚC\n\n09:00\n\nCHỦ NHẬT | 24 | THÁNG 05\n\n2026\n\n(TỨC NGÀY 08/04 NĂM BÍNH NGỌ)",
+                "fontSize": 17,
+                "color": "#30530F",
+                "align": "center",
+                "lineHeight": 1.8,
+                "fontFamily": "'Cormorant Garamond', serif"
+            }
+        },
+        {
+            "id": "deco-2-l",
+            "type": "element_image",
+            "x": -50,
+            "y": 3460,
+            "w": 180,
+            "h": 180,
+            "z": 2,
+            "rotation": 200,
+            "props": {
+                "src": "/templates/hoa-moc-xanh/flower.webp",
+                "opacity": 0.45,
+                "objectFit": "contain",
+                "isDecor": true
+            }
+        },
+        {
+            "id": "deco-2-r",
+            "type": "element_image",
+            "x": 420,
+            "y": 3450,
+            "w": 160,
+            "h": 160,
+            "z": 2,
+            "rotation": 60,
+            "props": {
+                "src": "/templates/hoa-moc-xanh/flower.webp",
+                "opacity": 0.4,
+                "objectFit": "contain",
+                "isDecor": true
+            }
+        },
+        {
+            "id": "cd-h",
+            "type": "element_text",
+            "x": 0,
+            "y": 3530,
+            "w": 575,
+            "h": 40,
+            "z": 10,
+            "props": {
+                "text": "CÙNG ĐẾM NGƯỢC",
+                "fontSize": 18,
+                "color": "#30530F",
+                "align": "center",
+                "letterSpacing": 3,
+                "fontWeight": "600"
+            }
+        },
+        {
+            "id": "cd-w",
+            "type": "element_countdown",
+            "x": 77,
+            "y": 3590,
+            "w": 420,
+            "h": 80,
+            "z": 10,
+            "props": {
+                "targetDate": "2026-05-24T18:00",
+                "color": "#30530F"
+            }
+        },
+        {
+            "id": "cal-w",
+            "type": "element_calendar",
+            "x": 87,
+            "y": 3680,
+            "w": 400,
+            "h": 360,
+            "z": 10,
+            "props": {
+                "date": "2026-05-24",
+                "primaryColor": "#30530F"
+            }
+        },
+        {
+            "id": "tl-header",
+            "type": "element_text",
+            "x": 0,
+            "y": 4230,
+            "w": 575,
+            "h": 50,
+            "z": 10,
+            "props": {
+                "text": "LỊCH TRÌNH",
+                "fontSize": 28,
+                "color": "#30530F",
+                "align": "center",
+                "fontWeight": "bold"
+            }
+        },
+        {
+            "id": "tl-line",
+            "type": "element_text",
+            "x": 287,
+            "y": 4330,
+            "w": 2,
+            "h": 400,
+            "z": 5,
+            "props": {
+                "text": "|",
+                "fontSize": 20,
+                "color": "#D1D5DB",
+                "align": "center"
+            }
+        },
+        {
+            "id": "tl-1-dot",
+            "type": "element_text",
+            "x": 272,
+            "y": 4380,
+            "w": 30,
+            "h": 30,
+            "z": 10,
+            "props": {
+                "text": "●",
+                "fontSize": 24,
+                "color": "#30530F",
+                "align": "center"
+            }
+        },
+        {
+            "id": "tl-1-time",
+            "type": "element_text",
+            "x": 310,
+            "y": 4385,
+            "w": 100,
+            "h": 30,
+            "z": 10,
+            "props": {
+                "text": "17:30",
+                "fontSize": 20,
+                "color": "#30530F",
+                "fontWeight": "bold",
+                "fontFamily": "'Cormorant Garamond', serif"
+            }
+        },
+        {
+            "id": "tl-1-title",
+            "type": "element_text",
+            "x": 100,
+            "y": 4385,
+            "w": 160,
+            "h": 30,
+            "z": 10,
+            "props": {
+                "text": "ĐÓN KHÁCH",
+                "fontSize": 18,
+                "color": "#30530F",
+                "align": "right",
+                "fontWeight": "500"
+            }
+        },
+        {
+            "id": "tl-2-dot",
+            "type": "element_text",
+            "x": 272,
+            "y": 4500,
+            "w": 30,
+            "h": 30,
+            "z": 10,
+            "props": {
+                "text": "●",
+                "fontSize": 24,
+                "color": "#30530F",
+                "align": "center"
+            }
+        },
+        {
+            "id": "tl-2-time",
+            "type": "element_text",
+            "x": 310,
+            "y": 4505,
+            "w": 100,
+            "h": 30,
+            "z": 10,
+            "props": {
+                "text": "18:30",
+                "fontSize": 20,
+                "color": "#30530F",
+                "fontWeight": "bold",
+                "fontFamily": "'Cormorant Garamond', serif"
+            }
+        },
+        {
+            "id": "tl-2-title",
+            "type": "element_text",
+            "x": 100,
+            "y": 4505,
+            "w": 160,
+            "h": 30,
+            "z": 10,
+            "props": {
+                "text": "KHAI TIỆC",
+                "fontSize": 18,
+                "color": "#30530F",
+                "align": "right",
+                "fontWeight": "500"
+            }
+        },
+        {
+            "id": "tl-3-dot",
+            "type": "element_text",
+            "x": 272,
+            "y": 4620,
+            "w": 30,
+            "h": 30,
+            "z": 10,
+            "props": {
+                "text": "●",
+                "fontSize": 24,
+                "color": "#30530F",
+                "align": "center"
+            }
+        },
+        {
+            "id": "tl-3-time",
+            "type": "element_text",
+            "x": 310,
+            "y": 4625,
+            "w": 100,
+            "h": 30,
+            "z": 10,
+            "props": {
+                "text": "19:00",
+                "fontSize": 20,
+                "color": "#30530F",
+                "fontWeight": "bold",
+                "fontFamily": "'Cormorant Garamond', serif"
+            }
+        },
+        {
+            "id": "tl-3-title",
+            "type": "element_text",
+            "x": 100,
+            "y": 4625,
+            "w": 160,
+            "h": 30,
+            "z": 10,
+            "props": {
+                "text": "MÓN CHÍNH",
+                "fontSize": 18,
+                "color": "#30530F",
+                "align": "right",
+                "fontWeight": "500"
+            }
+        },
+        {
+            "id": "deco-3-l",
+            "type": "element_image",
+            "x": -70,
+            "y": 4950,
+            "w": 200,
+            "h": 200,
+            "z": 2,
+            "rotation": 160,
+            "props": {
+                "src": "/templates/hoa-moc-xanh/flower.webp",
+                "opacity": 0.45,
+                "objectFit": "contain",
+                "isDecor": true
+            }
+        },
+        {
+            "id": "deco-3-r",
+            "type": "element_image",
+            "x": 430,
+            "y": 4940,
+            "w": 170,
+            "h": 170,
+            "z": 2,
+            "rotation": 300,
+            "props": {
+                "src": "/templates/hoa-moc-xanh/flower.webp",
+                "opacity": 0.4,
+                "objectFit": "contain",
+                "isDecor": true
+            }
+        },
+        {
+            "id": "w-h",
+            "type": "element_text",
+            "x": 0,
+            "y": 5030,
+            "w": 575,
+            "h": 50,
+            "z": 10,
+            "props": {
+                "text": "SỔ LƯU BÚT",
+                "fontSize": 28,
+                "color": "#30530F",
+                "align": "center",
+                "fontWeight": "bold"
+            }
+        },
+        {
+            "id": "w-w",
+            "type": "element_wishes",
+            "x": 40,
+            "y": 5130,
+            "w": 495,
+            "h": 800,
+            "z": 10,
+            "props": {
+                "primaryColor": "#30530F",
+                "mockWishes": [
+                    {
+                        "guest_name": "Bạn Hoàng dev",
+                        "wish_message": "Chúc 2 bạn mãi yêu nhau, đầu bạc răng long",
+                        "created_at": "2026-04-07T13:44:27"
+                    },
+                    {
+                        "guest_name": "Hoài Nam",
+                        "wish_message": "Chúc hai bạn luôn nắm tay nhau qua mọi chặng đường!!!",
+                        "created_at": "2026-04-07T13:43:31"
+                    },
+                    {
+                        "guest_name": "Bạn Linh",
+                        "wish_message": "Mừng ngày trọng đại! Chúc hai bạn cười nhiều hơn cãi, yêu nhiều hơn giận nhen!",
+                        "created_at": "2026-04-07T13:42:43"
+                    },
+                    {
+                        "guest_name": "Chị Huyền",
+                        "wish_message": "Chúc hai em trăm năm hạnh phúc, vợ chồng đồng lòng <3",
+                        "created_at": "2026-04-07T13:42:15"
+                    },
+                    {
+                        "guest_name": "Cô My",
+                        "wish_message": "Chúc vợ chồng son mãi yêu thương, sớm có tin vui :D",
+                        "created_at": "2026-04-07T13:41:50"
+                    },
+                    {
+                        "guest_name": "Chị Thanh",
+                        "wish_message": "Mừng ngày vu quy, chúc đôi uyên ương hạnh phúc bền lâu <3",
+                        "created_at": "2026-04-07T13:41:09"
+                    },
+                    {
+                        "guest_name": "Bạn Luân",
+                        "wish_message": "Mong rằng cuộc sống hôn nhân sẽ là hành trình tuyệt vời nhất của hai bạn.",
+                        "created_at": "2026-04-07T13:40:53"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "deco-4-l",
+            "type": "element_image",
+            "x": -60,
+            "y": 6060,
+            "w": 190,
+            "h": 190,
+            "z": 2,
+            "rotation": 240,
+            "props": {
+                "src": "/templates/hoa-moc-xanh/flower.webp",
+                "opacity": 0.45,
+                "objectFit": "contain",
+                "isDecor": true
+            }
+        },
+        {
+            "id": "deco-4-r",
+            "type": "element_image",
+            "x": 410,
+            "y": 6050,
+            "w": 180,
+            "h": 180,
+            "z": 2,
+            "rotation": 80,
+            "props": {
+                "src": "/templates/hoa-moc-xanh/flower.webp",
+                "opacity": 0.4,
+                "objectFit": "contain",
+                "isDecor": true
+            }
+        },
+        {
+            "id": "g-h",
+            "type": "element_text",
+            "x": 0,
+            "y": 6130,
+            "w": 575,
+            "h": 50,
+            "z": 10,
+            "props": {
+                "text": "Hộp Mừng Cưới",
+                "fontSize": 28,
+                "color": "#30530F",
+                "align": "center",
+                "fontWeight": "bold"
+            }
+        },
+        {
+            "id": "g-s",
+            "type": "element_image",
+            "x": 187,
+            "y": 6230,
+            "w": 180,
+            "h": 180,
+            "z": 100,
+            "props": {
+                "src": "https://i.postimg.cc/026XzsXD/pngtree-green-gift-box-present-png-image-11541909.png",
+                "action": "gift"
+            },
+            "className": "animate-shake cursor-pointer"
+        },
+        {
+            "id": "m-h",
+            "type": "element_text",
+            "x": 0,
+            "y": 6630,
+            "w": 575,
+            "h": 50,
+            "z": 10,
+            "props": {
+                "text": "ĐỊA ĐIỂM",
+                "fontSize": 28,
+                "color": "#30530F",
+                "align": "center",
+                "fontWeight": "bold"
+            }
+        },
+        {
+            "id": "m-w",
+            "type": "element_map",
+            "x": 40,
+            "y": 6730,
+            "w": 495,
+            "h": 320,
+            "z": 10,
+            "props": {
+                "location": "Tiệc Cưới Hoàng Gia 2"
+            }
+        },
+        {
+            "id": "deco-5-l",
+            "type": "element_image",
+            "x": -50,
+            "y": 7160,
+            "w": 170,
+            "h": 170,
+            "z": 2,
+            "rotation": 30,
+            "props": {
+                "src": "/templates/hoa-moc-xanh/flower.webp",
+                "opacity": 0.4,
+                "objectFit": "contain",
+                "isDecor": true
+            }
+        },
+        {
+            "id": "deco-5-r",
+            "type": "element_image",
+            "x": 420,
+            "y": 7170,
+            "w": 160,
+            "h": 160,
+            "z": 2,
+            "rotation": 190,
+            "props": {
+                "src": "/templates/hoa-moc-xanh/flower.webp",
+                "opacity": 0.35,
+                "objectFit": "contain",
+                "isDecor": true
+            }
+        },
+        {
+            "id": "f-p",
+            "type": "element_image",
+            "x": 87,
+            "y": 7230,
+            "w": 400,
+            "h": 500,
+            "z": 10,
+            "props": {
+                "src": "https://cdn.chungdoi.com/uploads/1174458a-fd65-41ed-b86c-626e9366faa2.webp",
+                "borderRadius": "15px"
+            }
+        },
+        {
+            "id": "t-u",
+            "type": "element_text",
+            "x": 0,
+            "y": 7830,
+            "w": 575,
+            "h": 80,
+            "z": 15,
+            "props": {
+                "text": "TRÂN TRỌNG CẢM ƠN!",
+                "fontSize": 24,
+                "color": "#30530F",
+                "align": "center",
+                "fontWeight": "bold"
+            }
+        }
+    ]
 }
